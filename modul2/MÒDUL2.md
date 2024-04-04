@@ -107,6 +107,16 @@ Els errors en calc
 
  -->
 
+\vspace*{\fill}
+
+![](img/cc.png){ height=50px }
+
+Aquest document està subjecte a una llicència creative commons que permet la seua difusió i ús comercial reconeixent sempre l'autoria del seu creador. Aquest document es troba per a ser modificat al següent repositori de github:
+<!-- CANVIAR L'ENLLAÇ -->
+[https://github.com/arvicenteboix/fulldecalcul](https://github.com/arvicenteboix/fulldecalcul)
+\newpage
+
+
 
 # Introducció
 
@@ -149,9 +159,9 @@ Per a seleccionar el rang podem fer ús del ratolí i seleccionar les cel·les q
 Fica't en la fórmula MAX i MIN, normalment quasi totes les fórmules de càlcul permeten bé introduïr un rang o diferents cel·les separades per a una coma. El que no pots fer és utiltizar dos rangs separats per una coma.
 :::
 
-## Asssistent per a fórmules
+## Assistent per a fórmules
 
-Quan anem a utilitzar fórmules és interessant fer ús de l'assistent ja que sempre ens anirà donant indicacions de si una fórmula és correcta o no. Al següent gràfic tens un esquema ràpid de com seria fer ús de l'asssitent de fórmules.
+Quan anem a utilitzar fórmules és interessant fer ús de l'assistent, ja que sempre ens anirà donant indicacions de si una fórmula és correcta o no. Al següent gràfic tens un esquema ràpid de com seria fer ús de l'assistent de fórmules.
 
 ![Assistent](img/2.png)
 
@@ -173,9 +183,30 @@ A l'exemple anterior hem vist un operador condicional. Els més comuns són els 
 
 L’opció Autoemplenar és una funció que permet estalviar temps en realitzar tasques repetitives. Amb aquesta funció, pots copiar valors, realitzar sèries, copiar fórmules, entre altres, simplement arrossegant el ratolí.
 
+![Autoemplenar](img/3.png)
 
+Una vegada arrosseguem el ratolí el resultat serà que la fila s'ompli amb Nom1, Nom2, Nom3, etc... De la mateixa manera passaria si tinguéssim només le número. Així mateix passaria amb les fórmules. Si volem que ens faja els càlculs de semblants als anteriors mantenint les referències podem arrastrar i soltar. Així per exemple en el següent recuadre:
+
+![Autoemplenar fórmules](img/4.png)
 
 # Referències absolutes i relatives $
 
+En un full de càlcul, les referències a les cel·les poden ser absolutes, relatives o mixtes:
+
+1. **Referències absolutes**: Fan referència a les cel·les ubicades en una posició específica i invariable. S'indiquen amb el signe `$` davant la lletra de la columna i del nombre de fila. Per exemple, `$A$1` és una referència absoluta.
+
+2. **Referències relatives**: Fan referència a cel·les ubicades en una columna o en una fila que s'actualitzaran segons el càlcul que es realitzi. No contenen signes de dòlar. Per exemple, `A1` és una referència relativa.
+
+3. **Referències mixtes**: Combina les dues anteriors. Una part de la referència és absoluta (columna o fila) i l'altra és relativa. Per exemple, `$A1` o `A$1`.
+
+Aquestes referències són útils quan es copien fórmules a altres cel·les, permetent ajustar automàticament les referències a les cel·les.
+
 
 # Operacions amb dates
+
+## Càlcul automàtic
+
+## Format dates
+
+# Exemple pràctic
+
