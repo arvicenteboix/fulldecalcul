@@ -7,6 +7,7 @@ subtitle: Mòdul II
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
+page-background: img/bg.png
 
 # portada
 titlepage-rule-height: 2

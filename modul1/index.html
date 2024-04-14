@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de
+càlcul</h1>
+            <!--        <p class="subtitle">Instal·lació i introducció
+al full de càlcul</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente
+Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#què-és-un-full-de-càlcul"
+id="toc-què-és-un-full-de-càlcul"><span
+class="toc-section-number">1</span> Què és un Full de Càlcul?</a></li>
+<li><a href="#installació" id="toc-installació"><span
+class="toc-section-number">2</span> Instal·lació</a>
+<ul>
+<li><a href="#libreoffice" id="toc-libreoffice"><span
+class="toc-section-number">2.1</span> LibreOffice</a></li>
+<li><a href="#office-365" id="toc-office-365"><span
+class="toc-section-number">2.2</span> Office 365</a></li>
+<li><a href="#ms-office" id="toc-ms-office"><span
+class="toc-section-number">2.3</span> MS Office</a></li>
+</ul></li>
+<li><a href="#treballant-amb-el-full-de-càlcul"
+id="toc-treballant-amb-el-full-de-càlcul"><span
+class="toc-section-number">3</span> Treballant amb el full de càlcul</a>
+<ul>
+<li><a href="#celles-files-i-columnes"
+id="toc-celles-files-i-columnes"><span
+class="toc-section-number">3.1</span> Cel·les, Files i Columnes</a></li>
+</ul></li>
+<li><a href="#formats" id="toc-formats"><span
+class="toc-section-number">4</span> Formats</a>
+<ul>
+<li><a href="#formats-de-cella" id="toc-formats-de-cella"><span
+class="toc-section-number">4.1</span> Formats de cel·la</a></li>
+<li><a href="#formats-del-full" id="toc-formats-del-full"><span
+class="toc-section-number">4.2</span> Formats del full</a>
+<ul>
+<li><a href="#format-de-la-pestanya"
+id="toc-format-de-la-pestanya"><span
+class="toc-section-number">4.2.1</span> Format de la pestanya</a></li>
+</ul></li>
+<li><a href="#validació-de-dades" id="toc-validació-de-dades"><span
+class="toc-section-number">4.3</span> Validació de dades</a></li>
+</ul></li>
+<li><a href="#fórmules" id="toc-fórmules"><span
+class="toc-section-number">5</span> Fórmules</a></li>
+<li><a href="#bibliografia" id="toc-bibliografia"><span
+class="toc-section-number">6</span> Bibliografia</a></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Aquest document està subjecte a una llicència creative
+            commons que permet la seua difusió i ús comercial
+            reconeixent sempre l’autoria del seu creador. Aquest
+            document es troba per a ser modificat al següent repositori
+            de github: <!-- CANVIAR L'ENLLAÇ --> <a
+            href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a>
+            </p>
+            <h1 data-number="1" id="què-és-un-full-de-càlcul"><span
+            class="header-section-number">1</span> Què és un Full de
+            Càlcul?</h1>
+            <p>Un full de càlcul és una aplicació que permet manipular
+            dades numèriques i alfanumèriques disposades en forma de
+            taules compostes per cel·les. Amb aquesta premisa poden fer
+            ús del full de càlcul per a realitzar nombroses tasques. En
+            aquest cas en centrarem en l’ús del càlcul per a la tasca
+            docent. El primer pas com a docents de la Comunitat
+            Valencina és la instal·lació del full de càlcul.</p>
+            <h1 data-number="2" id="installació"><span
+            class="header-section-number">2</span> Instal·lació</h1>
+            <p>Coma docents de la Comunitat tenim diferent opcions i
+            totes elles són vàlides.</p>
+            <ul>
+            <li>LibreOffice: es tracta d’una versió de codi obert i està
+            disponible per a pràcticament totes les plataformes més
+            comuns: Windows, Linux i Mac. En aquesta versió ens
+            centrarem en el curs.</li>
+            <li>MS Office: es tracta d’una versió de pagament que tots
+            els docents de la Comunitat tenim disponible per a instal·la
+            en un ordinador.</li>
+            <li>Office 365: Es tracta d’una versió al núvol per a pdoer
+            utilitzat les ferramentes Office a través del navegador.
+            Aquesta versió no té tantes coracterístiques com la versió
+            d’escriptori.</li>
+            </ul>
+            <h2 data-number="2.1" id="libreoffice"><span
+            class="header-section-number">2.1</span> LibreOffice</h2>
+            <p>El programa de full de càlcul de Libreoficce s’anomena
+            Calc. Este està disponible per a pràcticament totes les
+            distribuions GNU/Linux que existeixen sense necessitat
+            d’instl·lar res. Directament anant al menú Inici&gt;Oficina
+            el tronarem:</p>
+            <figure>
+            <img src="img/1.png" style="width:60.0%" alt="Inici Calc" />
+            <figcaption aria-hidden="true">Inici Calc</figcaption>
+            </figure>
+            <p>En Windows pots descarregar l’última versió de
+            Libreoffice des <a
+            href="https://es.libreoffice.org/descarga/libreoffice/?version=7.6.6&amp;lang=es">d’ací</a>.
+            Et recomanenm que utilitzes la versió 7.6.6, uan vegada
+            descarregat només has de fer doble clic al programa per a
+            instal·lar-lo:</p>
+            <figure>
+            <img src="img/1.1.png" style="width:60.0%"
+            alt="Instal·lació" />
+            <figcaption aria-hidden="true">Instal·lació</figcaption>
+            </figure>
+            <h2 data-number="2.2" id="office-365"><span
+            class="header-section-number">2.2</span> Office 365</h2>
+            <p>Per a fer ús del full de càlcul d’Office 365 (anomenant
+            Excel). Cal anar a la <a
+            href="https://www.office.com/?auth=2">pàgina web d’Office
+            365</a>. Veurem que al menú de l’esquerre tenim una icona
+            que posa Excel:</p>
+            <figure>
+            <img src="img/2.png" style="width:30.0%"
+            alt="Excel Office 365" />
+            <figcaption aria-hidden="true">Excel Office 365</figcaption>
+            </figure>
+            <p>En aquest cas podem utilitzar Excel a qualsevol
+            plataforma,només ens cal el navegador.</p>
+            <div class="warning">
+            <p>A estes altures tots els docents deurien de tindre
+            activades ja les opcions per a utilitzat Office 365. Si algú
+            no veu la icona d’Excel, que no es preocupe, a final del
+            curs 23-24 ja deurien d’estar acivades.</p>
+            </div>
+            <h2 data-number="2.3" id="ms-office"><span
+            class="header-section-number">2.3</span> MS Office</h2>
+            <p>Microsoft Office també està disponible per a tots els
+            docents de la Comunitat però en aquest cas només es pot fer
+            funcionar amb Windows, per a descarregar MS Office cal anar
+            a <em>Ver cuenta</em> al vostre perfil de la pàgina d’Office
+            (teniu una inicial o la vostra foto per a marcar-ho):</p>
+            <figure>
+            <img src="img/3.png" style="width:60.0%" alt="Compte" />
+            <figcaption aria-hidden="true">Compte</figcaption>
+            </figure>
+            <p>Una vegada dins a l’esquerra verurem que tenim una opció
+            que posa <em>Aplicacions Office</em>:</p>
+            <figure>
+            <img src="img/4.png" style="width:60.0%"
+            alt="Aplicacions Office" />
+            <figcaption aria-hidden="true">Aplicacions
+            Office</figcaption>
+            </figure>
+            <p>Ahí vos apareixerà una opció per a instal·lar Office, si
+            feu clic vos baixarà la Suite i caldrà que feu clic per a
+            que l’instal·l3:</p>
+            <figure>
+            <img src="img/5.png" style="width:60.0%"
+            alt="Instal·lar Office" />
+            <figcaption aria-hidden="true">Instal·lar
+            Office</figcaption>
+            </figure>
+            <p>Una vegada instal·lat si busque excel a la barra de
+            búsqueda de Windows vos apareixerà que ja està
+            instal·lat:</p>
+            <figure>
+            <img src="img/6.png" style="width:60.0%" alt="Excel" />
+            <figcaption aria-hidden="true">Excel</figcaption>
+            </figure>
+            <p>Això sí, és important que una vegada instal·lat registreu
+            l’Office amb el vostre compte corporatiu:</p>
+            <figure>
+            <img src="img/7.png" style="width:60.0%"
+            alt="Registre Office" />
+            <figcaption aria-hidden="true">Registre Office</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recorde que nosaltres anem a fer ús de Libreoffice,
+            moltes vegades farem referència a les altres suites per a
+            explicar algunes diferències.</p>
+            </div>
+            <h1 data-number="3"
+            id="treballant-amb-el-full-de-càlcul"><span
+            class="header-section-number">3</span> Treballant amb el
+            full de càlcul</h1>
+            <p>Hi ha una sèries de conceptes que cal tenir clars abans
+            de cmençar a treballar. És imprescindibles que aquesta
+            terminologia la tingueu clara ja que anem a estar
+            referint-nos a ella en tot moment. La base del full de
+            càlcul és la Cel·la.</p>
+            <h2 data-number="3.1" id="celles-files-i-columnes"><span
+            class="header-section-number">3.1</span> Cel·les, Files i
+            Columnes</h2>
+            <ul>
+            <li><p><strong>Cel·la</strong>: És la intersecció d’una fila
+            i una columna. Cada cel·la té una adreça única que es
+            determina a partir de la seva posició en la fila i la
+            columna. Per exemple, la cel·la “B2” es troba a la columna B
+            i la fila 2.</p></li>
+            <li><p><strong>Fila</strong>: És un conjunt de Cel·les en
+            una línia horitzontal. Les files es numeren seqüencialment
+            (1, 2, 3, etc.).</p></li>
+            <li><p><strong>Columna</strong>: És un conjunt de Cel·les en
+            una línia vertical. Les columnes es designen amb lletres (A,
+            B, C, etc.).</p></li>
+            <li><p>Un <strong>full</strong> és un conjunt de Cel·les
+            organitzades en files i columnes. Cada full de càlcul pot
+            contenir múltiples fulls.</p></li>
+            <li><p>Les <strong>fórmules</strong> són expressions que
+            realitzen càlculs sobre les dades de les Cel·les. Una
+            fórmula comença sempre amb un signe igual (=). Per exemple,
+            la fórmula <code>=SUM(A1:A3)</code> sumarà els valors de les
+            Cel·les A1 a A3.</p></li>
+            </ul>
+            <figure>
+            <img src="img/6.png" style="width:60.0%"
+            alt="Espai de treball" />
+            <figcaption aria-hidden="true">Espai de treball</figcaption>
+            </figure>
+            <ul>
+            <li><strong>Rang</strong>, és un número de cel·les que
+            vindran determinades per la primera cel·la del rang i
+            l’última, per exemple el rang A3:C5 serà:</li>
+            </ul>
+            <figure>
+            <img src="img/7.png" style="width:60.0%" alt="Rang" />
+            <figcaption aria-hidden="true">Rang</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Una de les caractarístiques de les fórmules és que són
+            diferents en castellà, en valencià i en anglès. En el nostre
+            cas utilitzarem les fórmules en castellà, per tant la suite
+            l’heu de tenir configurada en castellà. De tota manera podeu
+            fer ús de la llengua que vullgueu, si teniu configurat el
+            full de càlcul en anglès i heu fet el full en un programa
+            confgurat en valencià, automàticament vos apareixeran
+            traduïdes pel que no hi haurà problemes
+            d’incompatibilitat.</p>
+            </div>
+            <h1 data-number="4" id="formats"><span
+            class="header-section-number">4</span> Formats</h1>
+            <h2 data-number="4.1" id="formats-de-cella"><span
+            class="header-section-number">4.1</span> Formats de
+            cel·la</h2>
+            <p>En un full de càlcul, una cel·la pot tenir diversos
+            formats. Aquí tens una descripció breu de alguns d’ells:</p>
+            <ul>
+            <li><strong>Text</strong>: El text apareix per defecte
+            alineat a l’esquerra de la cel·la.</li>
+            <li><strong>Números</strong>: Els números apareixen per
+            defecte alineats a la dreta. Podem especificar que el que
+            hem escrit és un número (Categoria Número) i especificar
+            paràmetres com quants decimals volem visualitzar o si volem
+            separadors de milers.</li>
+            <li><strong>Dates</strong>: També podem introduir dates. Les
+            dates queden alineades a la dreta, com els números.</li>
+            <li><strong>Percentatge</strong>: Podem especificar que hem
+            escrit és un percentatge (Categoria percentatge) i
+            especificar paràmetres com quants decimals volem
+            visualitzar. El número escrit es multiplica per 100 i
+            apareix el símbol %.</li>
+            <li><strong>Moneda</strong>: Podem especificar que hem
+            escrit un número referit a una quantitat de diners
+            (Categoria Moneda). Escollim la moneda internacional (euros,
+            dolars, rubles….) i especificar paràmetres com quants
+            decimals volem. Apareix el símbol de la moneda a la dreta
+            del número.</li>
+            <li><strong>Científic</strong>: Podem utilitzar la Categoria
+            Científic per a visualitzar números llargs en notació
+            científica de forma molt compacte, igual que fan les
+            calculadores.</li>
+            <li><strong>Fracció</strong>: El full de càlcul pot
+            treballar i fer càlculs amb fraccions, però si escrivim 1/2
+            en una cel·la hem de dir al programa que això és una fracció
+            amb la categoria fracció.</li>
+            </ul>
+            <p>Pots accedir per a verure tots els tipus de format que
+            pot contenir una cel·la de la següents manera, fent clic amb
+            el botó dret del ratolí:</p>
+            <figure>
+            <img src="img/10.png" style="width:60.0%"
+            alt="Format cel·les" />
+            <figcaption aria-hidden="true">Format cel·les</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Tenim el cas del <strong>Format condicional</strong> que
+            permet que el format d’una cel·la canviï si es produeixen
+            determinades condicions. Per exemple, podem fer que una
+            cel·la amb un nombre aparega de color roig si és negatiu o
+            negre si és positiu.</p>
+            </div>
+            <figure>
+            <img src="img/11.png" style="width:60.0%"
+            alt="Format cel·les" />
+            <figcaption aria-hidden="true">Format cel·les</figcaption>
+            </figure>
+            <h2 data-number="4.2" id="formats-del-full"><span
+            class="header-section-number">4.2</span> Formats del
+            full</h2>
+            <p>Al igual que el procesador de text existein la
+            possibilitat de donar un fomat determinat al nostre full de
+            càlcul. Per defecte ja ens apareix una barra a Libreoffice
+            com aquesta:</p>
+            <figure>
+            <img src="img/12.png" style="width:60.0%"
+            alt="Barra de ferramentes de format" />
+            <figcaption aria-hidden="true">Barra de ferramentes de
+            format</figcaption>
+            </figure>
+            <p>En aquesta barra tenim diferents opcions, totes les
+            opcions de la barra són importants i són molt
+            utilitzades:</p>
+            <figure>
+            <img src="img/13.png" style="width:90.0%"
+            alt="Detall de Barra" />
+            <figcaption aria-hidden="true">Detall de Barra</figcaption>
+            </figure>
+            <h3 data-number="4.2.1" id="format-de-la-pestanya"><span
+            class="header-section-number">4.2.1</span> Format de la
+            pestanya</h3>
+            <p>Una tinguem tots els nostre full configurats tenim
+            l’opció de poder canviaar el color de la pestanya del full
+            per a que ens siga més fàcil d’organitzar-nos. A més si ja
+            hem dibuixat totes les cuadriacules i donat un format amb un
+            color de fons de les cel·les etc… podrem llevar les línies
+            de cuadrícula fent clic en <em>Ver líneas de
+            cuadrícula</em></p>
+            <figure>
+            <img src="img/19.png" style="width:60.0%"
+            alt="Format pestanya full" />
+            <figcaption aria-hidden="true">Format pestanya
+            full</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Recorda que si fas clic sobre el + podràs anar afegint
+            més fulls. Les full es poden relacionar entre ells. Agafar
+            intervals d’altre full per a utilitzar-los en el que estàs
+            treballant.</p>
+            </div>
+            <h2 data-number="4.3" id="validació-de-dades"><span
+            class="header-section-number">4.3</span> Validació de
+            dades</h2>
+            <p>Una altra opció molt interessant, tot i que no parlem de
+            fomat pròpiament dit és l’opció de validació de dades que
+            ens permetrà crear un desplegable de les dades en una
+            cel·la. Per exemple si volguérem que una cel·la només
+            permitira unes dades determiandes, podríem anar a Datos &gt;
+            Validez:</p>
+            <figure>
+            <img src="img/14.png" style="width:50.0%" alt="Validez" />
+            <figcaption aria-hidden="true">Validez</figcaption>
+            </figure>
+            <p>Després seleccionariem <em>Intervalo de celdas</em>:</p>
+            <figure>
+            <img src="img/15.png" style="width:50.0%"
+            alt="Interval de cel·les" />
+            <figcaption aria-hidden="true">Interval de
+            cel·les</figcaption>
+            </figure>
+            <p>I seleccionariem d’on volem agafar les dades, i li
+            donaríem a acceptar:</p>
+            <figure>
+            <img src="img/16.png" style="width:50.0%" alt="Orige" />
+            <figcaption aria-hidden="true">Orige</figcaption>
+            </figure>
+            <p>Finalment tindríem en el full de càlcul un desplegable
+            per a poder seleccionar les dades que nosaltres
+            desitjarem:</p>
+            <figure>
+            <img src="img/17.png" style="width:40.0%"
+            alt="Desplegable" />
+            <figcaption aria-hidden="true">Desplegable</figcaption>
+            </figure>
+            <div class="tip">
+            <p>En el casos que feu ús d’aquesta opció, és una opció
+            recomanable tindre totes les dades dels desplegables en un
+            full a banda o ocultar aquestes dades posant-les a la dreta.
+            Per a ocultar una columna vos poseu damunt de la línia amb
+            el cursos del ratolí i feu clic dret sobre la lletra i ahí
+            tenim l’opció d’ocultar. Aquesta acció ocultaria la columna
+            però encara estari ahí encara que no la puguem veure:</p>
+            <figure>
+            <img src="img/18.png" style="width:50.0%"
+            alt="Ocultar columna" />
+            <figcaption aria-hidden="true">Ocultar columna</figcaption>
+            </figure>
+            </div>
+            <div class="note">
+            <p>En Excel l’opció es diu <em>Validación de datos</em> i
+            per a seleccionar un interval heu de agafar l’opció
+            <em>Personalizar</em> i seleccionar l’interval.</p>
+            </div>
+            <h1 data-number="5" id="fórmules"><span
+            class="header-section-number">5</span> Fórmules</h1>
+            <p>Per realitzar fórmules en LibreOffice Calc, primer heu de
+            seleccionar la cel·la on voleu introduir la fórmula. A
+            continuació, podeu començar a introduir la fórmula. Per
+            exemple:</p>
+            <ol type="1">
+            <li><strong>Feu clic a la cel·la</strong> on voleu introduir
+            la fórmula.</li>
+            <li><strong>Feu clic a l’icona de Funció</strong> a la Barra
+            de Fórmules. Heu de posar un signe d’igual a la línia
+            d’entrada i podeu començar a introduir la fórmula.</li>
+            <li><strong>Introduïu la fórmula</strong>. Les fórmules
+            poden contenir nombres, text, operadors aritmètics,
+            operadors lògics o funcions. Per exemple, en lloc d’escriure
+            <code>=SUM(A1:B1)</code>, podeu escriure
+            <code>=A1+B1</code>.</li>
+            <li><strong>Premeu Enter o feu clic a la icona ok
+            verda</strong> per inserir el resultat a la cel·la
+            activa.</li>
+            </ol>
+            <p>Totes les fórmules comencen amb un signe d’igual. Alguns
+            exemples de fórmules de LibreOffice Calc poden ser:</p>
+            <ul>
+            <li><code>=A1+10</code> Mostra el contingut de la cel·la A1
+            més 10.</li>
+            <li><code>=A1*16%</code> Mostra el 16% del contingut de
+            A1.</li>
+            <li><code>=A1 * A2</code> Mostra el resultat de la
+            multiplicació de A1 i A2.</li>
+            <li><code>=ROUND(A1;1)</code> Mostra el contingut de la
+            cel·la A1 arrodonit a un decimal.</li>
+            <li><code>=B8-SUM(B10:B14)</code> Calcula B8 menys la suma
+            de les cel·les B10 a B14.</li>
+            <li><code>=SUM(B8;SUM(B10:B14))</code> Calcula la suma de
+            les cel·les B10 a B14 i afegeix el valor a B8.</li>
+            </ul>
+            <div class="tip">
+            <p>A la propera unitat parlarem un poc més de les fórmules i
+            de como utilitzar l’asssitent per a fórmules.</p>
+            </div>
+            <h1 data-number="6" id="bibliografia"><span
+            class="header-section-number">6</span> Bibliografia</h1>
+            <ol class="example" type="1">
+            <li>https://documentation.libreoffice.org/es/documentacion-en-espanol/calc/</li>
+            </ol>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>

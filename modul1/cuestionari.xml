@@ -1,0 +1,218 @@
+    <quiz>
+        <question type="multichoice">
+            <name>
+                <text>Què és un full de càlcul?</text>
+            </name>
+            <questiontext format="html">
+                <text><![CDATA[<p>Què és un full de càlcul?</p>]]></text>
+            </questiontext>
+            <answer fraction="0">
+                <text>Una aplicació per a escriure text i fer presentacions</text>
+            </answer>
+            <answer fraction="100">
+                <text>Una aplicació per manipular dades numèriques i alfanumèriques en taules</text>
+            </answer>
+            <answer fraction="0">
+                <text>Una aplicació per editar fotos i imatges</text>
+            </answer>
+            <answer fraction="0">
+                <text>Una aplicació per programar en diferents llenguatges</text>
+            </answer>
+        </question>
+        <!-- Repeat the structure above for each question -->
+
+
+    <!-- Question 2 -->
+    <question type="multichoice">
+        <name>
+            <text>Quin és el primer pas per utilitzar el full de càlcul per a la tasca docent?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin és el primer pas per utilitzar el full de càlcul per a la tasca docent?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Crear una presentació</text>
+        </answer>
+        <answer fraction="0">
+            <text>Realitzar una recerca a Internet</text>
+        </answer>
+        <answer fraction="100">
+            <text>Instal·lar el full de càlcul</text>
+        </answer>
+        <answer fraction="0">
+            <text>Compartir el document amb altres estudiants</text>
+        </answer>
+    </question>
+    <!-- Question 3 -->
+    <question type="multichoice">
+        <name>
+            <text>Quina és una opció vàlida per a utilitzar un full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quina és una opció vàlida per a utilitzar un full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>WordPerfect</text>
+        </answer>
+        <answer fraction="100">
+            <text>Microsoft Excel</text>
+        </answer>
+        <answer fraction="0">
+            <text>Adobe Photoshop</text>
+        </answer>
+        <answer fraction="0">
+            <text>GarageBand</text>
+        </answer>
+    </question>
+    <!-- Question 4 -->
+    <question type="multichoice">
+        <name>
+            <text>Quin és el nom del programa de full de càlcul de LibreOffice?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin és el nom del programa de full de càlcul de LibreOffice?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Write</text>
+        </answer>
+        <answer fraction="100">
+            <text>Calc</text>
+        </answer>
+        <answer fraction="0">
+            <text>Impress</text>
+        </answer>
+        <answer fraction="0">
+            <text>Draw</text>
+        </answer>
+    </question>
+    <!-- Repeat the structure above for each question -->
+    <!-- Question 5 -->
+    <question type="multichoice">
+        <name>
+            <text>Com es pot accedir als tipus de format d'una cel·la en un full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Com es pot accedir als tipus de format d'una cel·la en un full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Fent doble clic a la cel·la</text>
+        </answer>
+        <answer fraction="100">
+            <text>Fent clic a la icona de formatació de la barra de ferramentes</text>
+        </answer>
+        <answer fraction="0">
+            <text>Pulsant la tecla Enter</text>
+        </answer>
+        <answer fraction="0">
+            <text>Seleccionant tot el contingut de la cel·la</text>
+        </answer>
+    </question>
+    <!-- Question 6 -->
+    <question type="multichoice">
+        <name>
+            <text>Quin és un exemple de format de cel·la en un full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin és un exemple de format de cel·la en un full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>Text alineat a l'esquerra</text>
+        </answer>
+        <answer fraction="0">
+            <text>Imatge de fons animada</text>
+        </answer>
+        <answer fraction="0">
+            <text>Font de canvi de color automàtic</text>
+        </answer>
+        <answer fraction="0">
+            <text>Missatge emergent interactiu</text>
+        </answer>
+    </question>
+    <!-- Question 7 -->
+    <question type="multichoice">
+        <name>
+            <text>Quina opció permet que el format d'una cel·la canviï si es compleixen certes condicions?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quina opció permet que el format d'una cel·la canviï si es compleixen certes condicions?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Format de cel·la</text>
+        </answer>
+        <answer fraction="0">
+            <text>Comentari de cel·la</text>
+        </answer>
+        <answer fraction="0">
+            <text>Validació de dades</text>
+        </answer>
+        <answer fraction="100">
+            <text>Fórmula condicional</text>
+        </answer>
+    </question>
+    <!-- Question 8 -->
+    <question type="multichoice">
+        <name>
+            <text>Com es comença a introduir una fórmula en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Com es comença a introduir una fórmula en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Fent clic a la icona de pintura</text>
+        </answer>
+        <answer fraction="0">
+            <text>Pulsant la tecla Shift</text>
+        </answer>
+        <answer fraction="100">
+            <text>Fent clic a la icona de funció</text>
+        </answer>
+        <answer fraction="0">
+            <text>Pujant la barra lateral</text>
+        </answer>
+    </question>
+    <!-- Question 9 -->
+    <question type="multichoice">
+        <name>
+            <text>Quin signe s'utilitza per començar una fórmula en un full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin signe s'utilitza per començar una fórmula en un full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>+</text>
+        </answer>
+        <answer fraction="0">
+            <text>-</text>
+        </answer>
+        <answer fraction="0">
+            <text>*</text>
+        </answer>
+        <answer fraction="100">
+            <text>=</text>
+        </answer>
+    </question>
+    <!-- Question 10 -->
+    <question type="multichoice">
+        <name>
+            <text>Què significa el símbol % en una fórmula de full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què significa el símbol % en una fórmula de full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Divisió</text>
+        </answer>
+        <answer fraction="0">
+            <text>Resta</text>
+        </answer>
+        <answer fraction="0">
+            <text>Multiplicació</text>
+        </answer>
+        <answer fraction="100">
+            <text>Percentatge</text>
+        </answer>
+    </question>
+
+
+
+    </quiz>

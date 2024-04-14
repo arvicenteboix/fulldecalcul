@@ -1,0 +1,216 @@
+<quiz>
+    <question type="multichoice">
+        <name>
+            <text>¿Qué es una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué es una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Una aplicación para escribir texto y hacer presentaciones</text>
+        </answer>
+        <answer fraction="100">
+            <text>Una aplicación para manipular datos numéricos y alfanuméricos en tablas</text>
+        </answer>
+        <answer fraction="0">
+            <text>Una aplicación para editar fotos e imágenes</text>
+        </answer>
+        <answer fraction="0">
+            <text>Una aplicación para programar en diferentes lenguajes</text>
+        </answer>
+    </question>
+    <!-- Repite la estructura de arriba para cada pregunta -->
+
+
+    <!-- Pregunta 2 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuál es el primer paso para utilizar la hoja de cálculo para la tarea docente?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuál es el primer paso para utilizar la hoja de cálculo para la tarea docente?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Crear una presentación</text>
+        </answer>
+        <answer fraction="0">
+            <text>Realizar una búsqueda en Internet</text>
+        </answer>
+        <answer fraction="100">
+            <text>Instalar la hoja de cálculo</text>
+        </answer>
+        <answer fraction="0">
+            <text>Compartir el documento con otros estudiantes</text>
+        </answer>
+    </question>
+    <!-- Pregunta 3 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuál es una opción válida para utilizar una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuál es una opción válida para utilizar una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>WordPerfect</text>
+        </answer>
+        <answer fraction="100">
+            <text>Microsoft Excel</text>
+        </answer>
+        <answer fraction="0">
+            <text>Adobe Photoshop</text>
+        </answer>
+        <answer fraction="0">
+            <text>GarageBand</text>
+        </answer>
+    </question>
+    <!-- Pregunta 4 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuál es el nombre del programa de hoja de cálculo de LibreOffice?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuál es el nombre del programa de hoja de cálculo de LibreOffice?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Write</text>
+        </answer>
+        <answer fraction="100">
+            <text>Calc</text>
+        </answer>
+        <answer fraction="0">
+            <text>Impress</text>
+        </answer>
+        <answer fraction="0">
+            <text>Draw</text>
+        </answer>
+    </question>
+    <!-- Repite la estructura de arriba para cada pregunta -->
+    <!-- Pregunta 5 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cómo se puede acceder a los tipos de formato de una celda en una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cómo se puede acceder a los tipos de formato de una celda en una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Haciendo doble clic en la celda</text>
+        </answer>
+        <answer fraction="100">
+            <text>Haciendo clic en el icono de formato de la barra de herramientas</text>
+        </answer>
+        <answer fraction="0">
+            <text>Pulsando la tecla Enter</text>
+        </answer>
+        <answer fraction="0">
+            <text>Seleccionando todo el contenido de la celda</text>
+        </answer>
+    </question>
+    <!-- Pregunta 6 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuál es un ejemplo de formato de celda en una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuál es un ejemplo de formato de celda en una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>Texto alineado a la izquierda</text>
+        </answer>
+        <answer fraction="0">
+            <text>Imagen de fondo animada</text>
+        </answer>
+        <answer fraction="0">
+            <text>Fuente de cambio de color automático</text>
+        </answer>
+        <answer fraction="0">
+            <text>Mensaje emergente interactivo</text>
+        </answer>
+    </question>
+    <!-- Pregunta 7 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué opción permite que el formato de una celda cambie si se cumplen ciertas
+                condiciones?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué opción permite que el formato de una celda cambie si se cumplen ciertas condiciones?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Formato de celda</text>
+        </answer>
+        <answer fraction="0">
+            <text>Comentario de celda</text>
+        </answer>
+        <answer fraction="0">
+            <text>Validación de datos</text>
+        </answer>
+        <answer fraction="100">
+            <text>Fórmula condicional</text>
+        </answer>
+    </question>
+    <!-- Pregunta 8 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cómo se comienza a introducir una fórmula en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cómo se comienza a introducir una fórmula en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>Haciendo clic en el icono de pintura</text>
+        </answer>
+        <answer fraction="0">
+            <text>Pulsando la tecla Shift</text>
+        </answer>
+        <answer fraction="100">
+            <text>Haciendo clic en el icono de función</text>
+        </answer>
+        <answer fraction="0">
+            <text>Subiendo la barra lateral</text>
+        </answer>
+    </question>
+    <!-- Pregunta 9 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué signo se utiliza para comenzar una fórmula en una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué signo se utiliza para comenzar una fórmula en una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>+</text>
+        </answer>
+        <answer fraction="0">
+            <text>-</text>
+        </answer>
+        <answer fraction="0">
+            <text>*</text>
+        </answer>
+        <answer fraction="100">
+            <text>=</text>
+        </answer>
+    </question>
+    <!-- Pregunta 10 -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué significa el símbolo % en una fórmula de hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué significa el símbolo % en una fórmula de hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>División</text>
+        </answer>
+        <answer fraction="0">
+            <text>Resta</text>
+        </answer>
+        <answer fraction="0">
+            <text>Multiplicación</text>
+        </answer>
+        <answer fraction="100">
+            <text>Porcentaje</text>
+        </answer>
+    </question>
+</quiz>

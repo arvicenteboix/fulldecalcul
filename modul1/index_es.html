@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de
+càlcul</h1>
+            <!--        <p class="subtitle">Instal·lació i introducció
+al full de càlcul</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente
+Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#qué-es-una-hoja-de-cálculo"
+id="toc-qué-es-una-hoja-de-cálculo"><span
+class="toc-section-number">1</span> ¿Qué es una Hoja de
+Cálculo?</a></li>
+<li><a href="#instalación" id="toc-instalación"><span
+class="toc-section-number">2</span> Instalación</a>
+<ul>
+<li><a href="#libreoffice" id="toc-libreoffice"><span
+class="toc-section-number">2.1</span> LibreOffice</a></li>
+<li><a href="#office-365" id="toc-office-365"><span
+class="toc-section-number">2.2</span> Office 365</a></li>
+<li><a href="#ms-office" id="toc-ms-office"><span
+class="toc-section-number">2.3</span> MS Office</a></li>
+</ul></li>
+<li><a href="#trabajando-con-la-hoja-de-cálculo"
+id="toc-trabajando-con-la-hoja-de-cálculo"><span
+class="toc-section-number">3</span> Trabajando con la hoja de
+cálculo</a>
+<ul>
+<li><a href="#celdas-filas-y-columnas"
+id="toc-celdas-filas-y-columnas"><span
+class="toc-section-number">3.1</span> Celdas, Filas y Columnas</a></li>
+</ul></li>
+<li><a href="#formatos" id="toc-formatos"><span
+class="toc-section-number">4</span> Formatos</a>
+<ul>
+<li><a href="#formatos-de-celda" id="toc-formatos-de-celda"><span
+class="toc-section-number">4.1</span> Formatos de celda</a></li>
+<li><a href="#formatos-de-la-hoja" id="toc-formatos-de-la-hoja"><span
+class="toc-section-number">4.2</span> Formatos de la hoja</a>
+<ul>
+<li><a href="#formato-de-la-pestaña"
+id="toc-formato-de-la-pestaña"><span
+class="toc-section-number">4.2.1</span> Formato de la pestaña</a></li>
+</ul></li>
+<li><a href="#validación-de-datos" id="toc-validación-de-datos"><span
+class="toc-section-number">4.3</span> Validación de datos</a></li>
+</ul></li>
+<li><a href="#fórmulas" id="toc-fórmulas"><span
+class="toc-section-number">5</span> Fórmulas</a></li>
+<li><a href="#bibliografía" id="toc-bibliografía"><span
+class="toc-section-number">6</span> Bibliografía</a></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Este documento está sujeto a una licencia creative
+            commons que permite su difusión y uso comercial reconociendo
+            siempre la autoría de su creador. Este documento se
+            encuentra para ser modificado en el siguiente repositorio de
+            github: <!-- CAMBIAR EL ENLACE --> <a
+            href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a>
+            </p>
+            <h1 data-number="1" id="qué-es-una-hoja-de-cálculo"><span
+            class="header-section-number">1</span> ¿Qué es una Hoja de
+            Cálculo?</h1>
+            <p>Una hoja de cálculo es una aplicación que permite
+            manipular datos numéricos y alfanuméricos dispuestos en
+            forma de tablas compuestas por celdas. Con esta premisa
+            pueden hacer uso de la hoja de cálculo para realizar
+            numerosas tareas. En este caso nos centraremos en el uso del
+            cálculo para la tarea docente. El primer paso como docentes
+            de la Comunidad Valenciana es la instalación de la hoja de
+            cálculo.</p>
+            <h1 data-number="2" id="instalación"><span
+            class="header-section-number">2</span> Instalación</h1>
+            <p>Como docentes de la Comunidad tenemos diferentes opciones
+            y todas ellas son válidas.</p>
+            <ul>
+            <li>LibreOffice: se trata de una versión de código abierto y
+            está disponible para prácticamente todas las plataformas más
+            comunes: Windows, Linux y Mac. En esta versión nos
+            centraremos en el curso.</li>
+            <li>MS Office: se trata de una versión de pago que todos los
+            docentes de la Comunidad tenemos disponible para instalar en
+            un ordenador.</li>
+            <li>Office 365: Es una versión en la nube para poder
+            utilizar las herramientas Office a través del navegador.
+            Esta versión no tiene tantas características como la versión
+            de escritorio.</li>
+            </ul>
+            <h2 data-number="2.1" id="libreoffice"><span
+            class="header-section-number">2.1</span> LibreOffice</h2>
+            <p>El programa de hoja de cálculo de LibreOffice se llama
+            Calc. Este está disponible para prácticamente todas las
+            distribuciones GNU/Linux que existen sin necesidad de
+            instalar nada. Directamente yendo al menú Inicio&gt;Oficina
+            lo encontraremos:</p>
+            <figure>
+            <img src="img/1.png" alt="Inicio Calc" />
+            <figcaption aria-hidden="true">Inicio Calc</figcaption>
+            </figure>
+            <p>En Windows puedes descargar la última versión de
+            LibreOffice desde <a
+            href="https://es.libreoffice.org/descarga/libreoffice/?version=7.6.6&amp;lang=es">aquí</a>.
+            Te recomendamos que utilices la versión 7.6.6, una vez
+            descargado solo tienes que hacer doble clic en el programa
+            para instalarlo:</p>
+            <figure>
+            <img src="img/1.1.png" alt="Instalación" />
+            <figcaption aria-hidden="true">Instalación</figcaption>
+            </figure>
+            <h2 data-number="2.2" id="office-365"><span
+            class="header-section-number">2.2</span> Office 365</h2>
+            <p>Para hacer uso de la hoja de cálculo de Office 365
+            (llamada Excel). Debes ir a la <a
+            href="https://www.office.com/?auth=2">página web de Office
+            365</a>. Veremos que en el menú de la izquierda tenemos un
+            icono que dice Excel:</p>
+            <figure>
+            <img src="img/2.png" alt="Excel Office 365" />
+            <figcaption aria-hidden="true">Excel Office 365</figcaption>
+            </figure>
+            <p>En este caso podemos utilizar Excel en cualquier
+            plataforma, solo necesitamos el navegador.</p>
+            <div class="warning">
+            <p>A estas alturas todos los docentes deberían tener
+            activadas ya las opciones para utilizar Office 365. Si
+            alguien no ve el icono de Excel, que no se preocupe, al
+            final del curso 23-24 ya deberían estar activadas.</p>
+            </div>
+            <h2 data-number="2.3" id="ms-office"><span
+            class="header-section-number">2.3</span> MS Office</h2>
+            <p>Microsoft Office también está disponible para todos los
+            docentes de la Comunidad, pero en este caso solo puede
+            funcionar con Windows. Para descargar MS Office, debes ir a
+            <em>Ver cuenta</em> en tu perfil de la página de Office
+            (tienes una inicial o tu foto para marcarlo):</p>
+            <figure>
+            <img src="img/3.png" alt="Cuenta" />
+            <figcaption aria-hidden="true">Cuenta</figcaption>
+            </figure>
+            <p>Una vez dentro, a la izquierda verás que tenemos una
+            opción que dice <em>Aplicaciones Office</em>:</p>
+            <figure>
+            <img src="img/4.png" alt="Aplicaciones Office" />
+            <figcaption aria-hidden="true">Aplicaciones
+            Office</figcaption>
+            </figure>
+            <p>Ahí te aparecerá una opción para instalar Office, si
+            haces clic te descargará la Suite y tendrás que hacer clic
+            para que se instale:</p>
+            <figure>
+            <img src="img/5.png" alt="Instalar Office" />
+            <figcaption aria-hidden="true">Instalar Office</figcaption>
+            </figure>
+            <p>Una vez instalado, si buscas Excel en la barra de
+            búsqueda de Windows, te aparecerá que ya está instalado:</p>
+            <figure>
+            <img src="img/6.png" alt="Excel" />
+            <figcaption aria-hidden="true">Excel</figcaption>
+            </figure>
+            <p>Eso sí, es importante que una vez instalado registres
+            Office con tu cuenta corporativa:</p>
+            <figure>
+            <img src="img/7.png" alt="Registro Office" />
+            <figcaption aria-hidden="true">Registro Office</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recuerda que nosotros vamos a hacer uso de LibreOffice,
+            muchas veces haremos referencia a las otras suites para
+            explicar algunas diferencias.</p>
+            </div>
+            <h1 data-number="3"
+            id="trabajando-con-la-hoja-de-cálculo"><span
+            class="header-section-number">3</span> Trabajando con la
+            hoja de cálculo</h1>
+            <p>Hay una serie de conceptos que debes tener claros antes
+            de empezar a trabajar. Es imprescindible que esta
+            terminología la tengas clara ya que nos vamos a referir a
+            ella en todo momento. La base de la hoja de cálculo es la
+            Celda.</p>
+            <h2 data-number="3.1" id="celdas-filas-y-columnas"><span
+            class="header-section-number">3.1</span> Celdas, Filas y
+            Columnas</h2>
+            <ul>
+            <li><p><strong>Celda</strong>: Es la intersección de una
+            fila y una columna. Cada celda tiene una dirección única que
+            se determina a partir de su posición en la fila y la
+            columna. Por ejemplo, la celda “B2” se encuentra en la
+            columna B y la fila 2.</p></li>
+            <li><p><strong>Fila</strong>: Es un conjunto de Celdas en
+            una línea horizontal. Las filas se numeran secuencialmente
+            (1, 2, 3, etc.).</p></li>
+            <li><p><strong>Columna</strong>: Es un conjunto de Celdas en
+            una línea vertical. Las columnas se designan con letras (A,
+            B, C, etc.).</p></li>
+            <li><p>Una <strong>hoja</strong> es un conjunto de Celdas
+            organizadas en filas y columnas. Cada hoja de cálculo puede
+            contener múltiples hojas.</p></li>
+            <li><p>Las <strong>fórmulas</strong> son expresiones que
+            realizan cálculos sobre los datos de las Celdas. Una fórmula
+            siempre comienza con un signo igual (=). Por ejemplo, la
+            fórmula <code>=SUM(A1:A3)</code> sumará los valores de las
+            Celdas A1 a A3.</p></li>
+            </ul>
+            <figure>
+            <img src="img/6.png" alt="Espacio de trabajo" />
+            <figcaption aria-hidden="true">Espacio de
+            trabajo</figcaption>
+            </figure>
+            <ul>
+            <li><strong>Rango</strong>, es un número de celdas que
+            vendrán determinadas por la primera celda del rango y la
+            última, por ejemplo el rango A3:C5 será:</li>
+            </ul>
+            <figure>
+            <img src="img/7.png" alt="Rango" />
+            <figcaption aria-hidden="true">Rango</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Una de las características de las fórmulas es que son
+            diferentes en castellano, en valenciano y en inglés. En
+            nuestro caso utilizaremos las fórmulas en castellano, por
+            tanto la suite la debéis tener configurada en castellano. De
+            todas formas podéis hacer uso del idioma que queráis, si
+            tenéis configurada la hoja de cálculo en inglés y habéis
+            hecho la hoja en un programa configurado en valenciano,
+            automáticamente os aparecerán traducidas por lo que no habrá
+            problemas de incompatibilidad.</p>
+            </div>
+            <h1 data-number="4" id="formatos"><span
+            class="header-section-number">4</span> Formatos</h1>
+            <h2 data-number="4.1" id="formatos-de-celda"><span
+            class="header-section-number">4.1</span> Formatos de
+            celda</h2>
+            <p>En una hoja de cálculo, una celda puede tener varios
+            formatos. Aquí tienes una descripción breve de algunos de
+            ellos:</p>
+            <ul>
+            <li><strong>Texto</strong>: El texto aparece por defecto
+            alineado a la izquierda de la celda.</li>
+            <li><strong>Números</strong>: Los números aparecen por
+            defecto alineados a la derecha. Podemos especificar que lo
+            que hemos escrito es un número (Categoría Número) y
+            especificar parámetros como cuántos decimales queremos
+            visualizar o si queremos separadores de miles.</li>
+            <li><strong>Fechas</strong>: También podemos introducir
+            fechas. Las fechas quedan alineadas a la derecha, como los
+            números.</li>
+            <li><strong>Porcentaje</strong>: Podemos especificar que lo
+            que hemos escrito es un porcentaje (Categoría porcentaje) y
+            especificar parámetros como cuántos decimales queremos
+            visualizar. El número escrito se multiplica por 100 y
+            aparece el símbolo %.</li>
+            <li><strong>Moneda</strong>: Podemos especificar que hemos
+            escrito un número referido a una cantidad de dinero
+            (Categoría Moneda). Elegimos la moneda internacional (euros,
+            dólares, rublos….) y especificar parámetros como cuántos
+            decimales queremos. Aparece el símbolo de la moneda a la
+            derecha del número.</li>
+            <li><strong>Científico</strong>: Podemos utilizar la
+            Categoría Científico para visualizar números largos en
+            notación científica de forma muy compacta, igual que hacen
+            las calculadoras.</li>
+            <li><strong>Fracción</strong>: La hoja de cálculo puede
+            trabajar y hacer cálculos con fracciones, pero si escribimos
+            1/2 en una celda debemos decir al programa que esto es una
+            fracción con la categoría fracción. Puedes acceder para ver
+            todos los tipos de formato que puede contener una celda de
+            la siguiente manera, haciendo clic con el botón derecho del
+            ratón:</li>
+            </ul>
+            <figure>
+            <img src="img/10.png" alt="Formato celdas" />
+            <figcaption aria-hidden="true">Formato celdas</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Tenemos el caso del <strong>Formato condicional</strong>
+            que permite que el formato de una celda cambie si se
+            producen determinadas condiciones. Por ejemplo, podemos
+            hacer que una celda con un número aparezca de color rojo si
+            es negativo o negro si es positivo.</p>
+            </div>
+            <figure>
+            <img src="img/11.png" alt="Formato celdas" />
+            <figcaption aria-hidden="true">Formato celdas</figcaption>
+            </figure>
+            <h2 data-number="4.2" id="formatos-de-la-hoja"><span
+            class="header-section-number">4.2</span> Formatos de la
+            hoja</h2>
+            <p>Al igual que el procesador de texto existe la posibilidad
+            de dar un formato determinado a nuestra hoja de cálculo. Por
+            defecto ya nos aparece una barra en Libreoffice como
+            esta:</p>
+            <figure>
+            <img src="img/12.png"
+            alt="Barra de herramientas de formato" />
+            <figcaption aria-hidden="true">Barra de herramientas de
+            formato</figcaption>
+            </figure>
+            <p>En esta barra tenemos diferentes opciones, todas las
+            opciones de la barra son importantes y son muy
+            utilizadas:</p>
+            <figure>
+            <img src="img/13.png" alt="Detalle de Barra" />
+            <figcaption aria-hidden="true">Detalle de Barra</figcaption>
+            </figure>
+            <h3 data-number="4.2.1" id="formato-de-la-pestaña"><span
+            class="header-section-number">4.2.1</span> Formato de la
+            pestaña</h3>
+            <p>Una vez tengamos todas nuestras hojas configuradas
+            tenemos la opción de poder cambiar el color de la pestaña de
+            la hoja para que nos sea más fácil organizarnos. Además si
+            ya hemos dibujado todas las cuadrículas y dado un formato
+            con un color de fondo de las celdas etc… podremos quitar las
+            líneas de cuadrícula haciendo clic en <em>Ver líneas de
+            cuadrícula</em></p>
+            <figure>
+            <img src="img/19.png" alt="Formato pestaña hoja" />
+            <figcaption aria-hidden="true">Formato pestaña
+            hoja</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Recuerda que si haces clic sobre el + podrás ir añadiendo
+            más hojas. Las hojas se pueden relacionar entre ellas. Coger
+            intervalos de otra hoja para utilizarlos en la que estás
+            trabajando.</p>
+            </div>
+            <h2 data-number="4.3" id="validación-de-datos"><span
+            class="header-section-number">4.3</span> Validación de
+            datos</h2>
+            <p>Otra opción muy interesante, aunque no hablemos de
+            formato propiamente dicho es la opción de validación de
+            datos que nos permitirá crear un desplegable de los datos en
+            una celda. Por ejemplo si quisiéramos que una celda solo
+            permitiera unos datos determinados, podríamos ir a Datos
+            &gt; Validez:</p>
+            <figure>
+            <img src="img/14.png" alt="Validez" />
+            <figcaption aria-hidden="true">Validez</figcaption>
+            </figure>
+            <p>Después seleccionaríamos <em>Intervalo de
+            celdas</em>:</p>
+            <figure>
+            <img src="img/15.png" alt="Intervalo de celdas" />
+            <figcaption aria-hidden="true">Intervalo de
+            celdas</figcaption>
+            </figure>
+            <p>Y seleccionaríamos de dónde queremos coger los datos, y
+            le daríamos a aceptar:</p>
+            <figure>
+            <img src="img/16.png" alt="Origen" />
+            <figcaption aria-hidden="true">Origen</figcaption>
+            </figure>
+            <p>Finalmente tendríamos en la hoja de cálculo un
+            desplegable para poder seleccionar los datos que nosotros
+            deseáramos:</p>
+            <figure>
+            <img src="img/17.png" alt="Desplegable" />
+            <figcaption aria-hidden="true">Desplegable</figcaption>
+            </figure>
+            <div class="tip">
+            <p>En los casos que hagáis uso de esta opción, es una opción
+            recomendable tener todos los datos de los desplegables en
+            una hoja aparte o ocultar estos datos poniéndolos a la
+            derecha. Para ocultar una columna os ponéis encima de la
+            línea con el cursor del ratón y hacéis clic derecho sobre la
+            letra y ahí tenemos la opción de ocultar. Esta acción
+            ocultaría la columna pero aún estaría ahí aunque no la
+            podamos ver:</p>
+            <figure>
+            <img src="img/18.png" alt="Ocultar columna" />
+            <figcaption aria-hidden="true">Ocultar columna</figcaption>
+            </figure>
+            </div>
+            <div class="note">
+            <p>En Excel la opción se llama <em>Validación de datos</em>
+            y para seleccionar un intervalo tenéis que coger la opción
+            <em>Personalizar</em> y seleccionar el intervalo.</p>
+            </div>
+            <h1 data-number="5" id="fórmulas"><span
+            class="header-section-number">5</span> Fórmulas</h1>
+            <p>Para realizar fórmulas en LibreOffice Calc, primero
+            debéis seleccionar la celda donde queréis introducir la
+            fórmula. A continuación, podéis empezar a introducir la
+            fórmula. Por ejemplo:</p>
+            <ol type="1">
+            <li><strong>Haced clic en la celda</strong> donde queréis
+            introducir la fórmula.</li>
+            <li><strong>Haced clic en el icono de Función</strong> en la
+            Barra de Fórmulas. Debéis poner un signo de igual en la
+            línea de entrada y podéis empezar a introducir la
+            fórmula.</li>
+            <li><strong>Introducid la fórmula</strong>. Las fórmulas
+            pueden contener números, texto, operadores aritméticos,
+            operadores lógicos o funciones. Por ejemplo, en lugar de
+            escribir <code>=SUM(A1:B1)</code>, podéis escribir
+            <code>=A1+B1</code>.</li>
+            <li><strong>Presionad Enter o haced clic en el icono ok
+            verde</strong> para insertar el resultado en la celda
+            activa.</li>
+            </ol>
+            <p>Todas las fórmulas comienzan con un signo de igual.
+            Algunos ejemplos de fórmulas de LibreOffice Calc pueden
+            ser:</p>
+            <ul>
+            <li><code>=A1+10</code> Muestra el contenido de la celda A1
+            más 10.</li>
+            <li><code>=A1*16%</code> Muestra el 16% del contenido de
+            A1.</li>
+            <li><code>=A1 * A2</code> Muestra el resultado de la
+            multiplicación de A1 y A2.</li>
+            <li><code>=ROUND(A1;1)</code> Muestra el contenido de la
+            celda A1 redondeado a un decimal.</li>
+            <li><code>=B8-SUM(B10:B14)</code> Calcula B8 menos la suma
+            de las celdas B10 a B14.</li>
+            <li><code>=SUM(B8;SUM(B10:B14))</code> Calcula la suma de
+            las celdas B10 a B14 y añade el valor a B8.</li>
+            </ul>
+            <div class="tip">
+            <p>En la próxima unidad hablaremos un poco más de las
+            fórmulas y de cómo utilizar el asistente para fórmulas.</p>
+            </div>
+            <h1 data-number="6" id="bibliografía"><span
+            class="header-section-number">6</span> Bibliografía</h1>
+            <ol class="example" type="1">
+            <li>https://documentation.libreoffice.org/es/documentacion-en-espanol/calc/</li>
+            </ol>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>
