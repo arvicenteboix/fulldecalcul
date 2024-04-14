@@ -201,12 +201,141 @@ En un full de càlcul, les referències a les cel·les poden ser absolutes, rela
 
 Aquestes referències són útils quan es copien fórmules a altres cel·les, permetent ajustar automàticament les referències a les cel·les.
 
+Fixem-nos en el següent exemple, hem posat les fòrmules 
+
+```
+=B4*C4	=$B$4*C4
+```
+
+Si arrastrem les cel·les per a completar la resta de cel·les, podem veure com les de la primera columna sí que canvien els valors, en canvi les de la segona nomçes canvien els valors de C4, ja que B4 és absoluta perquè li hem posat el símbol $.
+
+![Referència absoluta](img/5.png)
+
+:::tip
+Per a pdoer crear la referència absoluta polses F4 quan tens el cursor a la fórmula i es convertix automàticament en absoluta. És fàcil enrecordar-se ja que el botó de 4 és el mateix que el de $.
+:::
+
+Entenc que voleu una explicació sobre com utilitzar LibreOffice Calc per a les operacions amb dates, el càlcul automàtic i el format de dates. Aquí teniu una guia bàsica:
 
 # Operacions amb dates
 
-## Càlcul automàtic
+En LibreOffice, podeu realitzar diverses operacions amb dates. Per exemple, podeu restar dues dates per obtenir el nombre de dies entre elles. Això es pot fer simplement restant una data d'una altra en una nova cel·la.
 
-## Format dates
+```markdown
+A1: 01/01/2024
+A2: 01/02/2024
+A3: =A2-A1
+```
+
+En aquest exemple, `A3` mostrarà `31`, que és el nombre de dies entre l'1 de gener de 2024 i l'1 de febrer de 2024. De la mateixa manera podem sumar dies, etc...
+
+## Format de dates
+
+Podeu canviar el format de les dates a LibreOffice Calc anant a `Formato -> Celdas -> Fecha`. Des d'aquí, podeu seleccionar el format de data que preferiu. També podeu crear un format de data personalitzat si cap dels formats predefinits no s'ajusta a les vostres necessitats.
+
+![Format dates](img/6.png)
+
+:::tip
+Podeu canviar l'idioma de la dates també per si voleu que vos apareguen al altres llengües al que tenim configurat Libreoffice Calc.
+:::
+
+## Altres funcionas amb dades
+
+Existeixen altres funcions molt utilitzades per a dates en LibreOffice Calc són:
+
+1. **HOY()**: Aquesta funció retorna la data actual. S'actualitza cada vegada que es recalculem el full de càlcul.
+
+2. **AHORA()**: Aquesta funció retorna la data i l'hora actuals. Com la funció HOY(), també s'actualitza cada vegada que es recalculem el full de càlcul.
+
+3. **FECHA(any; mes; dia)**: Aquesta funció es pot utilitzar per crear una data a partir d'un any, mes i dia especificats. Per exemple, `FECHA(1954;7;20)` crea la data 20 de juliol de 1954. Esta funció és interesant quan estàs calculant dates a partir d'altres paràmetres. Si vols escriure una data, escriu directament la data.
+
+4. **SIFECHA(data_inici; data_final; "unitats")**: Aquesta funció retorna el nombre de dies, mesos o anys complets entre dues dates. Per exemple, `SIFECHA("2024-01-01"; "2024-12-31"; "d")` retorna el nombre de dies entre l'1 de gener de 2024 i el 31 de desembre de 2024. Pots canviar, d - dies, m - mesos, y - anys.
+
+5. **DIASEMANA(fecha;tipo)**: retorna el dia de la setmana per a una data donada. El dia es retorna com un enter entre 1 (Diumenge) i 7 (Dissabte) si no s’especifica cap tipus o si el tipus és 1. Per exemple: DIASETMANA("1996-07-24";2) retorna 3 (el paràmetre tipo és 2, per tant, Dilluns és dia número 1. El 24 de juliol de 1996 va ser un Dimecres i, per tant, dia número 3).
 
 # Exemple pràctic
 
+Anem a plantejar-vos un full de càlcul per a que aneu practicant. Anem a plantejar un full de càlcul amb la següent disposició:
+
+![Full de càlcul](img/7.png)
+
+En aquest full de càlcul tenim diferents Situacions d'aprenentatge (SA) on anem a posar diferents criteris d'avalaució, els criteris d'avaluació són desplegables. Les notes també són desplegables limitant-se a les notes concretes que podem posar.
+
+Podem ordenar les diferents files o crear un criteri de búsqueda, per nom concret o per orde alfabètic.
+
+Les últimes columnes conten el número de de qualificacions que es repetixen a mode estadístic.
+
+## Validez
+
+Les cel·les on anem a posar les notes han d'acceptar únicament el text de les notes:
+
+![Validar](img/12.png)
+
+Podem veure com ho faríem al següent lloc:
+
+![Validar](img/12.png)
+
+## CONTAR.SI
+
+Al final de cada línia tenim un càlcul del número de vegades que es repetix una qualificació. Com ja sabeu no cal emplenar totes les dades en totes les files. Si juguem amb les referències absolutes i relatives podem fer la següent fórmula a la cel·la AA5:
+
+```markdown
+AA5: =CONTAR.SI($C5:$Z5;AA$4)
+```
+
+* **$C5:$Z5**: Manté el rang entre la columna C i la Z, de manera que quan arrastre l'atocompletat a la dreta manté les columnes, però l'autocompletat cap avall les línies sí que van canviant.
+* **AA$4**: Deixa la Columna absoluta i la fila relativa, així quan desplace l'autocompletat a la dreta, **4** es queda fixe i les següents referències passen a ser AB4, AC4, AD4 i AE4 Que corresponen a: SF, BÉ, NT i EX.
+
+D'aquesta manera només creem una fórmula i després podem autocompletar a la dreta i després les 5 cel·les cap avall i ja tenim totes les fórmules.
+
+# Tips
+
+## Copiar i enganxar
+
+Moltes vegades volem traslladar valors d'una cel·la a altra però no volem que ens copie el format, o volem copiar només el format de tota un columna a altra però no volem que s'enganxen els valors. De vegades tenim valors resultats d'una fórmula però volen passar-los a una columna de text. Tot això és posible amb l'enganxament especial: **Ctrl+Shift+V**. Podeu anar també a *Editar > Pegado especial*.
+
+![Enganxament especial](img/11.png)
+
+Si ens fixem en la finestra que ens apareix en aquest cas, tenim seleccionat només Formatos, de manaera que només s'enganxaran els formats de la cel·la. Hi han altres opcions interessants, com podem veure com és:
+
+* **Trasponer**: Canvia les files per columnes.
+* **Omitir celdas vacías**: Les cel·les buides no les enganxa.
+* **Desplazar celdas**: Si volem que enlloc de fer-ho damunt del que hi ha, estem afegint una columna/fila nova.
+* **Operaciones**: Si volem sumar als valors presents (o altra operació).
+
+## Filtre automàtic
+
+Podem seleccionar una fila (o part d'ella) i polsar la icona següent:
+
+![Filtre automàtic](img/13.png)
+
+També poden fer ús de la combinació de tecles **Ctrl+Shift+L**. D'aquesta manera podem crear un filtre automàtic 
+
+![Filtre automàtic](img/14.png)
+
+El filtre automàtic ens permet filtrar una sèries de cel·les donats una sèrie de criteris, de manera que ens permet interactuar ràpidament amb la nostra taula.
+
+## Files alternes
+
+Una de les coses que haureu vist és que si volem crear files alternes de diferents colors podem fer-ho de dos maneres:
+
+* Seleccionant les files alternadament i aplicar el format.
+* O bé a format condicional i enganxament especial.
+
+![Detectem fila](img/15.png)
+
+I definim el format:
+
+![Format](img/16.png)
+
+:::tip
+Podem veure que estem utilizant dos nous tipus de fórmules.
+**FILA():**: Esn torna el número de fila on estem.
+**ESPAR():**: Ens torna VERTADER si la fila es par o FALS si es impar.
+:::
+
+Aplicar a múltiples cel·les:
+
+![Enganxament especial](img/17.png)
+
+Aquesta és l'activitat que ens tindreu que presentar en aquest mòdul.

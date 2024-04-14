@@ -3,7 +3,7 @@
 # Metainformació del document
 title: Estratègies per a l'ús del full de càlcul
 titlepage: true
-subtitle: Mòdul II
+subtitle: "Mòdul V: Estratègies ambal tre programari" 
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
@@ -77,6 +77,14 @@ pandoc-latex-environment:
   importantblock: [important]
 ...
 
+\vspace*{\fill}
+
+![](img/cc.png){ height=50px }
+
+Aquest document està subjecte a una llicència creative commons que permet la seua difusió i ús comercial reconeixent sempre l'autoria del seu creador. Aquest document es troba per a ser modificat al següent repositori de github:
+<!-- CANVIAR L'ENLLAÇ -->
+[https://github.com/arvicenteboix/fulldecalcul](https://github.com/arvicenteboix/fulldecalcul)
+\newpage
 
 
 # 

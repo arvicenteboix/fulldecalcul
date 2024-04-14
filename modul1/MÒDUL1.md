@@ -3,7 +3,7 @@
 # Metainformació del document
 title: Estratègies per a l'ús del full de càlcul
 titlepage: true
-subtitle: Mòdul 1
+subtitle: Instal·lació i introducció al full de càlcul
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
@@ -247,8 +247,29 @@ En Excel l'opció es diu *Validación de datos* i per a seleccionar un interval 
 
 # Fórmules 
 
+Per realitzar fórmules en LibreOffice Calc, primer heu de seleccionar la cel·la on voleu introduir la fórmula. A continuació, podeu començar a introduir la fórmula. Per exemple:
 
+1. **Feu clic a la cel·la** on voleu introduir la fórmula.
+2. **Feu clic a l'icona de Funció** a la Barra de Fórmules. Heu de posar un signe d'igual a la línia d'entrada i podeu començar a introduir la fórmula.
+3. **Introduïu la fórmula**. Les fórmules poden contenir nombres, text, operadors aritmètics, operadors lògics o funcions. Per exemple, en lloc d'escriure `=SUM(A1:B1)`, podeu escriure `=A1+B1`.
+4. **Premeu Enter o feu clic a la icona ok verda** per inserir el resultat a la cel·la activa.
 
+Totes les fórmules comencen amb un signe d'igual. Alguns exemples de fórmules de LibreOffice Calc poden ser:
+
+- `=A1+10` Mostra el contingut de la cel·la A1 més 10.
+- `=A1*16%` Mostra el 16% del contingut de A1.
+- `=A1 * A2` Mostra el resultat de la multiplicació de A1 i A2.
+- `=ROUND(A1;1)` Mostra el contingut de la cel·la A1 arrodonit a un decimal.
+- `=B8-SUM(B10:B14)` Calcula B8 menys la suma de les cel·les B10 a B14.
+- `=SUM(B8;SUM(B10:B14))` Calcula la suma de les cel·les B10 a B14 i afegeix el valor a B8.
+
+:::tip
+A la propera unitat parlarem un poc més de les fórmules i de como utilitzar l'asssitent per a fórmules.
+:::
+
+# Bibliografia
+
+(@) https://documentation.libreoffice.org/es/documentacion-en-espanol/calc/
 
 
 
