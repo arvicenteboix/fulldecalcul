@@ -1,9 +1,9 @@
 ---
 # Front matter
 # Metainformació del document
-title: Estratègies per a l'ús del full de càlcul
+title: Estrategias para el uso de la hoja de cálculo
 titlepage: true
-subtitle: Instal·lació i introducció al full de càlcul
+subtitle: Instalación e introducción a la hoja de cálculo
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
