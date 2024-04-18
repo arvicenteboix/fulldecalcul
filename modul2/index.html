@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+        /* CSS for syntax highlighting */
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+        code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #7d9029; } /* Attribute */
+        code span.bn { color: #40a070; } /* BaseN */
+        code span.bu { color: #008000; } /* BuiltIn */
+        code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4070a0; } /* Char */
+        code span.cn { color: #880000; } /* Constant */
+        code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+        code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+        code span.dt { color: #902000; } /* DataType */
+        code span.dv { color: #40a070; } /* DecVal */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #40a070; } /* Float */
+        code span.fu { color: #06287e; } /* Function */
+        code span.im { color: #008000; font-weight: bold; } /* Import */
+        code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+        code span.op { color: #666666; } /* Operator */
+        code span.ot { color: #007020; } /* Other */
+        code span.pp { color: #bc7a00; } /* Preprocessor */
+        code span.sc { color: #4070a0; } /* SpecialChar */
+        code span.ss { color: #bb6688; } /* SpecialString */
+        code span.st { color: #4070a0; } /* String */
+        code span.va { color: #19177c; } /* Variable */
+        code span.vs { color: #4070a0; } /* VerbatimString */
+        code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de
+càlcul</h1>
+            <!--        <p class="subtitle">Treballant amb el full de
+càlcul, ús de les fórmules</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente
+Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducció" id="toc-introducció"><span
+class="toc-section-number">1</span> Introducció</a></li>
+<li><a href="#fórmules" id="toc-fórmules"><span
+class="toc-section-number">2</span> Fórmules</a>
+<ul>
+<li><a href="#operadors-fonamentals"
+id="toc-operadors-fonamentals"><span
+class="toc-section-number">2.1</span> Operadors fonamentals</a></li>
+<li><a href="#operadors-amb-rang" id="toc-operadors-amb-rang"><span
+class="toc-section-number">2.2</span> Operadors amb rang</a>
+<ul>
+<li><a href="#altres-operadors-esencials"
+id="toc-altres-operadors-esencials"><span
+class="toc-section-number">2.2.1</span> Altres operadors
+esencials</a></li>
+</ul></li>
+<li><a href="#assistent-per-a-fórmules"
+id="toc-assistent-per-a-fórmules"><span
+class="toc-section-number">2.3</span> Assistent per a fórmules</a></li>
+<li><a href="#operadors-condicionals"
+id="toc-operadors-condicionals"><span
+class="toc-section-number">2.4</span> Operadors condicionals</a></li>
+</ul></li>
+<li><a href="#autoemplenar" id="toc-autoemplenar"><span
+class="toc-section-number">3</span> Autoemplenar</a></li>
+<li><a href="#referències-absolutes-i-relatives"
+id="toc-referències-absolutes-i-relatives"><span
+class="toc-section-number">4</span> Referències absolutes i relatives
+$</a></li>
+<li><a href="#operacions-amb-dates" id="toc-operacions-amb-dates"><span
+class="toc-section-number">5</span> Operacions amb dates</a>
+<ul>
+<li><a href="#format-de-dates" id="toc-format-de-dates"><span
+class="toc-section-number">5.1</span> Format de dates</a></li>
+<li><a href="#altres-funcionas-amb-dades"
+id="toc-altres-funcionas-amb-dades"><span
+class="toc-section-number">5.2</span> Altres funcionas amb
+dades</a></li>
+</ul></li>
+<li><a href="#exemple-pràctic" id="toc-exemple-pràctic"><span
+class="toc-section-number">6</span> Exemple pràctic</a>
+<ul>
+<li><a href="#validez" id="toc-validez"><span
+class="toc-section-number">6.1</span> Validez</a></li>
+<li><a href="#contar.si" id="toc-contar.si"><span
+class="toc-section-number">6.2</span> CONTAR.SI</a></li>
+</ul></li>
+<li><a href="#tips" id="toc-tips"><span
+class="toc-section-number">7</span> Tips</a>
+<ul>
+<li><a href="#copiar-i-enganxar" id="toc-copiar-i-enganxar"><span
+class="toc-section-number">7.1</span> Copiar i enganxar</a></li>
+<li><a href="#filtre-automàtic" id="toc-filtre-automàtic"><span
+class="toc-section-number">7.2</span> Filtre automàtic</a></li>
+<li><a href="#files-alternes" id="toc-files-alternes"><span
+class="toc-section-number">7.3</span> Files alternes</a></li>
+</ul></li>
+<li><a href="#segon-full" id="toc-segon-full"><span
+class="toc-section-number">8</span> Segon full</a>
+<ul>
+<li><a href="#indice" id="toc-indice"><span
+class="toc-section-number">8.1</span> INDICE</a></li>
+<li><a href="#coincidir" id="toc-coincidir"><span
+class="toc-section-number">8.2</span> COINCIDIR</a></li>
+<li><a href="#columna" id="toc-columna"><span
+class="toc-section-number">8.3</span> COLUMNA</a></li>
+<li><a href="#full-exemple" id="toc-full-exemple"><span
+class="toc-section-number">8.4</span> Full exemple</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <!-- 
+            FÓRMULAS BÁSICAS + * / %
+            SUMAR
+            DIFERENCIES ENTRE TEXT I FORMULA
+
+            ÚS DE FÓRMULES 
+
+            AUTOEMPLENAR
+
+            REFERENCIAS ANSOLUTAS Y RELATIVAS
+            eL SIGNO $
+
+            CONTAR.SI
+            SI
+            si.error
+
+            OPERACIONS AMB DATES 
+
+            =HOY()
+            =DIA()
+            =DIASEMANA()
+
+
+            EXEMPLE PRÀCTIC 
+
+
+            Els errors en calc
+
+             -->
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Aquest document està subjecte a una llicència creative
+            commons que permet la seua difusió i ús comercial
+            reconeixent sempre l’autoria del seu creador. Aquest
+            document es troba per a ser modificat al següent repositori
+            de github: <!-- CANVIAR L'ENLLAÇ --> <a
+            href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a>
+            </p>
+            <h1 data-number="1" id="introducció"><span
+            class="header-section-number">1</span> Introducció</h1>
+            <p>En aquesta unitat anem a entrar a utilitzar l’ús de les
+            fórmules, aquestes fórmules les utilitzarem a través de
+            l’assistent de Libreoffice que ens ajudarà a fer les
+            fórmules de manera correcta. Una vegada ja tinguem certa
+            pràctica les fórmules les podrem escriure directament sense
+            fer ús de l’assistent.</p>
+            <h1 data-number="2" id="fórmules"><span
+            class="header-section-number">2</span> Fórmules</h1>
+            <p>Com hem vist per a poder utilitzar les fórmules als fulls
+            de càlcul hem de posar davant de la celda el signe =,
+            existeixen moltíssimes fórmules als fulls de càlcul i es
+            poden programar</p>
+            <h2 data-number="2.1" id="operadors-fonamentals"><span
+            class="header-section-number">2.1</span> Operadors
+            fonamentals</h2>
+            <p>Operadors fonamentals en fulls de càlcul:</p>
+            <ul>
+            <li><strong>Sumar (+):</strong> Utilitzat per a agregar el
+            valor de dues o més cel·les. Per exemple,
+            <code>=A1+A2</code> sumaria els valors de les cel·les A1 i
+            A2.</li>
+            <li><strong>Restar (-):</strong> Emprat per a calcular la
+            diferència entre dues cel·les. <code>=A1-A2</code> restaria
+            el valor de la cel·la A2 del valor de la cel·la A1.</li>
+            <li><strong>Multiplicar (*):</strong> Serveix per a obtenir
+            el producte de dos números. <code>=A1*A2</code>
+            multiplicaria els valors de les cel·les A1 i A2.</li>
+            <li><strong>Dividir (/):</strong> Utilitzat per a dividir el
+            valor d’una cel·la entre un altre. <code>=A1/A2</code>
+            dividiria el valor de la cel·la A1 entre el valor de la
+            cel·la A2.</li>
+            <li><strong>Percentatge (%):</strong> Permet calcular el
+            percentatge d’un valor. <code>=A1*10%</code> calcularia el
+            10% del valor de la cel·la A1.</li>
+            <li><strong>Exponencial (^):</strong> Aixeca un número a la
+            potència d’un altre. <code>=A1^2</code> elevaria el valor de
+            la cel·la A1 al quadrat.</li>
+            <li><strong>Radical ( <span
+            class="math inline">$\sqrt{}$</span> ):</strong> S’utilitza
+            per a calcular l’arrel quadrada d’un valor.
+            <code>=SQRT(A1)</code> retornaria l’arrel quadrada del valor
+            de la cel·la A1.</li>
+            </ul>
+            <p>Totes aquestes fórmules es poden anar combinant entre
+            elles utilitzant els parèntesi de manera que podríem fer
+            <code>=(A1+A2)*5</code> on es faria primer la suma i després
+            es multiplicaria per 5.</p>
+            <h2 data-number="2.2" id="operadors-amb-rang"><span
+            class="header-section-number">2.2</span> Operadors amb
+            rang</h2>
+            <p>Operar amb els operadors fonamentals ens limita molt la
+            nostra capacitat d’ús, per això és millor utilitzar
+            fórmules. De manera que si volguéssim sumar moltes cel·les
+            d’una fila seria molt llarg fer-ho d’una en una, per això es
+            poden utilitzar fórmules que utilitzen tot un rang. Així per
+            exemple si volem sumar totes les cel·les desde A1 a A10
+            podem fer ús de la fórmula
+            <strong>SUMA(A1:A10)</strong>:</p>
+            <figure>
+            <img src="img/1.png" alt="Suma" />
+            <figcaption aria-hidden="true">Suma</figcaption>
+            </figure>
+            <div class="note">
+            <p>Per a seleccionar el rang podem fer ús del ratolí i
+            seleccionar les cel·les que volem, automàticament ens
+            apareixerà el rang que volem.</p>
+            </div>
+            <h3 data-number="2.2.1"
+            id="altres-operadors-esencials"><span
+            class="header-section-number">2.2.1</span> Altres operadors
+            esencials</h3>
+            <ul>
+            <li><strong>PROMEDIO</strong>: Aquesta fórmula retorna el
+            valor mitjà aritmètic de les cel·les que passes com a
+            paràmetre. Exemple: =PROMEDIO(A2:B2).</li>
+            <li><strong>MAX</strong> i <strong>MIN</strong>: Aquestes
+            fórmules retornen el valor màxim i mínim respectivament d’un
+            conjunt de cel·les. Exemple: =MAX(A2:C8) o
+            =MIN(A2,B4,C3,29).</li>
+            </ul>
+            <div class="tip">
+            <p>Fica’t en la fórmula MAX i MIN, normalment quasi totes
+            les fórmules de càlcul permeten bé introduir un rang o
+            diferents cel·les separades per a una coma. El que no pots
+            fer és utilitzar dos rangs separats per una coma.</p>
+            </div>
+            <h2 data-number="2.3" id="assistent-per-a-fórmules"><span
+            class="header-section-number">2.3</span> Assistent per a
+            fórmules</h2>
+            <p>Quan anem a utilitzar fórmules és interessant fer ús de
+            l’assistent, ja que sempre ens anirà donant indicacions de
+            si una fórmula és correcta o no. Al següent gràfic tens un
+            esquema ràpid de com seria fer ús de l’assistent de
+            fórmules.</p>
+            <figure>
+            <img src="img/2.png" alt="Assistent" />
+            <figcaption aria-hidden="true">Assistent</figcaption>
+            </figure>
+            <h2 data-number="2.4" id="operadors-condicionals"><span
+            class="header-section-number">2.4</span> Operadors
+            condicionals</h2>
+            <p>A l’exemple anterior hem vist un operador condicional.
+            Els més comuns són els següents:</p>
+            <ul>
+            <li><p><strong>CONTAR.SI</strong>: Aquesta funció compta el
+            nombre de cel·les que compleixen un criteri específic. Per
+            exemple, <code>=CONTAR.SI(A2:A5;\"APTE\")</code> compta el
+            nombre de cel·les que contenen la paraula “APTE” en el rang
+            A2:A5.</p></li>
+            <li><p><strong>SI</strong>: Aquesta funció realitza una
+            comparació lògica entre un valor i el resultat esperat. Té
+            dos resultats possibles: el primer si la comparació és
+            veritable i el segon si la comparació és falsa. Suposa que
+            vols assignar una qualificació a un estudiant basada en la
+            seva nota. Si la nota (en la cel·la B2) és superior o igual
+            a 5, l’estudiant aprova. Si no, suspèn. La fórmula seria:
+            =SI(B2&gt;=5; “Aprova”; “Suspèn”). La primera opció
+            Normalment sol ser una comparativa lògica que done com a
+            resultat vertader o fals, per això s’utilitzen els
+            operadors:</p>
+            <ul>
+            <li>&gt; Major</li>
+            <li>&lt; Menor</li>
+            <li>= Igual</li>
+            <li>Combinació de dos &gt;= Major o igual</li>
+            </ul></li>
+            <li><p><strong>SI.ERROR</strong>: Aquesta funció retorna un
+            valor especificat si una fórmula s’avalua com a error; en
+            cas contrari, retorna el resultat de la fórmula. Per exemple
+            =SI.ERROR(A2/B2; “Error en la divisió”), podria donar-se
+            quan B2 per exemple és 0.</p></li>
+            </ul>
+            <h1 data-number="3" id="autoemplenar"><span
+            class="header-section-number">3</span> Autoemplenar</h1>
+            <p>L’opció Autoemplenar és una funció que permet estalviar
+            temps en realitzar tasques repetitives. Amb aquesta funció,
+            pots copiar valors, realitzar sèries, copiar fórmules, entre
+            altres, simplement arrossegant el ratolí.</p>
+            <figure>
+            <img src="img/3.png" alt="Autoemplenar" />
+            <figcaption aria-hidden="true">Autoemplenar</figcaption>
+            </figure>
+            <p>Una vegada arrosseguem el ratolí el resultat serà que la
+            fila s’ompli amb Nom1, Nom2, Nom3, etc… De la mateixa manera
+            passaria si tinguéssim només le número. Així mateix passaria
+            amb les fórmules. Si volem que ens faja els càlculs de
+            semblants als anteriors mantenint les referències podem
+            arrastrar i soltar. Així per exemple en el següent
+            recuadre:</p>
+            <figure>
+            <img src="img/4.png" alt="Autoemplenar fórmules" />
+            <figcaption aria-hidden="true">Autoemplenar
+            fórmules</figcaption>
+            </figure>
+            <h1 data-number="4"
+            id="referències-absolutes-i-relatives"><span
+            class="header-section-number">4</span> Referències absolutes
+            i relatives $</h1>
+            <p>En un full de càlcul, les referències a les cel·les poden
+            ser absolutes, relatives o mixtes:</p>
+            <ol type="1">
+            <li><p><strong>Referències absolutes</strong>: Fan
+            referència a les cel·les ubicades en una posició específica
+            i invariable. S’indiquen amb el signe <code>$</code> davant
+            la lletra de la columna i del nombre de fila. Per exemple,
+            <code>$A$1</code> és una referència absoluta.</p></li>
+            <li><p><strong>Referències relatives</strong>: Fan
+            referència a cel·les ubicades en una columna o en una fila
+            que s’actualitzaran segons el càlcul que es realitzi. No
+            contenen signes de dòlar. Per exemple, <code>A1</code> és
+            una referència relativa.</p></li>
+            <li><p><strong>Referències mixtes</strong>: Combina les dues
+            anteriors. Una part de la referència és absoluta (columna o
+            fila) i l’altra és relativa. Per exemple, <code>$A1</code> o
+            <code>A$1</code>.</p></li>
+            </ol>
+            <p>Aquestes referències són útils quan es copien fórmules a
+            altres cel·les, permetent ajustar automàticament les
+            referències a les cel·les.</p>
+            <p>Fixem-nos en el següent exemple, hem posat les
+            fórmules</p>
+            <pre><code>=B4*C4  =$B$4*C4</code></pre>
+            <p>Si arrastrem les cel·les per a completar la resta de
+            cel·les, podem veure com les de la primera columna sí que
+            canvien els valors, en canvi les de la segona només canvien
+            els valors de C4, ja que B4 és absoluta perquè li hem posat
+            el símbol $.</p>
+            <figure>
+            <img src="img/5.png" alt="Referència absoluta" />
+            <figcaption aria-hidden="true">Referència
+            absoluta</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Per a poder crear la referència absoluta polses F4 quan
+            tens el cursor a la fórmula i es convertix automàticament en
+            absoluta. És fàcil recordar-se-ne’n ja que el botó de 4 és
+            el mateix que el de $.</p>
+            </div>
+            <h1 data-number="5" id="operacions-amb-dates"><span
+            class="header-section-number">5</span> Operacions amb
+            dates</h1>
+            <p>En LibreOffice, podeu realitzar diverses operacions amb
+            dates. Per exemple, podeu restar dues dates per obtenir el
+            nombre de dies entre elles. Això es pot fer simplement
+            restant una data d’una altra en una nova cel·la.</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">A1:</span><span class="co"> 01/01/2024</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">A2:</span><span class="co"> 01/02/2024</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">A3:</span><span class="co"> =A2-A1</span></span></code></pre></div>
+            <p>En aquest exemple, <code>A3</code> mostrarà
+            <code>31</code>, que és el nombre de dies entre l’1 de gener
+            de 2024 i l’1 de febrer de 2024. De la mateixa manera podem
+            sumar dies, etc…</p>
+            <h2 data-number="5.1" id="format-de-dates"><span
+            class="header-section-number">5.1</span> Format de
+            dates</h2>
+            <p>Podeu canviar el format de les dates a LibreOffice Calc
+            anant a <code>Formato -&gt; Celdas -&gt; Fecha</code>. Des
+            d’aquí, podeu seleccionar el format de data que preferiu.
+            També podeu crear un format de data personalitzat si cap
+            dels formats predefinits no s’ajusta a les vostres
+            necessitats.</p>
+            <figure>
+            <img src="img/6.png" alt="Format dates" />
+            <figcaption aria-hidden="true">Format dates</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Podeu canviar l’idioma de la dates també, per si voleu
+            que vos apareguen amb altra llengua de la que tenim
+            configurat Libreoffice Calc.</p>
+            </div>
+            <h2 data-number="5.2" id="altres-funcionas-amb-dades"><span
+            class="header-section-number">5.2</span> Altres funcionas
+            amb dades</h2>
+            <p>Existeixen altres funcions molt utilitzades per a dates
+            en LibreOffice Calc són:</p>
+            <ol type="1">
+            <li><p><strong>HOY()</strong>: Aquesta funció retorna la
+            data actual. S’actualitza cada vegada que recalculem el full
+            de càlcul.</p></li>
+            <li><p><strong>AHORA()</strong>: Aquesta funció retorna la
+            data i hora actuals. Com la funció HOY(), també s’actualitza
+            cada vegada que recalculem el full de càlcul.</p></li>
+            <li><p><strong>FECHA(any; mes; dia)</strong>: Aquesta funció
+            es pot utilitzar per crear una data a partir d’un any, mes i
+            dia especificats. Per exemple, <code>FECHA(1954;7;20)</code>
+            crea la data 20 de juliol de 1954. Esta funció és
+            interessant quan estàs calculant dates a partir d’altres
+            paràmetres. Si vols escriure una data, escriu directament la
+            data.</p></li>
+            <li><p><strong>SIFECHA(data_inici; data_final;
+            “unitats”)</strong>: Aquesta funció retorna el nombre de
+            dies, mesos o anys complets entre dues dates. Per exemple,
+            <code>SIFECHA("2024-01-01"; "2024-12-31"; "d")</code>
+            retorna el nombre de dies entre l’1 de gener de 2024 i el 31
+            de desembre de 2024. Pots canviar, d - dies, m - mesos, y -
+            anys.</p></li>
+            <li><p><strong>DIASEMANA(fecha;tipo)</strong>: retorna el
+            dia de la setmana per a una data donada. El dia es retorna
+            com un enter entre 1 (Diumenge) i 7 (Dissabte) si no
+            s’especifica cap tipus o si el tipus és 1. Per exemple:
+            DIASETMANA(“1996-07-24”;2) retorna 3 (el paràmetre tipo és
+            2, per tant, Dilluns és dia número 1. El 24 de juliol de
+            1996 va ser un Dimecres i, per tant, dia número 3).</p></li>
+            </ol>
+            <h1 data-number="6" id="exemple-pràctic"><span
+            class="header-section-number">6</span> Exemple pràctic</h1>
+            <p>Anem a plantejar-vos un full de càlcul per a que aneu
+            practicant. La proposta és un full de càlcul amb la següent
+            disposició:</p>
+            <figure>
+            <img src="img/7.png" alt="Full de càlcul" />
+            <figcaption aria-hidden="true">Full de càlcul</figcaption>
+            </figure>
+            <p>En aquest full de càlcul tenim diferents Situacions
+            d’aprenentatge (SA) on anem a posar diferents criteris
+            d’avaluació, els criteris d’avaluació són desplegables. Les
+            notes també són desplegables limitant-se a les notes
+            concretes que podem posar.</p>
+            <p>Podem ordenar les diferents files o crear un criteri de
+            búsqueda, per nom concret o per orde alfabètic.</p>
+            <p>Les últimes columnes conten el número de de
+            qualificacions que es repetixen a mode estadístic.</p>
+            <h2 data-number="6.1" id="validez"><span
+            class="header-section-number">6.1</span> Validez</h2>
+            <p>Les cel·les on anem a posar les notes han d’acceptar
+            únicament el text de les notes:</p>
+            <figure>
+            <img src="img/12.png" alt="Validar" />
+            <figcaption aria-hidden="true">Validar</figcaption>
+            </figure>
+            <p>Posar les dades desplegables sempre en una llista a Datos
+            &gt; Validar no sempre és la millor opció, pel que es podria
+            crear un full addicional on es posaren tots els
+            desplegables. Així crearem un full anomenat CONTROL, per
+            exemple, i ahí afegirem els nostres criteris
+            d’avaluació.</p>
+            <figure>
+            <img src="img/12.1.png" alt="Validar" />
+            <figcaption aria-hidden="true">Validar</figcaption>
+            </figure>
+            <h2 data-number="6.2" id="contar.si"><span
+            class="header-section-number">6.2</span> CONTAR.SI</h2>
+            <p>Al final de cada línia tenim un càlcul del número de
+            vegades que es repetix una qualificació. Com ja sabeu no cal
+            emplenar totes les dades en totes les files. Si juguem amb
+            les referències absolutes i relatives podem fer la següent
+            fórmula a la cel·la AA5:</p>
+            <div class="sourceCode" id="cb3"><pre
+            class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">AA5:</span><span class="co"> =CONTAR.SI($C5:$Z5;AA$4)</span></span></code></pre></div>
+            <ul>
+            <li><strong>$C5:$Z5</strong>: Manté el rang entre la columna
+            C i la Z, de manera que quan arrastre l’autocompletat a la
+            dreta manté les columnes, però l’autocompletat cap avall les
+            línies sí que van canviant.</li>
+            <li><strong>AA$4</strong>: Deixa la Columna absoluta i la
+            fila relativa, així quan desplace l’autocompletat a la
+            dreta, <strong>4</strong> es queda fixe i les següents
+            referències passen a ser AB4, AC4, AD4 i AE4 Que corresponen
+            a: SF, BÉ, NT i EX.</li>
+            </ul>
+            <p>D’aquesta manera només creem una fórmula i després podem
+            autocompletar a la dreta i després les 5 cel·les cap avall i
+            ja tenim totes les fórmules.</p>
+            <h1 data-number="7" id="tips"><span
+            class="header-section-number">7</span> Tips</h1>
+            <h2 data-number="7.1" id="copiar-i-enganxar"><span
+            class="header-section-number">7.1</span> Copiar i
+            enganxar</h2>
+            <p>Moltes vegades volem traslladar valors d’una cel·la a
+            altra però no volem que ens copie el format, o volem copiar
+            només el format de tota un columna a altra però no volem que
+            s’enganxen els valors. De vegades tenim valors resultats
+            d’una fórmula però volen passar-los a una columna de text.
+            Tot això és posible amb l’enganxament especial:
+            <strong>Ctrl+Shift+V</strong>. Podeu anar també a <em>Editar
+            &gt; Pegado especial</em>.</p>
+            <figure>
+            <img src="img/11.png" alt="Enganxament especial" />
+            <figcaption aria-hidden="true">Enganxament
+            especial</figcaption>
+            </figure>
+            <p>Si ens fixem en la finestra que ens apareix en aquest
+            cas, tenim seleccionat només Formatos, de manera que només
+            s’enganxaran els formats de la cel·la. Hi han altres opcions
+            interessants, com podem veure com és:</p>
+            <ul>
+            <li><strong>Trasponer</strong>: Canvia les files per
+            columnes.</li>
+            <li><strong>Omitir celdas vacías</strong>: Les cel·les
+            buides no les enganxa.</li>
+            <li><strong>Desplazar celdas</strong>: Si volem que enlloc
+            de fer-ho damunt del que hi ha, estem afegint una
+            columna/fila nova.</li>
+            <li><strong>Operaciones</strong>: Si volem sumar als valors
+            presents (o altra operació).</li>
+            </ul>
+            <h2 data-number="7.2" id="filtre-automàtic"><span
+            class="header-section-number">7.2</span> Filtre
+            automàtic</h2>
+            <p>Podem seleccionar una fila (o part d’ella) i polsar la
+            icona següent:</p>
+            <figure>
+            <img src="img/13.png" alt="Filtre automàtic" />
+            <figcaption aria-hidden="true">Filtre automàtic</figcaption>
+            </figure>
+            <p>També poden fer ús de la combinació de tecles
+            <strong>Ctrl+Shift+L</strong>. D’aquesta manera podem crear
+            un filtre automàtic</p>
+            <figure>
+            <img src="img/14.png" alt="Filtre automàtic" />
+            <figcaption aria-hidden="true">Filtre automàtic</figcaption>
+            </figure>
+            <p>El filtre automàtic ens permet filtrar una sèries de
+            cel·les donats una sèrie de criteris, de manera que ens
+            permet interactuar ràpidament amb la nostra taula.</p>
+            <h2 data-number="7.3" id="files-alternes"><span
+            class="header-section-number">7.3</span> Files alternes</h2>
+            <p>Una de les coses que haureu vist és que si volem crear
+            files alternes de diferents colors podem fer-ho de dos
+            maneres:</p>
+            <ul>
+            <li>Seleccionant les files alternadament i aplicar el
+            format.</li>
+            <li>O bé a format condicional i enganxament especial.</li>
+            </ul>
+            <figure>
+            <img src="img/15.png" alt="Detectem fila" />
+            <figcaption aria-hidden="true">Detectem fila</figcaption>
+            </figure>
+            <p>I definim el format:</p>
+            <figure>
+            <img src="img/16.png" alt="Format" />
+            <figcaption aria-hidden="true">Format</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Podem veure que estem utilizant dos nous tipus de
+            fórmules. <strong>FILA()</strong>: Esn torna el número de
+            fila on estem. <strong>ESPAR()</strong>: Ens torna VERTADER
+            si la fila es par o FALS si es impar.</p>
+            </div>
+            <p>Aplicar a múltiples cel·les:</p>
+            <figure>
+            <img src="img/17.png" alt="Enganxament especial" />
+            <figcaption aria-hidden="true">Enganxament
+            especial</figcaption>
+            </figure>
+            <!-- TRADUÏT -->
+            <h1 data-number="8" id="segon-full"><span
+            class="header-section-number">8</span> Segon full</h1>
+            <p>En aquest cas anem a crear un segon full on tindrem un
+            desplegable on podrem escollir el nom del nostre alumne i
+            traslladarà les notes que hem posat a la nova taula. En
+            aquest full tenim la limitació que només agafarà un CA,
+            però, es podria fer que n’agafara més. Els fulls ens
+            quedaran de la següent manera.</p>
+            <figure>
+            <img src="img/18.png" alt="Alumnes" />
+            <figcaption aria-hidden="true">Alumnes</figcaption>
+            </figure>
+            <figure>
+            <img src="img/18.png" alt="Notes" />
+            <figcaption aria-hidden="true">Notes</figcaption>
+            </figure>
+            <div class="important">
+            <p>Es tracta d’un full per a practicar, és difícil en aquest
+            moment traure-li una utilitat. A mesura que anem avançant el
+            curs anirem ampliant els nsotres coneixements per a poder
+            fer coses més concretes</p>
+            </div>
+            <p>Introduirem les següents fórmules:</p>
+            <ol type="1">
+            <li><p><strong>ÍNDICE</strong>: Aquesta funció és utilitzada
+            per recuperar el valor en una cel·la específica,
+            especificada per números de fila i columna relatius dins
+            d’una taula de dades. Depenent del context, ÍNDICE també pot
+            ser utilitzat per determinar la referència de la cel·la a la
+            intersecció de la fila i columna especificades. La sintaxi
+            general per a la funció ÍNDICE és:
+            <code>INDICE (Referència; Fila; Columna; Rang )</code>.</p></li>
+            <li><p><strong>COINCIDIR</strong>¹²: Aquesta funció busca un
+            valor determinat en un vector, és a dir, en un rang d’una
+            sola fila o d’una sola columna. Retorna la posició on es
+            troba el valor buscat. Per exemple,
+            <code>COINCIDIR(200;D1:D100)</code> busca l’àrea D1:D100,
+            que s’ordena per la columna D, per al valor 200.</p></li>
+            <li><p><strong>COLUMNA</strong>: Aquesta funció determina el
+            número de columna(s) d’una referència donada a una sola
+            cel·la o a un rang de cel·les. Retorna un o més enters
+            positius en el rang de 1 a 1024 (inclosos) que són el
+            número(s) de columna(s) de la(s) cel·la(s) especificada(s)
+            en l’argument.</p></li>
+            <li><p><strong>SI.ERROR</strong>: Aquesta funció retorna el
+            valor de la primera expressió a menys que aquesta generi un
+            error.</p></li>
+            </ol>
+            <div class="tip">
+            <p>La fórmula <strong>SI.ERROR</strong>, és molt recomanable
+            tindre-la present ja que ens permet tindre una taula més
+            clara quan hi ha algún error.</p>
+            </div>
+            <p>El que volem és que es busque en la columna de noms el
+            nom de la persona seleccionada y trasllade eixes notes a la
+            línia corresponent. Anem a anar explicant detalladament
+            cadascuna de les fórmules.</p>
+            <h2 data-number="8.1" id="indice"><span
+            class="header-section-number">8.1</span> INDICE</h2>
+            <p>Podem entendre la funció índice amb un exemple, si et
+            fixes en la següent imatge:</p>
+            <figure>
+            <img src="img/19.png" alt="INDICE" />
+            <figcaption aria-hidden="true">INDICE</figcaption>
+            </figure>
+            <p>Podem veure que es tracta de un joc semblant a <em>hundir
+            la flota</em>, hem creat la funció
+            <strong>INDICE(C4:I22;L4;M4)</strong>:</p>
+            <ul>
+            <li><strong>C4:I22</strong> Correspon al rang que hem
+            agafat.</li>
+            <li><strong>L4</strong> és una referència a la cel·la. En
+            eixa cel·la canviarem el valor i posarem el número de la
+            fila.</li>
+            <li><strong>M4</strong> fa referència a la cel·la on
+            escriurem el número de la columna</li>
+            </ul>
+            <h2 data-number="8.2" id="coincidir"><span
+            class="header-section-number">8.2</span> COINCIDIR</h2>
+            <p>Fixem-nos ara en el següent full:</p>
+            <figure>
+            <img src="img/20.png" alt="COINCIDIR" />
+            <figcaption aria-hidden="true">COINCIDIR</figcaption>
+            </figure>
+            <p>El que fa la fórmula COINCIDIR és busca el valor que
+            posem i ens torna el número de fila on es troba,
+            <strong>=COINCIDIR(M4;C4:C22;0)</strong>:</p>
+            <ul>
+            <li><strong>M4</strong> és la cel·la del valor on volem
+            buscar.</li>
+            <li><strong>C4:C22</strong> és el rango on volem buscar</li>
+            <li>El valor 0, no anem a entrar en detalls, però significa
+            que la coincidència siga exacta.</li>
+            </ul>
+            <div class="warning">
+            <p>Si el rang que li donem és un rang horizontal (una fila
+            per exemple) ens torna el número de columna.</p>
+            </div>
+            <h2 data-number="8.3" id="columna"><span
+            class="header-section-number">8.3</span> COLUMNA</h2>
+            <p>La fórmula COLUMNA torna el número de columna (en
+            referència global) on es troba la cel·la que estem
+            passant-li. En aquest cas torna 5 perquè hem passat la
+            cel·la E7, que es troba a la columna 5.</p>
+            <figure>
+            <img src="img/21.png" alt="COLUMNA" />
+            <figcaption aria-hidden="true">COLUMNA</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Al final no hem fet servir aquesta fórmula, però és
+            senzilla de recordar i ens farà falta en algun moment.</p>
+            </div>
+            <h2 data-number="8.4" id="full-exemple"><span
+            class="header-section-number">8.4</span> Full exemple</h2>
+            <p>Abans de fer el full i fer una fórmula que continga totes
+            les fórmules integrades és important anar tractant de el
+            full poc a poc. Primer una columna que ens busque la fila,
+            després altra que busque la columna, la NOTA i afegim eL
+            SI.ERROR. Quan tinguen tots els passos clars podem crear una
+            fórmula on estiga tot junt i borrar la resta de
+            columnes:</p>
+            <figure>
+            <img src="img/21.png" alt="Exemple de procés de treball" />
+            <figcaption aria-hidden="true">Exemple de procés de
+            treball</figcaption>
+            </figure>
+            <p>En aquesta taula tenim com quedarien les fórmules</p>
+            <table>
+            <colgroup>
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 50%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>FILA</th>
+            <th>Columna</th>
+            <th>NOTA</th>
+            <th>Amb SI.ERROR</th>
+            <th>TOT JUNT</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>=COINCIDIR($C<span
+            class="math inline">3; ″.</span>B4:$B<span
+            class="math inline">13; 0)| = <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(<em>E</em>8; ″.</span>C<span
+            class="math inline">3:</span>N<span
+            class="math inline">3; 0)| = <em>I</em><em>N</em><em>D</em><em>I</em><em>C</em><em>E</em>(″.</span>C<span
+            class="math inline">4:</span>N<span
+            class="math inline">13; <em>F</em>8; <em>G</em>8)| = <em>S</em><em>I</em>.<em>E</em><em>R</em><em>R</em><em>O</em><em>R</em>(<em>I</em><em>N</em><em>D</em><em>I</em><em>C</em><em>E</em>(″.</span>C<span
+            class="math inline">4:</span>N<span
+            class="math inline">$13;F8;G8);"No avaluat") |
+            =SI.ERROR(INDICE($</span>’‘.$C<span
+            class="math inline">4:</span>N<span
+            class="math inline">13; <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(</span>C<span
+            class="math inline">3;</span>’‘.$B<span
+            class="math inline">4:</span>B<span
+            class="math inline">13; 0); <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(<em>E</em>8;</span>’’.$C<span
+            class="math inline">3:</span>N$3;0));“No avaluat”)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="tip">
+            <p>Hem utilitzat referències absolutes i relatives mixtes
+            per a poder fer una única fórmula i arrastrar les
+            altres.</p>
+            </div>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>

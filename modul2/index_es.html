@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+        /* CSS for syntax highlighting */
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+        code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #7d9029; } /* Attribute */
+        code span.bn { color: #40a070; } /* BaseN */
+        code span.bu { color: #008000; } /* BuiltIn */
+        code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4070a0; } /* Char */
+        code span.cn { color: #880000; } /* Constant */
+        code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+        code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+        code span.dt { color: #902000; } /* DataType */
+        code span.dv { color: #40a070; } /* DecVal */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #40a070; } /* Float */
+        code span.fu { color: #06287e; } /* Function */
+        code span.im { color: #008000; font-weight: bold; } /* Import */
+        code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+        code span.op { color: #666666; } /* Operator */
+        code span.ot { color: #007020; } /* Other */
+        code span.pp { color: #bc7a00; } /* Preprocessor */
+        code span.sc { color: #4070a0; } /* SpecialChar */
+        code span.ss { color: #bb6688; } /* SpecialString */
+        code span.st { color: #4070a0; } /* String */
+        code span.va { color: #19177c; } /* Variable */
+        code span.vs { color: #4070a0; } /* VerbatimString */
+        code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de
+càlcul</h1>
+            <!--        <p class="subtitle">Treballant amb el full de
+càlcul, ús de les fórmules</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente
+Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducción" id="toc-introducción"><span
+class="toc-section-number">1</span> Introducción</a></li>
+<li><a href="#fórmulas" id="toc-fórmulas"><span
+class="toc-section-number">2</span> Fórmulas</a>
+<ul>
+<li><a href="#operadores-fundamentales"
+id="toc-operadores-fundamentales"><span
+class="toc-section-number">2.1</span> Operadores fundamentales</a></li>
+<li><a href="#operadores-con-rango" id="toc-operadores-con-rango"><span
+class="toc-section-number">2.2</span> Operadores con rango</a>
+<ul>
+<li><a href="#otros-operadores-esenciales"
+id="toc-otros-operadores-esenciales"><span
+class="toc-section-number">2.2.1</span> Otros operadores
+esenciales</a></li>
+</ul></li>
+<li><a href="#asistente-para-fórmulas"
+id="toc-asistente-para-fórmulas"><span
+class="toc-section-number">2.3</span> Asistente para fórmulas</a></li>
+<li><a href="#operadores-condicionales"
+id="toc-operadores-condicionales"><span
+class="toc-section-number">2.4</span> Operadores condicionales</a></li>
+</ul></li>
+<li><a href="#auto-rellenar" id="toc-auto-rellenar"><span
+class="toc-section-number">3</span> Auto rellenar</a></li>
+<li><a href="#referencias-absolutas-y-relativas"
+id="toc-referencias-absolutas-y-relativas"><span
+class="toc-section-number">4</span> Referencias absolutas y relativas
+$</a></li>
+<li><a href="#operaciones-con-fechas"
+id="toc-operaciones-con-fechas"><span
+class="toc-section-number">5</span> Operaciones con fechas</a>
+<ul>
+<li><a href="#formato-de-fechas" id="toc-formato-de-fechas"><span
+class="toc-section-number">5.1</span> Formato de fechas</a></li>
+<li><a href="#otras-funciones-con-fechas"
+id="toc-otras-funciones-con-fechas"><span
+class="toc-section-number">5.2</span> Otras funciones con
+fechas</a></li>
+</ul></li>
+<li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico"><span
+class="toc-section-number">6</span> Ejemplo práctico</a>
+<ul>
+<li><a href="#validez" id="toc-validez"><span
+class="toc-section-number">6.1</span> Validez</a></li>
+<li><a href="#contar.si" id="toc-contar.si"><span
+class="toc-section-number">6.2</span> CONTAR.SI</a></li>
+</ul></li>
+<li><a href="#consejos" id="toc-consejos"><span
+class="toc-section-number">7</span> Consejos</a>
+<ul>
+<li><a href="#copiar-y-pegar" id="toc-copiar-y-pegar"><span
+class="toc-section-number">7.1</span> Copiar y pegar</a></li>
+<li><a href="#filtro-automático" id="toc-filtro-automático"><span
+class="toc-section-number">7.2</span> Filtro automático</a></li>
+<li><a href="#filas-alternas" id="toc-filas-alternas"><span
+class="toc-section-number">7.3</span> Filas alternas</a></li>
+</ul></li>
+<li><a href="#segon-full" id="toc-segon-full"><span
+class="toc-section-number">8</span> Segon full</a>
+<ul>
+<li><a href="#índice" id="toc-índice"><span
+class="toc-section-number">8.1</span> ÍNDICE</a></li>
+<li><a href="#coincidir" id="toc-coincidir"><span
+class="toc-section-number">8.2</span> COINCIDIR</a></li>
+<li><a href="#columna" id="toc-columna"><span
+class="toc-section-number">8.3</span> COLUMNA</a></li>
+<li><a href="#hoja-de-ejemplo" id="toc-hoja-de-ejemplo"><span
+class="toc-section-number">8.4</span> Hoja de ejemplo</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <!-- 
+            FÓRMULAS BÁSICAS + * / %
+            SUMAR
+            DIFERENCIES ENTRE TEXT I FORMULA
+
+            ÚS DE FÓRMULES 
+
+            AUTOEMPLENAR
+
+            REFERENCIAS ANSOLUTAS Y RELATIVAS
+            eL SIGNO $
+
+            CONTAR.SI
+            SI
+            si.error
+
+            OPERACIONS AMB DATES 
+
+            =HOY()
+            =DIA()
+            =DIASEMANA()
+
+
+            EXEMPLE PRÀCTIC 
+
+
+            Els errors en calc
+
+             -->
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Este documento está sujeto a una licencia creative
+            commons que permite su difusión y uso comercial reconociendo
+            siempre la autoría de su creador. Este documento se
+            encuentra para ser modificado en el siguiente repositorio de
+            github: <!-- CAMBIAR EL ENLACE --> <a
+            href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a>
+            </p>
+            <h1 data-number="1" id="introducción"><span
+            class="header-section-number">1</span> Introducción</h1>
+            <p>En esta unidad vamos a empezar a utilizar las fórmulas,
+            estas fórmulas las utilizaremos a través del asistente de
+            Libreoffice que nos ayudará a hacer las fórmulas de manera
+            correcta. Una vez ya tengamos cierta práctica las fórmulas
+            las podremos escribir directamente sin hacer uso del
+            asistente.</p>
+            <h1 data-number="2" id="fórmulas"><span
+            class="header-section-number">2</span> Fórmulas</h1>
+            <p>Como hemos visto para poder utilizar las fórmulas en las
+            hojas de cálculo debemos poner delante de la celda el signo
+            =, existen muchísimas fórmulas en las hojas de cálculo y se
+            pueden programar</p>
+            <h2 data-number="2.1" id="operadores-fundamentales"><span
+            class="header-section-number">2.1</span> Operadores
+            fundamentales</h2>
+            <p>Operadores fundamentales en hojas de cálculo:</p>
+            <ul>
+            <li><strong>Sumar (+):</strong> Utilizado para agregar el
+            valor de dos o más celdas. Por ejemplo, <code>=A1+A2</code>
+            sumaría los valores de las celdas A1 y A2.</li>
+            <li><strong>Restar (-):</strong> Empleado para calcular la
+            diferencia entre dos celdas. <code>=A1-A2</code> restaría el
+            valor de la celda A2 del valor de la celda A1.</li>
+            <li><strong>Multiplicar (*):</strong> Sirve para obtener el
+            producto de dos números. <code>=A1*A2</code> multiplicaría
+            los valores de las celdas A1 y A2.</li>
+            <li><strong>Dividir (/):</strong> Utilizado para dividir el
+            valor de una celda entre otro. <code>=A1/A2</code> dividiría
+            el valor de la celda A1 entre el valor de la celda A2.</li>
+            <li><strong>Porcentaje (%):</strong> Permite calcular el
+            porcentaje de un valor. <code>=A1*10%</code> calcularía el
+            10% del valor de la celda A1.</li>
+            <li><strong>Exponenciación (^):</strong> Eleva un número a
+            la potencia de otro. <code>=A1^2</code> elevaría el valor de
+            la celda A1 al cuadrado.</li>
+            <li><strong>Raíz ( <span
+            class="math inline">$\sqrt{}$</span> ):</strong> Se utiliza
+            para calcular la raíz cuadrada de un valor.
+            <code>=SQRT(A1)</code> retornaría la raíz cuadrada del valor
+            de la celda A1.</li>
+            </ul>
+            <p>Todas estas fórmulas se pueden ir combinando entre ellas
+            utilizando los paréntesis de manera que podríamos hacer
+            <code>=(A1+A2)*5</code> donde se haría primero la suma y
+            después se multiplicaría por 5.</p>
+            <h2 data-number="2.2" id="operadores-con-rango"><span
+            class="header-section-number">2.2</span> Operadores con
+            rango</h2>
+            <p>Operar con los operadores fundamentales nos limita mucho
+            nuestra capacidad de uso, por eso es mejor utilizar
+            fórmulas. De manera que si quisiéramos sumar muchas celdas
+            de una fila sería muy largo hacerlo de una en una, por eso
+            se pueden utilizar fórmulas que utilizan todo un rango. Así
+            por ejemplo si queremos sumar todas las celdas desde A1 a
+            A10 podemos hacer uso de la fórmula
+            <strong>SUMA(A1:A10)</strong>:</p>
+            <p><img src="img/1.png" alt="Suma" /> :::note Para
+            seleccionar el rango podemos hacer uso del ratón y
+            seleccionar las celdas que queremos, automáticamente nos
+            aparecerá el rango que queremos. :::</p>
+            <h3 data-number="2.2.1"
+            id="otros-operadores-esenciales"><span
+            class="header-section-number">2.2.1</span> Otros operadores
+            esenciales</h3>
+            <ul>
+            <li><strong>PROMEDIO</strong>: Esta fórmula devuelve el
+            valor medio aritmético de las celdas que pases como
+            parámetro. Ejemplo: =PROMEDIO(A2:B2).</li>
+            <li><strong>MAX</strong> y <strong>MIN</strong>: Estas
+            fórmulas devuelven el valor máximo y mínimo respectivamente
+            de un conjunto de celdas. Ejemplo: =MAX(A2:C8) o
+            =MIN(A2,B4,C3,29).</li>
+            </ul>
+            <div class="tip">
+            <p>Fíjate en la fórmula MAX y MIN, normalmente casi todas
+            las fórmulas de cálculo permiten bien introducir un rango o
+            diferentes celdas separadas por una coma. Lo que no puedes
+            hacer es utilizar dos rangos separados por una coma.</p>
+            </div>
+            <h2 data-number="2.3" id="asistente-para-fórmulas"><span
+            class="header-section-number">2.3</span> Asistente para
+            fórmulas</h2>
+            <p>Cuando vamos a utilizar fórmulas es interesante hacer uso
+            del asistente, ya que siempre nos irá dando indicaciones de
+            si una fórmula es correcta o no. En el siguiente gráfico
+            tienes un esquema rápido de cómo sería hacer uso del
+            asistente de fórmulas.</p>
+            <figure>
+            <img src="img/2.png" alt="Asistente" />
+            <figcaption aria-hidden="true">Asistente</figcaption>
+            </figure>
+            <h2 data-number="2.4" id="operadores-condicionales"><span
+            class="header-section-number">2.4</span> Operadores
+            condicionales</h2>
+            <p>En el ejemplo anterior hemos visto un operador
+            condicional. Los más comunes son los siguientes:</p>
+            <ul>
+            <li><p><strong>CONTAR.SI</strong>: Esta función cuenta el
+            número de celdas que cumplen un criterio específico. Por
+            ejemplo, <code>=CONTAR.SI(A2:A5;"APTO")</code> cuenta el
+            número de celdas que contienen la palabra “APTO” en el rango
+            A2:A5.</p></li>
+            <li><p><strong>SI</strong>: Esta función realiza una
+            comparación lógica entre un valor y el resultado esperado.
+            Tiene dos resultados posibles: el primero si la comparación
+            es verdadera y el segundo si la comparación es falsa. Supón
+            que quieres asignar una calificación a un estudiante basada
+            en su nota. Si la nota (en la celda B2) es superior o igual
+            a 5, el estudiante aprueba. Si no, suspende. La fórmula
+            sería: =SI(B2&gt;=5; “Aprueba”; “Suspende”). La primera
+            opción Normalmente suele ser una comparativa lógica que dé
+            como resultado verdades o falso, por eso se utilizan los
+            operadores:</p>
+            <ul>
+            <li>&gt; Mayor</li>
+            <li>&lt; Menor</li>
+            <li>= Igual</li>
+            <li>Combinación de dos &gt;= Mayor o igual</li>
+            </ul></li>
+            <li><p><strong>SI.ERROR</strong>: Esta función devuelve un
+            valor especificado si una fórmula se evalúa como error; en
+            caso contrario, devuelve el resultado de la fórmula. Por
+            ejemplo =SI.ERROR(A2/B2; “Error en la división”), podría
+            darse cuando B2 por ejemplo es 0.</p></li>
+            </ul>
+            <h1 data-number="3" id="auto-rellenar"><span
+            class="header-section-number">3</span> Auto rellenar</h1>
+            <p>La opción Auto rellenar es una función que permite
+            ahorrar tiempo en realizar tareas repetitivas. Con esta
+            función, puedes copiar valores, realizar series, copiar
+            fórmulas, entre otros, simplemente arrastrando el ratón.</p>
+            <figure>
+            <img src="img/3.png" alt="Auto rellenar" />
+            <figcaption aria-hidden="true">Auto rellenar</figcaption>
+            </figure>
+            <p>Una vez arrastramos el ratón el resultado será que la
+            fila se llene con Nom1, Nom2, Nom3, etc… De la misma manera
+            pasaría si tuviéramos solo el número. Así mismo pasaría con
+            las fórmulas. Si queremos que nos haga los cálculos de
+            similares a los anteriores manteniendo las referencias
+            podemos arrastrar y soltar. Así por ejemplo en el siguiente
+            recuadro:</p>
+            <figure>
+            <img src="img/4.png" alt="Auto rellenar fórmulas" />
+            <figcaption aria-hidden="true">Auto rellenar
+            fórmulas</figcaption>
+            </figure>
+            <h1 data-number="4"
+            id="referencias-absolutas-y-relativas"><span
+            class="header-section-number">4</span> Referencias absolutas
+            y relativas $</h1>
+            <p>En una hoja de cálculo, las referencias a las celdas
+            pueden ser absolutas, relativas o mixtas:</p>
+            <ol type="1">
+            <li><p><strong>Referencias absolutas</strong>: Hacen
+            referencia a las celdas ubicadas en una posición específica
+            e invariable. Se indican con el signo <code>$</code> delante
+            de la letra de la columna y del número de fila. Por ejemplo,
+            <code>$A$1</code> es una referencia absoluta.</p></li>
+            <li><p><strong>Referencias relativas</strong>: Hacen
+            referencia a celdas ubicadas en una columna o en una fila
+            que se actualizarán según el cálculo que se realice. No
+            contienen signos de dólar. Por ejemplo, <code>A1</code> es
+            una referencia relativa.</p></li>
+            <li><p><strong>Referencias mixtas</strong>: Combina las dos
+            anteriores. Una parte de la referencia es absoluta (columna
+            o fila) y la otra es relativa. Por ejemplo, <code>$A1</code>
+            o <code>A$1</code>.</p></li>
+            </ol>
+            <p>Estas referencias son útiles cuando se copian fórmulas a
+            otras celdas, permitiendo ajustar automáticamente las
+            referencias a las celdas.</p>
+            <p>Fijémonos en el siguiente ejemplo, hemos puesto las
+            fórmulas</p>
+            <figure>
+            <img src="img/5.png" alt="Referencia absoluta" />
+            <figcaption aria-hidden="true">Referencia
+            absoluta</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Para poder crear la referencia absoluta pulsa F4 cuando
+            tienes el cursor en la fórmula y se convierte
+            automáticamente en absoluta. Es fácil recordarlo ya que el
+            botón de 4 es el mismo que el de $.</p>
+            </div>
+            <h1 data-number="5" id="operaciones-con-fechas"><span
+            class="header-section-number">5</span> Operaciones con
+            fechas</h1>
+            <p>En LibreOffice, puedes realizar varias operaciones con
+            fechas. Por ejemplo, puedes restar dos fechas para obtener
+            el número de días entre ellas. Esto se puede hacer
+            simplemente restando una fecha de otra en una nueva
+            celda.</p>
+            <div class="sourceCode" id="cb1"><pre
+            class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">A1:</span><span class="co"> 01/01/2024</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">A2:</span><span class="co"> 01/02/2024</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">A3:</span><span class="co"> =A2-A1</span></span></code></pre></div>
+            <p>En aquest exemple, <code>A3</code> mostrarà
+            <code>31</code>, que és el nombre de dies entre l’1 de gener
+            de 2024 i l’1 de febrer de 2024. De la mateixa manera podem
+            sumar dies, etc…</p>
+            <h2 data-number="5.1" id="formato-de-fechas"><span
+            class="header-section-number">5.1</span> Formato de
+            fechas</h2>
+            <p>Puedes cambiar el formato de las fechas en LibreOffice
+            Calc yendo a <code>Formato -&gt; Celdas -&gt; Fecha</code>.
+            Desde aquí, puedes seleccionar el formato de fecha que
+            prefieras. También puedes crear un formato de fecha
+            personalizado si ninguno de los formatos predefinidos se
+            ajusta a tus necesidades.</p>
+            <figure>
+            <img src="img/6.png" alt="Formato de fechas" />
+            <figcaption aria-hidden="true">Formato de
+            fechas</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Puedes cambiar el idioma de las fechas también por si
+            quieres que te aparezcan en otros idiomas al que tenemos
+            configurado LibreOffice Calc.</p>
+            </div>
+            <h2 data-number="5.2" id="otras-funciones-con-fechas"><span
+            class="header-section-number">5.2</span> Otras funciones con
+            fechas</h2>
+            <p>Existen otras funciones muy utilizadas para fechas en
+            LibreOffice Calc son:</p>
+            <ol type="1">
+            <li><p><strong>HOY()</strong>: Esta función devuelve la
+            fecha actual. Se actualiza cada vez que recalculamos la hoja
+            de cálculo.</p></li>
+            <li><p><strong>AHORA()</strong>: Esta función devuelve la
+            fecha y la hora actuales. Como la función HOY(), también se
+            actualiza cada vez que recalculamos la hoja de
+            cálculo.</p></li>
+            <li><p><strong>FECHA(año; mes; día)</strong>: Esta función
+            se puede utilizar para crear una fecha a partir de un año,
+            mes y día especificados. Por ejemplo,
+            <code>FECHA(1954;7;20)</code> crea la fecha 20 de julio de
+            1954. Esta función es interesante cuando estás calculando
+            fechas a partir de otros parámetros. Si quieres escribir una
+            fecha, escribe directamente la fecha.</p></li>
+            <li><p><strong>SIFECHA(fecha_inicio; fecha_final;
+            “unidades”)</strong>: Esta función devuelve el número de
+            días, meses o años completos entre dos fechas. Por ejemplo,
+            <code>SIFECHA("2024-01-01"; "2024-12-31"; "d")</code>
+            devuelve el número de días entre el 1 de enero de 2024 y el
+            31 de diciembre de 2024. Puedes cambiar, d - días, m -
+            meses, y - años.</p></li>
+            <li><p><strong>DIASEMANA(fecha;tipo)</strong>: devuelve el
+            día de la semana para una fecha dada. El día se devuelve
+            como un entero entre 1 (Domingo) y 7 (Sábado) si no se
+            especifica ningún tipo o si el tipo es 1. Por ejemplo:
+            DIASEMANA(“1996-07-24”;2) devuelve 3 (el parámetro tipo es
+            2, por lo tanto, Lunes es día número 1. El 24 de julio de
+            1996 fue un Miércoles y, por lo tanto, día número
+            3).</p></li>
+            </ol>
+            <h1 data-number="6" id="ejemplo-práctico"><span
+            class="header-section-number">6</span> Ejemplo práctico</h1>
+            <p>Vamos a plantearos una hoja de cálculo para que vayáis
+            practicando. Tendremos una hoja de cálculo con la siguiente
+            disposición:</p>
+            <figure>
+            <img src="img/7.png" alt="Hoja de cálculo" />
+            <figcaption aria-hidden="true">Hoja de cálculo</figcaption>
+            </figure>
+            <p>En esta hoja de cálculo tenemos diferentes Situaciones de
+            Aprendizaje (SA) donde vamos a poner diferentes criterios de
+            evaluación, los criterios de evaluación son desplegables.
+            Las notas también son desplegables limitándose a las notas
+            concretas que podemos poner.</p>
+            <p>Podemos ordenar las diferentes filas o crear un criterio
+            de búsqueda, por nombre concreto o por orden alfabético.</p>
+            <p>Las últimas columnas contienen el número de
+            calificaciones que se repiten a modo estadístico.</p>
+            <h2 data-number="6.1" id="validez"><span
+            class="header-section-number">6.1</span> Validez</h2>
+            <p>Las celdas donde vamos a poner las notas deben aceptar
+            únicamente el texto de las notas:</p>
+            <figure>
+            <img src="img/12.png" alt="Validar" />
+            <figcaption aria-hidden="true">Validar</figcaption>
+            </figure>
+            <p>Poner los datos desplegables siempre en una lista en
+            Datos &gt; Validar no siempre es la mejor opción, por lo que
+            se podría crear una hoja adicional donde se pongan todos los
+            desplegables. Así crearemos una hoja llamada CONTROL, por
+            ejemplo, y ahí añadiremos nuestros criterios de
+            evaluación.</p>
+            <figure>
+            <img src="img/12.1.png" alt="Validar" />
+            <figcaption aria-hidden="true">Validar</figcaption>
+            </figure>
+            <h2 data-number="6.2" id="contar.si"><span
+            class="header-section-number">6.2</span> CONTAR.SI</h2>
+            <p>Al final de cada línea tenemos un cálculo del número de
+            veces que se repite una calificación. Como ya sabéis no hace
+            falta llenar todos los datos en todas las filas. Si jugamos
+            con las referencias absolutas y relativas podemos hacer la
+            siguiente fórmula en la celda AA5:</p>
+            <div class="sourceCode" id="cb2"><pre
+            class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">AA5:</span><span class="co"> =CONTAR.SI($C5:$Z5;AA$4)</span></span></code></pre></div>
+            <ul>
+            <li><strong>$C5:$Z5</strong>: Mantiene el rango entre la
+            columna C y la Z, de manera que cuando arrastre el
+            autocompletado a la derecha mantiene las columnas, pero el
+            autocompletado hacia abajo las líneas sí que van
+            cambiando.</li>
+            <li><strong>AA$4</strong>: Deja la Columna absoluta y la
+            fila relativa, así cuando desplace el autocompletado a la
+            derecha, <strong>4</strong> se queda fijo y las siguientes
+            referencias pasan a ser AB4, AC4, AD4 y AE4 que corresponden
+            a: SF, BÉ, NT y EX.</li>
+            </ul>
+            <p>De esta manera solo creamos una fórmula y después podemos
+            autocompletar a la derecha y después las 5 celdas hacia
+            abajo y ya tenemos todas las fórmulas.</p>
+            <h1 data-number="7" id="consejos"><span
+            class="header-section-number">7</span> Consejos</h1>
+            <h2 data-number="7.1" id="copiar-y-pegar"><span
+            class="header-section-number">7.1</span> Copiar y pegar</h2>
+            <p>Muchas veces queremos trasladar valores de una celda a
+            otra pero no queremos que nos copie el formato, o queremos
+            copiar solo el formato de toda una columna a otra pero no
+            queremos que se peguen los valores. A veces tenemos valores
+            resultados de una fórmula pero queremos pasarlos a una
+            columna de texto. Todo esto es posible con el pegado
+            especial: <strong>Ctrl+Shift+V</strong>. Puedes ir también a
+            <em>Editar &gt; Pegado especial</em>.</p>
+            <figure>
+            <img src="img/11.png" alt="Pegado especial" />
+            <figcaption aria-hidden="true">Pegado especial</figcaption>
+            </figure>
+            <p>Si nos fijamos en la ventana que nos aparece en este
+            caso, tenemos seleccionado solo Formatos, de manera que solo
+            se pegarán los formatos de la celda. Hay otras opciones
+            interesantes, como podemos ver como es:</p>
+            <ul>
+            <li><strong>Trasponer</strong>: Cambia las filas por
+            columnas.</li>
+            <li><strong>Omitir celdas vacías</strong>: Las celdas vacías
+            no las pega.</li>
+            <li><strong>Desplazar celdas</strong>: Si queremos que en
+            lugar de hacerlo encima de lo que hay, estamos añadiendo una
+            columna/fila nueva.</li>
+            <li><strong>Operaciones</strong>: Si queremos sumar a los
+            valores presentes (u otra operación).</li>
+            </ul>
+            <h2 data-number="7.2" id="filtro-automático"><span
+            class="header-section-number">7.2</span> Filtro
+            automático</h2>
+            <p>Podemos seleccionar una fila (o parte de ella) y pulsar
+            el siguiente icono:</p>
+            <figure>
+            <img src="img/13.png" alt="Filtro automático" />
+            <figcaption aria-hidden="true">Filtro
+            automático</figcaption>
+            </figure>
+            <p>También pueden hacer uso de la combinación de teclas
+            <strong>Ctrl+Shift+L</strong>. De esta manera podemos crear
+            un filtro automático</p>
+            <figure>
+            <img src="img/14.png" alt="Filtro automático" />
+            <figcaption aria-hidden="true">Filtro
+            automático</figcaption>
+            </figure>
+            <p>El filtro automático nos permite filtrar una series de
+            celdas dados una serie de criterios, de manera que nos
+            permite interactuar rápidamente con nuestra tabla.</p>
+            <h2 data-number="7.3" id="filas-alternas"><span
+            class="header-section-number">7.3</span> Filas alternas</h2>
+            <p>Una de las cosas que habréis visto es que si queremos
+            crear filas alternas de diferentes colores podemos hacerlo
+            de dos maneras:</p>
+            <ul>
+            <li>Seleccionando las filas alternadamente y aplicar el
+            formato.</li>
+            <li>O bien a formato condicional y pegado especial.</li>
+            </ul>
+            <figure>
+            <img src="img/15.png" alt="Detectamos fila" />
+            <figcaption aria-hidden="true">Detectamos fila</figcaption>
+            </figure>
+            <p>Y definimos el formato:</p>
+            <figure>
+            <img src="img/16.png" alt="Formato" />
+            <figcaption aria-hidden="true">Formato</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Podemos ver que estamos utilizando dos nuevos tipos de
+            fórmulas. <strong>FILA()</strong>: Nos devuelve el número de
+            fila donde estamos. <strong>ESPAR()</strong>: Nos devuelve
+            VERDADERO si la fila es par o FALSO si es impar.</p>
+            </div>
+            <p>Aplicar a múltiples celdas:</p>
+            <figure>
+            <img src="img/17.png" alt="Pegado especial" />
+            <figcaption aria-hidden="true">Pegado especial</figcaption>
+            </figure>
+            <p>Esta es la actividad que tendrás que presentar en este
+            módulo.</p>
+            <h1 data-number="8" id="segon-full"><span
+            class="header-section-number">8</span> Segon full</h1>
+            <p>En aquest cas anem a crear un segon full on tindrem un
+            desplegable on podrem escollir el nom del nostre alumne i
+            traslladarà les notes que hem posat a la nova taula. En
+            aquest full tenim la limitació que només agafarà un CA,
+            però, es podria fer que n’agafara més. Els fulls ens
+            quedaran de la següent manera. <img src="img/18.png"
+            alt="Alumnos" /></p>
+            <figure>
+            <img src="img/18.png" alt="Notas" />
+            <figcaption aria-hidden="true">Notas</figcaption>
+            </figure>
+            <div class="important">
+            <p>Se trata de una hoja para practicar, es difícil en este
+            momento sacarle una utilidad. A medida que avancemos en el
+            curso iremos ampliando nuestros conocimientos para poder
+            hacer cosas más concretas.</p>
+            </div>
+            <p>Introduciremos las siguientes fórmulas:</p>
+            <ol type="1">
+            <li><p><strong>ÍNDICE</strong>: Esta función se utiliza para
+            recuperar el valor en una celda específica, especificada por
+            números de fila y columna relativos dentro de una tabla de
+            datos. Dependiendo del contexto, ÍNDICE también puede ser
+            utilizado para determinar la referencia de la celda en la
+            intersección de la fila y columna especificadas. La sintaxis
+            general para la función ÍNDICE es:
+            <code>ÍNDICE (Referencia ; Fila ; Columna ; Rango )</code>.</p></li>
+            <li><p><strong>COINCIDIR</strong>¹²: Esta función busca un
+            valor determinado en un vector, es decir, en un rango de una
+            sola fila o de una sola columna. Devuelve la posición donde
+            se encuentra el valor buscado. Por ejemplo,
+            <code>COINCIDIR(200;D1:D100)</code> busca en el área
+            D1:D100, que se ordena por la columna D, para el valor
+            200.</p></li>
+            <li><p><strong>COLUMNA</strong>: Esta función determina el
+            número de columna(s) de una referencia dada a una sola celda
+            o a un rango de celdas. Devuelve uno o más enteros positivos
+            en el rango de 1 a 1024 (incluidos) que son el número(s) de
+            columna(s) de la(s) celda(s) especificada(s) en el
+            argumento.</p></li>
+            <li><p><strong>SI.ERROR</strong>: Esta función devuelve el
+            valor de la primera expresión a menos que esta genere un
+            error.</p></li>
+            </ol>
+            <div class="tip">
+            <p>La fórmula <strong>SI.ERROR</strong>, es muy recomendable
+            tenerla presente ya que nos permite tener una tabla más
+            clara cuando hay algún error.</p>
+            </div>
+            <p>Lo que queremos es que se busque en la columna de nombres
+            el nombre de la persona seleccionada y traslade esas notas a
+            la línea correspondiente. Vamos a ir explicando
+            detalladamente cada una de las fórmulas.</p>
+            <h2 data-number="8.1" id="índice"><span
+            class="header-section-number">8.1</span> ÍNDICE</h2>
+            <p>Podemos entender la función índice con un ejemplo, si te
+            fijas en la siguiente imagen:</p>
+            <figure>
+            <img src="img/19.png" alt="ÍNDICE" />
+            <figcaption aria-hidden="true">ÍNDICE</figcaption>
+            </figure>
+            <p>Podemos ver que se trata de un juego similar a <em>hundir
+            la flota</em>, hemos creado la función
+            <strong>ÍNDICE(C4:I22;L4;M4)</strong>:</p>
+            <ul>
+            <li><strong>C4:I22</strong> Corresponde al rango que hemos
+            tomado.</li>
+            <li><strong>L4</strong> es una referencia a la celda. En esa
+            celda cambiaremos el valor y pondremos el número de la
+            fila.</li>
+            <li><strong>M4</strong> hace referencia a la celda donde
+            escribiremos el número de la columna</li>
+            </ul>
+            <h2 data-number="8.2" id="coincidir"><span
+            class="header-section-number">8.2</span> COINCIDIR</h2>
+            <p>Fijémonos ahora en la siguiente hoja:</p>
+            <figure>
+            <img src="img/20.png" alt="COINCIDIR" />
+            <figcaption aria-hidden="true">COINCIDIR</figcaption>
+            </figure>
+            <p>Lo que hace la fórmula COINCIDIR es buscar el valor que
+            ponemos y nos devuelve el número de fila donde se encuentra,
+            <strong>=COINCIDIR(M4;C4:C22;0)</strong>:</p>
+            <ul>
+            <li><strong>M4</strong> es la celda del valor donde queremos
+            buscar.</li>
+            <li><strong>C4:C22</strong> es el rango donde queremos
+            buscar</li>
+            <li>El valor 0, no vamos a entrar en detalles, pero
+            significa que la coincidencia sea exacta.</li>
+            </ul>
+            <div class="warning">
+            <p>Si el rango que le damos es un rango horizontal (una fila
+            por ejemplo) nos devuelve el número de columna.</p>
+            </div>
+            <h2 data-number="8.3" id="columna"><span
+            class="header-section-number">8.3</span> COLUMNA</h2>
+            <p>La fórmula COLUMNA devuelve el número de columna (en
+            referencia global) donde se encuentra la celda que le
+            estamos pasando. En este caso devuelve 5 porque hemos pasado
+            la celda E7, que se encuentra en la columna 5.</p>
+            <figure>
+            <img src="img/21.png" alt="COLUMNA" />
+            <figcaption aria-hidden="true">COLUMNA</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Al final no hemos usado esta fórmula, pero es sencilla de
+            recordar y nos hará falta en algún momento.</p>
+            </div>
+            <h2 data-number="8.4" id="hoja-de-ejemplo"><span
+            class="header-section-number">8.4</span> Hoja de
+            ejemplo</h2>
+            <p>Antes de hacer la hoja y hacer una fórmula que contenga
+            todas las fórmulas integradas es importante ir tratando de
+            la hoja poco a poco. Primero una columna que nos busque la
+            fila, luego otra que busque la columna, la NOTA y añadimos
+            el SI.ERROR. Cuando tengamos todos los pasos claros podemos
+            crear una fórmula donde esté todo junto y borrar el resto de
+            columnas:</p>
+            <figure>
+            <img src="img/21.png" alt="Ejemplo de proceso de trabajo" />
+            <figcaption aria-hidden="true">Ejemplo de proceso de
+            trabajo</figcaption>
+            </figure>
+            <p>En esta tabla tenemos cómo quedarían las fórmulas</p>
+            <table>
+            <colgroup>
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 50%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>FILA</th>
+            <th>Columna</th>
+            <th>NOTA</th>
+            <th>Con SI.ERROR</th>
+            <th>TODO JUNTO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>=COINCIDIR($C<span
+            class="math inline">3; ″.</span>B4:$B<span
+            class="math inline">13; 0)| = <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(<em>E</em>8; ″.</span>C<span
+            class="math inline">3:</span>N<span
+            class="math inline">3; 0)| = <em>I</em><em>N</em><em>D</em><em>I</em><em>C</em><em>E</em>(″.</span>C<span
+            class="math inline">4:</span>N<span
+            class="math inline">13; <em>F</em>8; <em>G</em>8)| = <em>S</em><em>I</em>.<em>E</em><em>R</em><em>R</em><em>O</em><em>R</em>(<em>I</em><em>N</em><em>D</em><em>I</em><em>C</em><em>E</em>(″.</span>C<span
+            class="math inline">4:</span>N<span
+            class="math inline">$13;F8;G8);"No evaluado") |
+            =SI.ERROR(INDICE($</span>’‘.$C<span
+            class="math inline">4:</span>N<span
+            class="math inline">13; <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(</span>C<span
+            class="math inline">3;</span>’‘.$B<span
+            class="math inline">4:</span>B<span
+            class="math inline">13; 0); <em>C</em><em>O</em><em>I</em><em>N</em><em>C</em><em>I</em><em>D</em><em>I</em><em>R</em>(<em>E</em>8;</span>’’.$C<span
+            class="math inline">3:</span>N$3;0));“No evaluado”)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="tip">
+            <p>Hemos utilizado referencias absolutas y relativas mixtas
+            para poder hacer una única fórmula y arrastrar las
+            otras.</p>
+            </div>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>
