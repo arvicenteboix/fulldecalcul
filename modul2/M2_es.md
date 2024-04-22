@@ -145,8 +145,17 @@ Todas estas fórmulas se pueden ir combinando entre ellas utilizando los parént
 Operar con los operadores fundamentales nos limita mucho nuestra capacidad de uso, por eso es mejor utilizar fórmulas. De manera que si quisiéramos sumar muchas celdas de una fila sería muy largo hacerlo de una en una, por eso se pueden utilizar fórmulas que utilizan todo un rango. Así por ejemplo si queremos sumar todas las celdas desde A1 a A10 podemos hacer uso de la fórmula **SUMA(A1:A10)**:
 
 ![Suma](img/1.png)
+
 :::note
 Para seleccionar el rango podemos hacer uso del ratón y seleccionar las celdas que queremos, automáticamente nos aparecerá el rango que queremos.
+:::
+
+:::important
+Es posible darle un nombre a un rango. De esta manera siempre nos será más fácil cuando hagamos operaciones poner solo el nombre del rango. Si pulsamos en el botón al lado podremos ver todos los nombres que tenemos definidos.
+
+Si vamos a *gestionar nombres* podremos ver una ventana con todos los nombres.
+
+![Nombre del rango](img/23c.png){ width=60% }
 :::
 
 ### Otros operadores esenciales
@@ -178,7 +187,7 @@ En el ejemplo anterior hemos visto un operador condicional. Los más comunes son
 
 - **SI.ERROR**: Esta función devuelve un valor especificado si una fórmula se evalúa como error; en caso contrario, devuelve el resultado de la fórmula. Por ejemplo =SI.ERROR(A2/B2; "Error en la división"), podría darse cuando B2 por ejemplo es 0.
 
-# Auto rellenar
+# Autorellenar
 
 La opción Auto rellenar es una función que permite ahorrar tiempo en realizar tareas repetitivas. Con esta función, puedes copiar valores, realizar series, copiar fórmulas, entre otros, simplemente arrastrando el ratón.
 
@@ -200,7 +209,12 @@ En una hoja de cálculo, las referencias a las celdas pueden ser absolutas, rela
 
 Estas referencias son útiles cuando se copian fórmulas a otras celdas, permitiendo ajustar automáticamente las referencias a las celdas.
 
-Fijémonos en el siguiente ejemplo, hemos puesto las fórmulas
+Fijémonos en el siguiente ejemplo, hemos puesto las siguientes fórmulas:
+
+```
+=B4*C4	=$B$4*C4
+```
+Si arrastramos las celdas para completar la resta de celdas, podemos ver cómo las de la primera columna sí cambian los valores, mientras que las de la segunda solo cambian los valores de C4, ya que B4 es absoluta porque le hemos puesto el símbolo $.
 
 ![Referencia absoluta](img/5.png)
 
@@ -224,7 +238,7 @@ En aquest exemple, `A3` mostrarà `31`, que és el nombre de dies entre l'1 de g
 
 Puedes cambiar el formato de las fechas en LibreOffice Calc yendo a `Formato -> Celdas -> Fecha`. Desde aquí, puedes seleccionar el formato de fecha que prefieras. También puedes crear un formato de fecha personalizado si ninguno de los formatos predefinidos se ajusta a tus necesidades.
 
-![Formato de fechas](img/6.png)
+![Formato de fechas](img/6.png){ width=60% }
 
 :::tip
 Puedes cambiar el idioma de las fechas también por si quieres que te aparezcan en otros idiomas al que tenemos configurado LibreOffice Calc.
@@ -260,7 +274,7 @@ Las últimas columnas contienen el número de calificaciones que se repiten a mo
 
 Las celdas donde vamos a poner las notas deben aceptar únicamente el texto de las notas:
 
-![Validar](img/12.png)
+![Validar](img/12.png){ width=60% }
 
 Poner los datos desplegables siempre en una lista en Datos > Validar no siempre es la mejor opción, por lo que se podría crear una hoja adicional donde se pongan todos los desplegables. Así crearemos una hoja llamada CONTROL, por ejemplo, y ahí añadiremos nuestros criterios de evaluación.
 
@@ -271,12 +285,12 @@ Poner los datos desplegables siempre en una lista en Datos > Validar no siempre 
 Al final de cada línea tenemos un cálculo del número de veces que se repite una calificación. Como ya sabéis no hace falta llenar todos los datos en todas las filas. Si jugamos con las referencias absolutas y relativas podemos hacer la siguiente fórmula en la celda AA5:
 
 ```markdown
-AA5: =CONTAR.SI($C5:$Z5;AA$4)
+O4: =CONTAR.SI($C4:$N4;O$3)
 ```
 
 
-* **\$C5:\$Z5**: Mantiene el rango entre la columna C y la Z, de manera que cuando arrastre el autocompletado a la derecha mantiene las columnas, pero el autocompletado hacia abajo las líneas sí que van cambiando.
-* **AA$4**: Deja la Columna absoluta y la fila relativa, así cuando desplace el autocompletado a la derecha, **4** se queda fijo y las siguientes referencias pasan a ser AB4, AC4, AD4 y AE4 que corresponden a: SF, BÉ, NT y EX.
+* **\$C4:\$N4**: Mantiene el rango entre la columna C y la Z, de manera que cuando arrastre el autocompletado a la derecha mantiene las columnas, pero el autocompletado hacia abajo las líneas sí que van cambiando.
+* **O$3**: Deja la Columna absoluta y la fila relativa, así cuando desplace el autocompletado a la derecha, **3** se queda fijo y las siguientes referencias pasan a ser P3, Q3, R3 y S3 que corresponden a: SF, BÉ, NT y EX.
 
 De esta manera solo creamos una fórmula y después podemos autocompletar a la derecha y después las 5 celdas hacia abajo y ya tenemos todas las fórmulas.
 
@@ -288,12 +302,12 @@ Muchas veces queremos trasladar valores de una celda a otra pero no queremos que
 
 ![Pegado especial](img/11.png)
 
-Si nos fijamos en la ventana que nos aparece en este caso, tenemos seleccionado solo Formatos, de manera que solo se pegarán los formatos de la celda. Hay otras opciones interesantes, como podemos ver como es:
+Si nos fijamos en la ventana que nos aparece en este caso, tenemos seleccionado solo Formatos, de manera que solo se pegarán los formatos de la celda. Hay otras opciones interesantes, como podemos ver tenemos:
 
 * **Trasponer**: Cambia las filas por columnas.
 * **Omitir celdas vacías**: Las celdas vacías no las pega.
-* **Desplazar celdas**: Si queremos que en lugar de hacerlo encima de lo que hay, estamos añadiendo una columna/fila nueva.
-* **Operaciones**: Si queremos sumar a los valores presentes (u otra operación).
+* **Desplazar celdas**: Si queremos que en lugar de hacerlo encima de lo que hay, estamos añadiendo una columna/fila nueva desplazando la que ya está.
+* **Operaciones**: Si queremos sumar a los valores presentes (u otra operación). Por ejemplo, en lugar de pegar, los nuevos resultados los suma.
 
 ## Filtro automático
 
@@ -303,9 +317,16 @@ Podemos seleccionar una fila (o parte de ella) y pulsar el siguiente icono:
 
 También pueden hacer uso de la combinación de teclas **Ctrl+Shift+L**. De esta manera podemos crear un filtro automático 
 
-![Filtro automático](img/14.png)
+![Filtro automático](img/14.png){ width=30% }
 
 El filtro automático nos permite filtrar una series de celdas dados una serie de criterios, de manera que nos permite interactuar rápidamente con nuestra tabla.
+
+:::tip
+Si nos fijamos en la siguiente imagen, podemos ver que si seleccionamos esta celda, aparecen dos botones, uno corresponde a la selección del valor de la celda y el otro al filtro automático.
+
+![Filtro y validar](img/24.png)
+
+:::
 
 ## Filas alternas
 
@@ -314,11 +335,11 @@ Una de las cosas que habréis visto es que si queremos crear filas alternas de d
 * Seleccionando las filas alternadamente y aplicar el formato.
 * O bien a formato condicional y pegado especial.
 
-![Detectamos fila](img/15.png)
+![Detectamos fila](img/15.png){ width=70% }
 
 Y definimos el formato:
 
-![Formato](img/16.png)
+![Formato](img/16.png){ width=70% }
 
 :::tip
 Podemos ver que estamos utilizando dos nuevos tipos de fórmulas.
@@ -328,17 +349,20 @@ Podemos ver que estamos utilizando dos nuevos tipos de fórmulas.
 
 Aplicar a múltiples celdas:
 
-![Pegado especial](img/17.png)
+![Pegado especial](img/17.png){ width=80% }
 
 Esta es la actividad que tendrás que presentar en este módulo.
 
 
-# Segon full
+# Segundo hoja
 
-En aquest cas anem a crear un segon full on tindrem un desplegable on podrem escollir el nom del nostre alumne i traslladarà les notes que hem posat a la nova taula. En aquest full tenim la limitació que només agafarà un CA, però, es podria fer que n'agafara més. Els fulls ens quedaran de la següent manera.
-![Alumnos](img/18.png)
+En este caso vamos a crear una segunda hoja donde tendremos un desplegable para seleccionar el nombre de nuestro alumno y transferirá las notas que hemos puesto a la nueva tabla. En esta hoja tenemos la limitación de que solo tomará un CA, pero se podría hacer que tomara más. Las hojas quedarán de la siguiente manera.
 
-![Notas](img/18.png)
+![Alumnos](img/7.png)
+
+La segunda hoja serà como la siguiente:
+
+![Notas](img/25.png)
 
 :::important
 Se trata de una hoja para practicar, es difícil en este momento sacarle una utilidad. A medida que avancemos en el curso iremos ampliando nuestros conocimientos para poder hacer cosas más concretas.
@@ -402,12 +426,13 @@ Al final no hemos usado esta fórmula, pero es sencilla de recordar y nos hará 
 
 Antes de hacer la hoja y hacer una fórmula que contenga todas las fórmulas integradas es importante ir tratando de la hoja poco a poco. Primero una columna que nos busque la fila, luego otra que busque la columna, la NOTA y añadimos el SI.ERROR. Cuando tengamos todos los pasos claros podemos crear una fórmula donde esté todo junto y borrar el resto de columnas:
 
-![Ejemplo de proceso de trabajo](img/21.png)
+![Ejemplo de proceso de trabajo](img/26.png)
+
 En esta tabla tenemos cómo quedarían las fórmulas en la primera línea. Podemos ver que una vez conseguimos la fila, la columna, podemos obtener ya la nota con índice referenciando a las celdas F8 y G8 que son las anteriores.
 
 | FILA | Columna | NOTA |	Con SI.ERROR | TODO JUNTO |
 | ---- | ---- | ---- | ---- | -------- | 
-| `=COINCIDIR($C$3;''.$B4:$B$13;0)` |	`=COINCIDIR(E8;''.$C$3:$N$3;0)` | `=INDICE(''.$C$4:$N$13;F8;G8)` | `=SI.ERROR(INDICE(''.$C$4:$N$13;F8;G8);"No avaluat")` | `=SI.ERROR(INDICE($''.$C$4:$N$13;COINCIDIR($C$3;$''.$B$4:$B$13;0);COINCIDIR(E8;$''.$C$3:$N$3;0));"No avaluat")` |
+| `=COINCIDIR($C$3;Alumnes.$B4:$B$13;0)` |	`=COINCIDIR(E8;Alumnes.$C$3:$N$3;0)` | `=INDICE(Alumnes.$C$4:$N$13;F8;G8)` | `=SI.ERROR(INDICE(Alumnes.$C$4:$N$13;F8;G8);"No avaluat")` | `=SI.ERROR(INDICE($Alumnes.$C$4:$N$13;COINCIDIR($C$3;$Alumnes.$B$4:$B$13;0);COINCIDIR(E8;$Alumnes.$C$3:$N$3;0));"No avaluat")` |
 
 :::tip
 Hemos utilizado referencias absolutas y relativas mixtas para poder hacer una única fórmula y arrastrar las otras.

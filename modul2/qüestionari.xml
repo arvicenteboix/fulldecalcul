@@ -1,0 +1,214 @@
+
+<quiz>
+    <question type="multichoice">
+        <name>
+            <text>Quin símbol s'ha de posar davant d'una cel·la a LibreOffice per utilitzar una fórmula?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin símbol s'ha de posar davant d'una cel·la a LibreOffice per utilitzar una fórmula?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. -</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. +</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. =</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. %</text>
+        </answer>
+    </question>
+    
+    <!-- Add the rest of the questions here -->
+    
+    <question type="multichoice">
+        <name>
+            <text>2. Quin operador s'utilitza per calcular la diferència entre dues cel·les a LibreOffice?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin operador s'utilitza per calcular la diferència entre dues cel·les a LibreOffice?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. +</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. /</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. *</text>
+        </answer>
+        <answer fraction="100">
+            <text>d. -</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>3. Què fa l'operador "*" a LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què fa l'operador "*" a LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Afegeix dues cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Resta dues cel·les</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. Multiplica dues cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Divideix dues cel·les</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>4. A LibreOffice Calc, què fa l'operador "%"?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>A LibreOffice Calc, què fa l'operador "%"?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Troba el percentatge d'un valor</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Multiplica dues cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Divideix dues cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Afegeix dues cel·les</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>5. Què representa el símbol "^" a LibreOffice quan s'utilitza en una fórmula?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què representa el símbol "^" a LibreOffice quan s'utilitza en una fórmula?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Exponencial</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Arrel quadrada</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Divisió</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Suma</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>6. Quina funció a LibreOffice s'utilitza per calcular la mitjana de les cel·les?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quina funció a LibreOffice s'utilitza per calcular la mitjana de les cel·les?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. MAX</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. MIN</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. PROMEDIO</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. CONTAR.SI</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>7. En treballar amb dates a LibreOffice, quina funció retorna la data actual?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>En treballar amb dates a LibreOffice, quina funció retorna la data actual?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. AHORA()</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. MAX</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. HOY()</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. FECHA()</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>8. Quina funció a LibreOffice s'utilitza per comptar el nombre de cel·les que compleixen un criteri específic?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quina funció a LibreOffice s'utilitza per comptar el nombre de cel·les que compleixen un criteri específic?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. SI</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. SIFECHA</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. CONTAR.SI</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. DIASEMANA</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>9. Què fa la funció SI.ERROR de LibreOffice?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què fa la funció SI.ERROR de LibreOffice?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Retorna un valor si una fórmula s'avalua com a error</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Multiplica valors de cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Divideix valors de cel·les</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Suma valors de cel·les</text>
+        </answer>
+    </question>
+    
+    <question type="multichoice">
+        <name>
+            <text>10. Com podem aplicar colors alterns a les files a LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Com podem aplicar colors alterns a les files a LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Seleccionant les files i canviant el color de la font</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Utilitzant format condicional</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. Seleccionant les files i aplicant un estil de cel·la</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Aplicant colors alterns de fila a les opcions de format</text>
+        </answer>
+    </question>
+</quiz>

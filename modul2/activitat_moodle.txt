@@ -1,0 +1,41 @@
+<p dir="ltr" style="text-align: left;">En esta tarea continuaremos trabajando con la hoja de cálculo que creamos en la tarea 1. La hoja de cálculo deberá contener 3 hojas llamadas:<br></p>
+<ul dir="ltr">
+    <li style="text-align: left;">Alumnos<br></li>
+    <li style="text-align: left;">Hoja intermedia</li>
+    <li style="text-align: left;">NOTAS</li>
+</ul>
+<div>La hoja "Alumnos" será de la siguiente manera:</div>
+<div><br></div>
+<div><img src="https://aules.edu.gva.es/formaciodelprofessorat/draftfile.php/1412/user/draft/279498124/7.png" alt="aa" width="1480" height="287" class="img-fluid atto_image_button_text-bottom"><br></div>
+<div><br></div>
+<div>La hoja tiene una tabla con alumnos donde agregaremos las notas para cada criterio de evaluación. Las notas solo pueden ser EX, NT, BE, SF e IN.</div>
+<div><br></div>
+<div>Los criterios de evaluación solo pueden ser los siguientes: CA 1.1&nbsp;&nbsp;&nbsp; CA 1.2&nbsp;&nbsp;&nbsp; CA 1.3&nbsp;&nbsp;&nbsp; CA 1.4&nbsp;&nbsp;&nbsp; CA 1.5&nbsp;&nbsp;&nbsp; CA 1.6&nbsp;&nbsp;&nbsp; CA 1.7&nbsp;&nbsp;&nbsp; CA 2.1&nbsp;&nbsp;&nbsp; CA 2.2&nbsp;&nbsp;&nbsp; CA 2.3&nbsp;&nbsp;&nbsp; CA 2.4&nbsp;&nbsp;&nbsp; CA 2.5&nbsp;&nbsp;&nbsp; CA 2.6.<br></div>
+<div><br></div>
+<div>Además, en cada una de las columnas tendremos un botón de filtro automático, de manera que cuando pulsemos la celda del filtro nos aparezcan los dos botones, para filtrar o para seleccionar:</div>
+<div><br></div>
+<div><img src="https://aules.edu.gva.es/formaciodelprofessorat/draftfile.php/1412/user/draft/279498124/24.png" alt="aa" width="129" height="66" class="img-fluid atto_image_button_text-bottom"><br></div>
+<div><br></div>
+<div>La hoja intermedia tendrá una celda donde podremos seleccionar uno de los alumnos que tenemos en la hoja anterior, luego habrá una tabla que dispondrá de varias columnas:</div>
+<div><br></div>
+<div>
+    <ul>
+        <li>FILA: Para calcular el número de fila en la que se encuentra el alumno seleccionado.</li>
+        <li>Columna: Para calcular el número de columna en la que se encuentra el criterio de evaluación de la fila.</li>
+        <li>NOTA: La nota correspondiente a ese alumno y ese criterio.</li>
+        <li>SI.ERROR: Donde agregaremos a la fórmula que hemos creado en NOTA la fórmula SI.ERROR, para que nos devuelva el valor "No evaluado" si ese criterio no está en nuestra hoja de alumnos.</li>
+        <li>TOT JUNT: Se tratará de hacer lo mismo que con la columna anterior pero haciendo el cálculo directo sin celdas intermedias.</li>
+    </ul>
+    <div>El resultado será similar a este:</div>
+    <div><br></div>
+    <div><img src="https://aules.edu.gva.es/formaciodelprofessorat/draftfile.php/1412/user/draft/279498124/2.png" alt="aa" width="636" height="381" class="img-fluid atto_image_button_text-bottom"><br></div>
+    <div><br></div>
+</div>
+<div><br></div>
+<div>Finalmente tendremos la hoja "NOTAS", donde haremos lo mismo que en la hoja anterior pero solo pondremos la columna TOT JUNT.</div>
+<div><br></div>
+<div><img src="https://aules.edu.gva.es/formaciodelprofessorat/draftfile.php/1412/user/draft/279498124/3.png" alt="aaa" width="400" height="371" class="img-fluid atto_image_button_text-bottom"><br></div>
+<div><br></div>
+<p dir="ltr" style="text-align: left;">En estas hojas deben hacer exactamente lo que hemos detallado en los apuntes, así que es necesario haber leído los apuntes del curso para poder realizar la tarea. Pueden descargar la siguiente hoja por si no quieren utilizar la suya.</p>
+<p dir="ltr" style="text-align: left;"><a href="https://aules.edu.gva.es/formaciodelprofessorat/draftfile.php/1412/user/draft/279498124/activitat2.ods">HOJA DE CÁLCULO PARA LLENAR</a><br></p>
+<p dir="ltr" style="text-align: left;">NOTA: Pueden entregar una versión de su hoja de cálculo creada en la tarea 1, no tiene que ser la misma y tienen total libertad para adaptar la hoja como deseen.<br></p>
