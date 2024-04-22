@@ -149,12 +149,12 @@ Aquí tens una breu explicació de les fórmules que has demanat:
 
 3. **AGREGAR**: Aquesta funció retorna un agregat en una llista o base de dades. Pot aplicar diferents funcions d'agregació a la llista o base de dades, amb l'opció d'ometre les files ocultes i els valors d'error. La seva sintaxi és `AGREGAR (núm_funció; opcions; ref1; [ref2]; …)` per a la forma de referència, i `AGREGAR (núm_funció, opcions, matriu, [k])` per a la forma matricial.
 
-4. **&**: Encara que no es tracte d'un funció pròpiament dita, aquesta expressió ens serveix per a concatenar valors. Per exemple, si tenim els següents valors:
+4. **\&**: Encara que no es tracte d'un funció pròpiament dita, aquesta expressió ens serveix per a concatenar valors. Per exemple, si tenim els següents valors:
 
 ```
 A1: "Hola"
 A2: 5
-A3: =A1&A2
+A3: =A1\&A2
 ```
 El resultat de A3 serà Hola5.
 
@@ -185,7 +185,7 @@ Per exemple, si tens el següent rang de cel·les a la columna A i la funció `C
 ```
 A1: 1
 A2: 2
-A3: #¡DIV/0!
+A3: DIV/0
 A4: 4
 A5: 5
 ```
@@ -255,8 +255,8 @@ En aquest cas veurem que COINCIDIR en realitat no ens torna un valor, sino un ll
 
 Recordem que la formulació de és COINCIDIR("Criteri de búsqueda","Matriu de búsqueda", 0 per a valor exacte), en aquest cas tenim els següents valors:
 
-* Criteri de búsqueda: $M$5&COLUMNA($A2:$L2) unim el valor "CA 1.1" als números de les columnes
-* Matriu de búsqueda: $A2:$L2&COLUMNA($A2:$L2) unim el valor dels criteris CA 1.1	CA 1.2	CA 2.1... als número de les columnes:
+* Criteri de búsqueda: $M$5\&COLUMNA($A2:$L2) unim el valor "CA 1.1" als números de les columnes
+* Matriu de búsqueda: $A2:$L2\&COLUMNA($A2:$L2) unim el valor dels criteris CA 1.1	CA 1.2	CA 2.1... als número de les columnes:
 
 Tenint aquests resultats:
 
@@ -285,7 +285,7 @@ En primer lloc tractarem de traure el següent llistat:
 Per a tal fi utilitzarem la següent fórmula:
 
 ```excel
-=K.ESIMO.MENOR(COINCIDIR(E8&COLUMNA(CRITERIS)-2;CRITERIS&COLUMNA(CRITERIS)-2;0);1)
+=K.ESIMO.MENOR(COINCIDIR(E8\&COLUMNA(CRITERIS)-2;CRITERIS\&COLUMNA(CRITERIS)-2;0);1)
 ```
 
 Fixeu-vos que tenim un -2 tant al Criteri com a la matriu de búsqueda. Això és perquè el nostre rang comença en a tercera columna, i volem ajustar-ho per a tindre el llistat amb de COLUMNA amb {1.2.3.4...}. Recordem que el 0 és per a valor exacte i el 1 del final es per a traure el primer número més xicotet.
@@ -301,7 +301,7 @@ Hem triat K.ESIMO.MENOR enlloc de K.ESIMO.MAYOR, per a ordenar de menor a major.
 Canviant la fórmula d'abans a AGREGAR, recordem que K.ESIMO.MENOR és la fórmula 15 i li afegim l'opció 6, que es que no tinga en compte els valors no vàlids, per tant ens quedaria una fórmula:
 
 ```
-=AGREGAR(15;6;COINCIDIR(E8&COLUMNA(CRITERIS)-2;CRITERIS&COLUMNA(CRITERIS)-2;0);1)
+=AGREGAR(15;6;COINCIDIR(E8\&COLUMNA(CRITERIS)-2;CRITERIS\&COLUMNA(CRITERIS)-2;0);1)
 ```
 
 Podem veure el resultat ací:
@@ -323,7 +323,7 @@ Si agafes A1, tracta que estiga buida, busca sempre una línia que no puga posar
 Així la fórmula quedaría de la següent manera:
 
 ```excel
-=AGREGAR(15;6;COINCIDIR($E8&COLUMNA(CRITERIS)-2;CRITERIS&COLUMNA(CRITERIS)-2;0);COLUMNA(A1))
+=AGREGAR(15;6;COINCIDIR($E8\&COLUMNA(CRITERIS)-2;CRITERIS\&COLUMNA(CRITERIS)-2;0);COLUMNA(A1))
 ```
 
 Finalment només ens caldria afegir SI.ERROR per a que el valor que ens donara fos més "humà".
