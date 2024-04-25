@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+          font-size: inherit;
+          width: 0.8em;
+          margin: 0 0.8em 0.2em -1.6em;
+          vertical-align: middle;
+        }
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de
+càlcul</h1>
+            <!--        <p class="subtitle">Treballant amb el full de
+càlcul, relacions</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente
+Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducció" id="toc-introducció"><span
+class="toc-section-number">1</span> INTRODUCCIÓ</a></li>
+<li><a href="#introducció-teòrica" id="toc-introducció-teòrica"><span
+class="toc-section-number">2</span> Introducció teòrica</a>
+<ul>
+<li><a href="#buscar-coincidències" id="toc-buscar-coincidències"><span
+class="toc-section-number">2.1</span> Buscar coincidències</a></li>
+<li><a href="#implementació-al-full-de-càlcul"
+id="toc-implementació-al-full-de-càlcul"><span
+class="toc-section-number">2.2</span> Implementació al full de
+càlcul</a>
+<ul>
+<li><a href="#k.enesimo.menor-i-k.enesimo.mayor"
+id="toc-k.enesimo.menor-i-k.enesimo.mayor"><span
+class="toc-section-number">2.2.1</span> K.ENESIMO.MENOR i
+K.ENESIMO.MAYOR</a></li>
+<li><a href="#agregar" id="toc-agregar"><span
+class="toc-section-number">2.2.2</span> AGREGAR</a></li>
+<li><a href="#coincidir" id="toc-coincidir"><span
+class="toc-section-number">2.2.3</span> COINCIDIR</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#full-de-càlcul" id="toc-full-de-càlcul"><span
+class="toc-section-number">3</span> Full de càlcul</a>
+<ul>
+<li><a href="#k.esimo.menor" id="toc-k.esimo.menor"><span
+class="toc-section-number">3.1</span> K.ESIMO.MENOR</a></li>
+<li><a href="#agregar-1" id="toc-agregar-1"><span
+class="toc-section-number">3.2</span> AGREGAR</a></li>
+<li><a href="#ajustos-finals" id="toc-ajustos-finals"><span
+class="toc-section-number">3.3</span> Ajustos finals</a></li>
+</ul></li>
+<li><a href="#excel" id="toc-excel"><span
+class="toc-section-number">4</span> Excel</a>
+<ul>
+<li><a href="#copilot" id="toc-copilot"><span
+class="toc-section-number">4.1</span> Copilot</a></li>
+<li><a href="#la-nostra-pàgina-intermèdia"
+id="toc-la-nostra-pàgina-intermèdia"><span
+class="toc-section-number">4.2</span> La nostra pàgina
+intermèdia</a></li>
+<li><a href="#fila" id="toc-fila"><span
+class="toc-section-number">4.3</span> FILA</a></li>
+<li><a href="#columna" id="toc-columna"><span
+class="toc-section-number">4.4</span> COLUMNA</a></li>
+<li><a href="#nota-i-si.error" id="toc-nota-i-si.error"><span
+class="toc-section-number">4.5</span> NOTA i SI.ERROR</a></li>
+</ul></li>
+<li><a href="#tot-junt" id="toc-tot-junt"><span
+class="toc-section-number">5</span> TOT JUNT</a></li>
+<li><a href="#agregar-2" id="toc-agregar-2"><span
+class="toc-section-number">6</span> AGREGAR</a>
+<ul>
+<li><a href="#agregar-amb-excel" id="toc-agregar-amb-excel"><span
+class="toc-section-number">6.1</span> AGREGAR amb Excel</a></li>
+</ul></li>
+<li><a href="#conclusions" id="toc-conclusions"><span
+class="toc-section-number">7</span> Conclusions</a></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Aquest document està subjecte a una llicència creative
+            commons que permet la seua difusió i ús comercial
+            reconeixent sempre l’autoria del seu creador. Aquest
+            document es troba per a ser modificat al següent repositori
+            de github: <!-- CANVIAR L'ENLLAÇ --> <a
+            href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a>
+            </p>
+            <h1 data-number="1" id="introducció"><span
+            class="header-section-number">1</span> INTRODUCCIÓ</h1>
+            <p>En esta unitat anem a seguir utilitzant funcions i veurem
+            com poder traure relacions coincidents entre diferents
+            rangs. Probablement esta siga la unitat més complexa de
+            totes, ja que utilitzarem funcions d’una manera bastant
+            avançada. Però no vos preocupeu que a la tasca vos demanarem
+            exactament el que hem fet ací.</p>
+            <p>Partirem del full en el qual estem treballant, aquest
+            full ens està relacionant criteris d’avaluació amb
+            competències específiques (no vos estem demanant que seguiu
+            la normativa, insistim que sempre podeu adaptar les
+            entregues a la vostra realitat).</p>
+            <p>Així, una de les coses que veurem en aquest cas, és… Què
+            passa si tenim més d’un criteri d’avaluació que es repetix
+            en diferents situacions d’aprenentatge? Volem tindre una
+            llista on estiguen totes les qualificacions reflectides.
+            Pues és precisament això el que veurem en aquest mòdul. Per
+            això parlem de relacions, anem a relacionar dades entre
+            elles.</p>
+            <p>La unitat té una primera part que ens permetrà resoldre
+            fer la fórmula amb Libreoffice Calc, podeu seguir el mateix
+            procediment amb Excel. Després farem el mateix procediment
+            amb ajuda de Copilot, un assistent GPT de Microsoft, on
+            podrem veure les seues possibilitats i les limitacions. Al
+            mateix temps, introduirem algunes de les diferències que
+            presenta Excel respecte a Libreoffice Calc, i en aquest cas
+            amb Excel pot ser més senzill.</p>
+            <h1 data-number="2" id="introducció-teòrica"><span
+            class="header-section-number">2</span> Introducció
+            teòrica</h1>
+            <p>És possible que no entengueu aquesta introducció teòrica,
+            però és important que tingueu clar el concepte que anem a
+            tractar. Cal conèixer els conceptes teòrics del que estem
+            fem, si apliquem la fórmula suma, per exemple, és perquè
+            sabem que els valors que estem sumant han de sumar-se.</p>
+            <h2 data-number="2.1" id="buscar-coincidències"><span
+            class="header-section-number">2.1</span> Buscar
+            coincidències</h2>
+            <p>En el nostre cas imaginem-nos que tenim el següent full
+            amb un criteri d’avaluació (CA 1.1) que es repetix diverses
+            vegades, hauríem de buscar el valor que té eixa qualificació
+            i posar tots els valors seguits en una línia.</p>
+            <figure>
+            <img src="img/1.png" style="width:70.0%"
+            alt="Full de càlcul" />
+            <figcaption aria-hidden="true">Full de càlcul</figcaption>
+            </figure>
+            <p>I com farem eixa búsqueda? Comparem dos files, en primer
+            lloc afegirem el número de columna al rang on tenim tots els
+            criteris, per exemple:</p>
+            <table style="width:100%;">
+            <colgroup>
+            <col style="width: 13%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Línia criteris</th>
+            <th>CA 1.1</th>
+            <th>CA 1.2</th>
+            <th>CA 2.1</th>
+            <th>CA 2.4</th>
+            <th>CA 1.5</th>
+            <th>CA 1.1</th>
+            <th>CA 1.2</th>
+            <th>CA 1.1</th>
+            <th>CA 2.2</th>
+            <th>CA 2.3</th>
+            <th>CA 1.4</th>
+            <th>CA 1.7</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Criteri+nº columna</td>
+            <td>CA 1.11</td>
+            <td>CA 1.22</td>
+            <td>CA 2.13</td>
+            <td>CA 2.44</td>
+            <td>CA 1.55</td>
+            <td>CA 1.16</td>
+            <td>CA 1.27</td>
+            <td>CA 1.18</td>
+            <td>CA 2.29</td>
+            <td>CA 2.310</td>
+            <td>CA 1.411</td>
+            <td>CA 1.712</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="info">
+            <p>Fixem-nos que el que estem fent és afegir a la cel·la de
+            cada criteri el número de columna on està.</p>
+            </div>
+            <p>I, per altra banda afegirem al criteri que estem buscant
+            (CA 1.1) també el número de columna:</p>
+            <table style="width:100%;">
+            <colgroup>
+            <col style="width: 13%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            <col style="width: 6%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Criteri</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th>CA 1.1</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Criteri+nº columna</td>
+            <td>CA 1.11</td>
+            <td>CA 1.12</td>
+            <td>CA 1.13</td>
+            <td>CA 1.14</td>
+            <td>CA 1.15</td>
+            <td>CA 1.16</td>
+            <td>CA 1.17</td>
+            <td>CA 1.18</td>
+            <td>CA 1.19</td>
+            <td>CA 1.110</td>
+            <td>CA 1.111</td>
+            <td>CA 1.112</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="info">
+            <p>Fixem-nos que el que estem fent és afegir a cada criteri
+            el número de columna on està i ho repetim 12 vegades.</p>
+            </div>
+            <p>Si comparem ambdós:</p>
+            <table style="width:100%;">
+            <colgroup>
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            <col style="width: 7%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th><strong>CA 1.11</strong></th>
+            <th>CA 1.22</th>
+            <th>CA 2.13</th>
+            <th>CA 2.44</th>
+            <th>CA 1.55</th>
+            <th><strong>CA 1.16</strong></th>
+            <th>CA 1.27</th>
+            <th><strong>CA 1.18</strong></th>
+            <th>CA 2.29</th>
+            <th>CA 2.310</th>
+            <th>CA 1.411</th>
+            <th>CA 1.712</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td><strong>CA 1.11</strong></td>
+            <td>CA 1.12</td>
+            <td>CA 1.13</td>
+            <td>CA 1.14</td>
+            <td>CA 1.15</td>
+            <td><strong>CA 1.16</strong></td>
+            <td>CA 1.17</td>
+            <td><strong>CA 1.18</strong></td>
+            <td>CA 1.19</td>
+            <td>CA 1.110</td>
+            <td>CA 1.111</td>
+            <td>CA 1.112</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Podem veure que els valors coincidents són els valors que
+            es repetixen. En aquest cas tenim que la columna 1, 6 i 8
+            contenen els criteris d’avaluació que es repetixen.</p>
+            <div class="warning">
+            <p>Hi han moltes maneres d’extraure els valors, aquesta és
+            només una d’exemple. El raonament s’ha seguit basant-se en
+            les fórmules que es coneixen. Cal pensar que existeixen al
+            voltant de 400 fórmules en qualsevol full de càlcul.</p>
+            </div>
+            <h2 data-number="2.2"
+            id="implementació-al-full-de-càlcul"><span
+            class="header-section-number">2.2</span> Implementació al
+            full de càlcul</h2>
+            <p>Les fórmules que anem a introduir per a aconseguir aquest
+            propòsit són les següents:</p>
+            <ol type="1">
+            <li><p><strong>K.ENESIMO.MENOR</strong>: Aquesta funció
+            retorna el k-èsim valor més petit d’un conjunt de dades. La
+            seva sintaxi és <code>K.ENESIMO.MENOR (matriu;k)</code>, on
+            <code>matriu</code> és l’array o rang de dades numèriques
+            del qual vols determinar el k-èsim valor més petit, i
+            <code>k</code> és la posició, dins de l’array o rang de
+            dades, dels dades que es retornaran, determinada a partir
+            dels valors més petits.</p></li>
+            <li><p><strong>K.ENESIMO.MAYOR</strong>: Aquesta funció
+            retorna el k-èsim valor més gran d’un conjunt de dades. La
+            seva sintaxi és <code>K.ENESIMO.MAYOR (matriu;k)</code>, on
+            <code>matriu</code> és l’array o rang de dades del qual vols
+            determinar el k-èsim valor més gran, i <code>k</code> és la
+            posició (a partir del valor més gran), dins de l’array o
+            rang de cel·les, de les dades que es retornaran.</p></li>
+            <li><p><strong>AGREGAR</strong>: Aquesta funció retorna un
+            agregat en una llista o base de dades. Pot aplicar diferents
+            funcions d’agregació a la llista o base de dades, amb
+            l’opció d’ometre les files ocultes i els valors d’error. La
+            seva sintaxi és
+            <code>AGREGAR (núm_funció; opcions; ref1; [ref2]; …)</code>
+            per a la forma de referència, i
+            <code>AGREGAR (núm_funció, opcions, matriu, [k])</code> per
+            a la forma matricial.</p></li>
+            <li><p><strong>&amp;</strong>: Encara que no es tracte d’una
+            funció pròpiament dita, aquesta expressió ens serveix per a
+            concatenar valors. Per exemple, si tenim els següents
+            valors:</p></li>
+            </ol>
+            <pre><code>A1: &quot;Hola&quot;
+A2: 5
+A3: =A1\&amp;A2</code></pre>
+            <p>El resultat de A3 serà Hola5.</p>
+            <p>Bé aquestes són totes les definicions dels manuals, però
+            anem a analitzar cadascuna d’elles amb un exemple.</p>
+            <h3 data-number="2.2.1"
+            id="k.enesimo.menor-i-k.enesimo.mayor"><span
+            class="header-section-number">2.2.1</span> K.ENESIMO.MENOR i
+            K.ENESIMO.MAYOR</h3>
+            <p>En el següents exemples podem extraure el segon valor més
+            xicotet del següent llistat, o el segon valor més gran.</p>
+            <figure>
+            <img src="img/2.png" style="width:70.0%"
+            alt="Segon valor més gran" />
+            <figcaption aria-hidden="true">Segon valor més
+            gran</figcaption>
+            </figure>
+            <figure>
+            <img src="img/3.png" style="width:70.0%"
+            alt="Segon valor més xicotet" />
+            <figcaption aria-hidden="true">Segon valor més
+            xicotet</figcaption>
+            </figure>
+            <p>Podem afegir la fórmula SI.ERROR per a que ens done un
+            altre valor en cas que demanem algun valor que no està a la
+            llista:</p>
+            <figure>
+            <img src="img/4.png" style="width:70.0%"
+            alt="Amb SI.ERROR" />
+            <figcaption aria-hidden="true">Amb SI.ERROR</figcaption>
+            </figure>
+            <p>Si el llistat que agafem té una cel·la amb error ens
+            tornarà un error.</p>
+            <h3 data-number="2.2.2" id="agregar"><span
+            class="header-section-number">2.2.2</span> AGREGAR</h3>
+            <p>La funció <code>AGREGAR</code> a Excel és una funció
+            auxiliar que ens ajuda a implementar altres funcions d’Excel
+            com són <code>PROMEDIO</code>, <code>SUMAR</code>
+            ,<code>CONTAR</code>, <code>K.ENESIMO.MENOR</code> y mayor,
+            etc… però fent que aquestes funcions no prenguin en compte
+            els errors.</p>
+            <p>La sintaxi de la funció <code>AGREGAR</code> és la
+            següent:
+            <code>AGREGAR (núm_funció; opcions; ref1; [ref2]; …)</code>.
+            Cal conèixer les taules de les funcions que pot utilitzar la
+            funció agregar ja que cada funció ve representada per un
+            número (nú,_funció). Així tenim que la fórmula
+            <code>AGREGAR</code> pot utilitzar les següents funcions<a
+            href="#fn1" class="footnote-ref" id="fnref1"
+            role="doc-noteref"><sup>1</sup></a>,</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Núm_funció</th>
+            <th>Funció</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>1</td>
+            <td>PROMEDIO</td>
+            </tr>
+            <tr class="even">
+            <td>2</td>
+            <td>CONTAR</td>
+            </tr>
+            <tr class="odd">
+            <td>3</td>
+            <td>CONTARA</td>
+            </tr>
+            <tr class="even">
+            <td>4</td>
+            <td>MAX</td>
+            </tr>
+            <tr class="odd">
+            <td>5</td>
+            <td>MIN</td>
+            </tr>
+            <tr class="even">
+            <td>6</td>
+            <td>PRODUCTO</td>
+            </tr>
+            <tr class="odd">
+            <td>7</td>
+            <td>DESVEST.M</td>
+            </tr>
+            <tr class="even">
+            <td>8</td>
+            <td>DESVEST.P</td>
+            </tr>
+            <tr class="odd">
+            <td>9</td>
+            <td>SUMA</td>
+            </tr>
+            <tr class="even">
+            <td>10</td>
+            <td>VAR.M</td>
+            </tr>
+            <tr class="odd">
+            <td>11</td>
+            <td>VAR.P</td>
+            </tr>
+            <tr class="even">
+            <td>12</td>
+            <td>MEDIANA</td>
+            </tr>
+            <tr class="odd">
+            <td>13</td>
+            <td>MODA.UNO</td>
+            </tr>
+            <tr class="even">
+            <td>14</td>
+            <td><strong>K.ESIMO.MAYOR</strong></td>
+            </tr>
+            <tr class="odd">
+            <td>15</td>
+            <td><strong>K.ESIMO.MENOR</strong></td>
+            </tr>
+            <tr class="even">
+            <td>16</td>
+            <td>PERCENTIL.INC</td>
+            </tr>
+            <tr class="odd">
+            <td>17</td>
+            <td>CUARTIL.INC</td>
+            </tr>
+            <tr class="even">
+            <td>18</td>
+            <td>PERCENTIL.EXC</td>
+            </tr>
+            <tr class="odd">
+            <td>19</td>
+            <td>CUARTIL.EXC</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>I aquí tenim les opcions que podem utilitzar:</p>
+            <table>
+            <colgroup>
+            <col style="width: 50%" />
+            <col style="width: 50%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Opció</th>
+            <th>Comportament</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>0 o omitit</td>
+            <td>Omet funcions AGREGAR i SUBTOTALES anidades</td>
+            </tr>
+            <tr class="even">
+            <td>1</td>
+            <td>Omet files ocultes i funcions AGREGAR i SUBTOTALES
+            anidades</td>
+            </tr>
+            <tr class="odd">
+            <td>2</td>
+            <td>Omet valors d’error i funcions AGREGAR i SUBTOTALES
+            anidades</td>
+            </tr>
+            <tr class="even">
+            <td>3</td>
+            <td>Omet files ocultes, valors d’error i funcions AGREGAR i
+            SUBTOTALES anidades</td>
+            </tr>
+            <tr class="odd">
+            <td>4</td>
+            <td>No omet res</td>
+            </tr>
+            <tr class="even">
+            <td>5</td>
+            <td>Omet files ocultes</td>
+            </tr>
+            <tr class="odd">
+            <td>6</td>
+            <td>Omet valors d’error</td>
+            </tr>
+            <tr class="even">
+            <td>7</td>
+            <td>Omet files ocultes i valors d’error</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Per exemple, si tens el següent rang de cel·les a la
+            columna A i la funció <code>CONTAR</code> fent un recompte
+            de les cel·les que conformen el rang:</p>
+            <pre class="excel"><code>A1: 1
+A2: 2
+A3: DIV/0
+A4: 4
+A5: 5</code></pre>
+            <p>Si ocultes la fila 4, la funció <code>CONTAR</code>
+            seguirà retornant com a resultat el valor 5. No obstant
+            això, si vols que la funció <code>CONTAR</code> no prengui
+            en compte les cel·les ocultes, llavors pots utilitzar la
+            funció <code>AGREGAR</code> i executar la funció
+            <code>CONTAR</code> sense considerar la fila oculta:</p>
+            <pre class="excel"><code>=AGREGAR(2;5;A1:A5)</code></pre>
+            <p>En aquest cas, la funció <code>AGREGAR</code> està
+            executant la funció <code>CONTAR</code> (que es representa
+            amb el número 2 en el primer argument de la funció
+            <code>AGREGAR</code>) sobre el rang A1:A5, però està
+            ignorant les cel·les ocultes (que es representa amb el
+            número 5 en el segon argument de la funció
+            <code>AGREGAR</code>). Com a resultat, la funció
+            <code>AGREGAR</code> retornarà el valor 4, ja que està
+            comptant només les cel·les visibles.</p>
+            <p>Una vegada vist este exemple, anem a centrar-nos en la
+            fórmula K.ESIMO.MENOR a nostre full de càlcul, que correspon
+            al número 15. Volem que els valors que agafem (aquells que
+            corresponen a ref1), s’ometen els valors no vàlids. A
+            continuació, passem a vore un nou exemple. En este cas
+            tindríem el mateix que tenim amb el valor K.ESIMO.MENOR,
+            pero hem agafat l’opció 6, per tant el valor no vàlid no el
+            tindrà en compte:</p>
+            <figure>
+            <img src="img/6.png" style="width:70.0%"
+            alt="Funció AGREGAR" />
+            <figcaption aria-hidden="true">Funció AGREGAR</figcaption>
+            </figure>
+            <p>Ho vorem amb més detall a l’exemple del full de
+            càlcul.</p>
+            <h3 data-number="2.2.3" id="coincidir"><span
+            class="header-section-number">2.2.3</span> COINCIDIR</h3>
+            <p>Recordem que COLUMNA ens tornava el número on es trobava
+            una cel·la, si passem un rang, ens tornarà un llistat de
+            números on es troba cada cel·la:</p>
+            <figure>
+            <img src="img/8.png" style="width:70.0%"
+            alt="Funció COLUMNA" />
+            <figcaption aria-hidden="true">Funció COLUMNA</figcaption>
+            </figure>
+            <p>Ací podem veure que ens torna {6.7.8.9} que són les
+            posicions de les columnes, el resultat que ens mostra al
+            full de càlcul és el 6 que és el primer número del
+            llistat.</p>
+            <p>En aquest cas veurem que COINCIDIR en realitat no ens
+            torna un valor, sino un llistat de números.</p>
+            <figure>
+            <img src="img/7.png" style="width:90.0%"
+            alt="Funció AGREGAR" />
+            <figcaption aria-hidden="true">Funció AGREGAR</figcaption>
+            </figure>
+            <p>Recordem que la formulació de la funció és
+            COINCIDIR(“Criteri de búsqueda”,“Matriu de búsqueda”,
+            <strong>0</strong> per a valor exacte), en aquest cas tenim
+            els següents valors:</p>
+            <ul>
+            <li>Criteri de búsqueda: $M$5&amp;COLUMNA(<span
+            class="math inline"><em>A</em>2:</span>L2) unim el valor “CA
+            1.1” als números de les columnes</li>
+            <li>Matriu de búsqueda: $A2:$L2&amp;COLUMNA(<span
+            class="math inline"><em>A</em>2:</span>L2) unim el valor
+            dels criteris CA 1.1 CA 1.2 CA 2.1… als número de les
+            columnes:</li>
+            </ul>
+            <p>Tenint aquests resultats:</p>
+            <table>
+            <colgroup>
+            <col style="width: 23%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            <col style="width: 5%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Criteri de búsqueda</th>
+            <th><strong>CA 1.11</strong></th>
+            <th>CA 1.22</th>
+            <th>CA 2.13</th>
+            <th>CA 2.44</th>
+            <th>CA 1.55</th>
+            <th><strong>CA 1.16</strong></th>
+            <th>CA 1.27</th>
+            <th><strong>CA 1.18</strong></th>
+            <th>CA 2.29</th>
+            <th>CA 2.310</th>
+            <th>CA 1.411</th>
+            <th>CA 1.712</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Matriu de búsqueda</td>
+            <td><strong>CA 1.11</strong></td>
+            <td>CA 1.12</td>
+            <td>CA 1.13</td>
+            <td>CA 1.14</td>
+            <td>CA 1.15</td>
+            <td><strong>CA 1.16</strong></td>
+            <td>CA 1.17</td>
+            <td><strong>CA 1.18</strong></td>
+            <td>CA 1.19</td>
+            <td>CA 1.110</td>
+            <td>CA 1.111</td>
+            <td>CA 1.112</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>A la imatge podem veure que el resultat de COINCIDIR és:
+            {<strong>1</strong>.#N/D.#N/D.#N/D.#N/D.<strong>6</strong>.#N/D.<strong>8</strong>.#N/D.#N/D.#N/D.#N/D},
+            que el resultat de la comparació de les dos llistes
+            anteriors, els valors que coincideixen deixen el número de
+            columna i els que no coincideixen ens sur
+            <strong>#N/D</strong> que significa NO DISPONIBLE.</p>
+            <h1 data-number="3" id="full-de-càlcul"><span
+            class="header-section-number">3</span> Full de càlcul</h1>
+            <p>Ara anem a posar-ho tot junt, però per a simplificar la
+            nostra comprensió, hem decidit donar noms als rangs. Així
+            partirem del següent full de càlcul amb els següents
+            noms:</p>
+            <figure>
+            <img src="img/9.png" style="width:90.0%"
+            alt="Noms de rangs" />
+            <figcaption aria-hidden="true">Noms de rangs</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Sempre és recomanable anar poc a poc. En fórmules
+            llargues sempre hi ha alguna cosa susceptible d’error, per
+            això cal tindre fulls intermedis fins que ja tens el teu
+            full complet.</p>
+            </div>
+            <h2 data-number="3.1" id="k.esimo.menor"><span
+            class="header-section-number">3.1</span> K.ESIMO.MENOR</h2>
+            <p>En primer lloc tractarem de traure el següent llistat
+            marcat amb un recuadre roig:</p>
+            <figure>
+            <img src="img/10.png" style="width:90.0%"
+            alt="K.ESIMO.MENOR" />
+            <figcaption aria-hidden="true">K.ESIMO.MENOR</figcaption>
+            </figure>
+            <p>Aquest recuadre en els trau la unió de els dos llistats
+            de números:</p>
+            <table style="width:100%;">
+            <colgroup>
+            <col style="width: 40%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            <col style="width: 4%" />
+            </colgroup>
+            <thead>
+            <tr class="header">
+            <th>Criteri búsqueda E8&amp;COLUMNA(CRITERIS)</th>
+            <th><strong>CA 1.11</strong></th>
+            <th>CA 1.22</th>
+            <th>CA 2.13</th>
+            <th>CA 2.44</th>
+            <th>CA 1.55</th>
+            <th><strong>CA 1.16</strong></th>
+            <th>CA 1.27</th>
+            <th><strong>CA 1.18</strong></th>
+            <th>CA 2.29</th>
+            <th>CA 2.310</th>
+            <th>CA 1.411</th>
+            <th>CA 1.712</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Matriu búsqueda CRITERIS&amp;COLUMNA(CRITERIS)</td>
+            <td><strong>CA 1.11</strong></td>
+            <td>CA 1.12</td>
+            <td>CA 1.13</td>
+            <td>CA 1.14</td>
+            <td>CA 1.15</td>
+            <td><strong>CA 1.16</strong></td>
+            <td>CA 1.17</td>
+            <td><strong>CA 1.18</strong></td>
+            <td>CA 1.19</td>
+            <td>CA 1.110</td>
+            <td>CA 1.111</td>
+            <td>CA 1.112</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Fixem-nos que estem comparant amb coincidir quines són de
+            les dos files els valors iguals. En aquest cas en 1, 6 i 8,
+            que aconseguim amb la fórmula
+            COINCIDIR(E8&amp;COLUMNA(CRITERIS)-2;CRITERIS&amp;COLUMNA(CRITERIS)-2;0).
+            K.ESIMO.MENOR ens trau el menor d’eixos 3 valors. Per a tal
+            fi utilitzarem la següent fórmula:</p>
+            <pre class="excel"><code>=K.ESIMO.MENOR(COINCIDIR(E8&amp;COLUMNA(CRITERIS)-2;CRITERIS&amp;COLUMNA(CRITERIS)-2;0);1)</code></pre>
+            <p>Fixeu-vos que tenim un -2 tant al Criteri com a la matriu
+            de búsqueda. Això és perquè el nostre rang comença en la
+            tercera columna, i volem ajustar-ho per a tindre el llistat
+            amb de COLUMNA amb {1.2.3.4…}. Recordem que el 0 en la
+            fórmula COINCIDIR és per a valor exacte i el 1 del final es
+            per a traure el primer número més xicotet.</p>
+            <figure>
+            <img src="img/11.png" style="width:100.0%"
+            alt="Ajustos del lloc" />
+            <figcaption aria-hidden="true">Ajustos del lloc</figcaption>
+            </figure>
+            <div class="note">
+            <p>Hem triat K.ESIMO.MENOR enlloc de K.ESIMO.MAYOR, per a
+            ordenar de menor a major. Si escollirem K.ESIMO.MAYOR
+            ordenaríem de major a menor, o siga de l’última columna on
+            apareix el Criteri a la primera.</p>
+            </div>
+            <h2 data-number="3.2" id="agregar-1"><span
+            class="header-section-number">3.2</span> AGREGAR</h2>
+            <p>Canviant la fórmula d’abans a AGREGAR, recordem que
+            K.ESIMO.MENOR és la fórmula 15 i li afegim l’opció 6, que es
+            que no tinga en compte els valors no vàlids, per tant ens
+            quedaria una fórmula:</p>
+            <pre><code>=AGREGAR(15;6;COINCIDIR(E8&amp;COLUMNA(CRITERIS)-2;CRITERIS&amp;COLUMNA(CRITERIS)-2;0);1)</code></pre>
+            <p>Podem veure el resultat ací:</p>
+            <figure>
+            <img src="img/12.png" style="width:70.0%"
+            alt="Ajustos del lloc" />
+            <figcaption aria-hidden="true">Ajustos del lloc</figcaption>
+            </figure>
+            <p>Si anàrem canviant l’últim valor per 2 o 3, podríem veure
+            com van canviant els valors al que està en segon lloc i al
+            que està en tercer.</p>
+            <h2 data-number="3.3" id="ajustos-finals"><span
+            class="header-section-number">3.3</span> Ajustos finals</h2>
+            <p>Una de les coses que volem aconseguir és que al desplaçar
+            la fórmula aquesta agafe tots els valors que tenim. Per
+            tant, tindríem que anar canviant el valor del que parlàvem
+            abans per a que vaja pujant automàticament. Això ho podem
+            fer seleccionant una del·la <code>A1</code> per exemple i
+            utilitzar la fórmula COLUMNA, de manera que al desplaçar la
+            cel·la A1 passarà a A2 i així successivament, de manera que
+            ens retornarà 1,2,3, etc…</p>
+            <div class="tip">
+            <p>Si agafes A1, tracta que estiga buida, busca sempre una
+            línia que no puga posar-te problemes com les cel·les
+            unificades.</p>
+            </div>
+            <figure>
+            <img src="img/13.png" style="width:80.0%"
+            alt="Ajustos del lloc" />
+            <figcaption aria-hidden="true">Ajustos del lloc</figcaption>
+            </figure>
+            <p>Així la fórmula quedaría de la següent manera:</p>
+            <pre class="excel"><code>=AGREGAR(15;6;COINCIDIR($E8&amp;COLUMNA(CRITERIS)-2;CRITERIS&amp;COLUMNA(CRITERIS)-2;0);COLUMNA(A1))</code></pre>
+            <p>Finalment només ens caldria afegir SI.ERROR per a que el
+            valor que ens donara en cas d’error fos més legible.</p>
+            <h1 data-number="4" id="excel"><span
+            class="header-section-number">4</span> Excel</h1>
+            <p>En esta secció anem a parlar del mateix procediment però
+            amb Excel. LibreOffice Calc és totalment compatible amb
+            Excel, però no al revés. Excel presenta algunes diferències
+            en la manera d’abordar les fórmules.</p>
+            <p>En aquest apartat seguirem el mateix procediment que hem
+            seguit abans, crear-nos un full intermedi per a una fórmula
+            tan gran però. Però introduirem l’ús de la intel·ligència
+            artificial. En aquest cas utilitzarem Copilot, ja que, i es
+            tracta d’una apreciació personal, és la que millor funciona
+            per a programar.</p>
+            <h2 data-number="4.1" id="copilot"><span
+            class="header-section-number">4.1</span> Copilot</h2>
+            <p>Microsoft Copilot és un assistent d’intel·ligència
+            artificial que proporciona respostes d’ús general, a més
+            integra la tecnologia Wall-e per a crear imatges. Podem
+            accedir a aquest assistent des de la següent pàgina: <a
+            href="https://copilot.microsoft.com/">https://copilot.microsoft.com/</a>.
+            Per a aquells que no estigueu familiaritzats en aquest tipus
+            de tecnologies, heu de saber que les qüestions que se li
+            plantegen a un assistent com pot ser Copilot o ChatGPT
+            s’anomenen <strong>prompts</strong>. Nosaltres els
+            representarem amb la següent icona:</p>
+            <p>Hem de tenir en compte que les respostes que donen les IA
+            solen ser traduccions en anglès, i el Excel a EEUU té dos
+            característiques que no tenim a Espanya:</p>
+            <ul>
+            <li>Les fórmules, òbviament, estan en anglès.</li>
+            <li>Aquestes normalment es separen per “,”. A Espanya es
+            separem per “;”.</li>
+            </ul>
+            <h2 data-number="4.2" id="la-nostra-pàgina-intermèdia"><span
+            class="header-section-number">4.2</span> La nostra pàgina
+            intermèdia</h2>
+            <p>Partim de la següent pàgina però anirem creant un prompt
+            per a cada pas, veurem que les fórmules més senzilles en les
+            traurà perfectament, les altre no. Això sí, crear prompts
+            per a extraure la fórmula és tot un art i cal ser molts
+            clars amb el que es demana.</p>
+            <figure>
+            <img src="img/17.png" style="width:80.0%"
+            alt="Pàgina de partida" />
+            <figcaption aria-hidden="true">Pàgina de
+            partida</figcaption>
+            </figure>
+            <h2 data-number="4.3" id="fila"><span
+            class="header-section-number">4.3</span> FILA</h2>
+            <p>Partim del següent prompt:</p>
+            <p>La resposta:</p>
+            <figure>
+            <img src="img/18.png" style="width:80.0%" alt="FILA" />
+            <figcaption aria-hidden="true">FILA</figcaption>
+            </figure>
+            <p>Resposta pràcticament igual a la que teníem.</p>
+            <div class="warning">
+            <p>Tot i que li hem demanat que siga una referència
+            absoluta, no ens donat la referència absoluta a $C$3, per
+            tant hem de revisar la fórmula per a corregir este
+            coses.</p>
+            </div>
+            <h2 data-number="4.4" id="columna"><span
+            class="header-section-number">4.4</span> COLUMNA</h2>
+            <p>La resposta:</p>
+            <figure>
+            <img src="img/19.png" style="width:80.0%" alt="COLUMNA" />
+            <figcaption aria-hidden="true">COLUMNA</figcaption>
+            </figure>
+            <h2 data-number="4.5" id="nota-i-si.error"><span
+            class="header-section-number">4.5</span> NOTA i
+            SI.ERROR</h2>
+            <p>Passem directament a la columna amb SI.ERROR.</p>
+            <p>La resposta:</p>
+            <figure>
+            <img src="img/20.png" style="width:80.0%"
+            alt="Amb SI.ERROR" />
+            <figcaption aria-hidden="true">Amb SI.ERROR</figcaption>
+            </figure>
+            <h1 data-number="5" id="tot-junt"><span
+            class="header-section-number">5</span> TOT JUNT</h1>
+            <p>La resposta:</p>
+            <figure>
+            <img src="img/21.png" style="width:80.0%"
+            alt="Tota la fórmula" />
+            <figcaption aria-hidden="true">Tota la fórmula</figcaption>
+            </figure>
+            <div class="info">
+            <p>Fins ara tot anat molt bé i els resultats són bastant
+            exactes al que anàvem buscant. Però cal anar amb compte ja
+            que s’ha colat un INDEX a la fórmula, podem continuar la
+            conversa i demanar que ens faça la fórmula amb totes les
+            funcions en castellà. O ficar-nos i canviar-ho
+            nosaltres.</p>
+            </div>
+            <div class="tip">
+            <p>Des d’un principi heu vist que hem donat un nom als
+            rangs, això fa que ens resulte més senzill interpretar les
+            fórmules que ens està donant, no és el mateix llegir ALUMNES
+            que $‘Alumnes’.B4:B10. Ens simplifica molt la tasca
+            d’interpretar.</p>
+            </div>
+            <h1 data-number="6" id="agregar-2"><span
+            class="header-section-number">6</span> AGREGAR</h1>
+            <p>Ací és on acaba el potencial dels assistents GPT. Els
+            raonament que hem fet a la introducció teòrica és massa
+            complexe per a una IA, tal vegada invertint més temps
+            podríem aconseguir traure la fórmula. El que hem tractat de
+            fer és le següent:</p>
+            <figure>
+            <img src="img/22.png" style="width:80.0%" alt="Resposta" />
+            <figcaption aria-hidden="true">Resposta</figcaption>
+            </figure>
+            <p>Si analitzem la resposta podem veure que algunes funcions
+            no estan correctament traduïdes, per exemple K.ESIMO.MENOR
+            en anglès és la fórmula SMALL que ho tradueix a PEQUEÑO.La
+            fórmula correcta seria:</p>
+            <pre><code>=SI.ERROR(INDICE(NOTES; K.ESIMO.MENOR(SI((ALUMNES=$C$3)*(CRITERIS=E8); FILA(NOTES)-MIN(FILA(NOTES))+1); FILA(A1))); &quot;No avaluat&quot;)</code></pre>
+            <p>Però, així i tot, no funciona. Per tant podem seguir
+            intentant que funcione o podem tractar de fer-ho
+            nosaltres.</p>
+            <h2 data-number="6.1" id="agregar-amb-excel"><span
+            class="header-section-number">6.1</span> AGREGAR amb
+            Excel</h2>
+            <p>Un dels avantatges que ens dona Excel respecte a
+            Libreoffice Calc és que ens permet comparar un rang de
+            valors. Per exemple:</p>
+            <figure>
+            <img src="img/23.png" style="width:90.0%"
+            alt="Comparant rang de valors" />
+            <figcaption aria-hidden="true">Comparant rang de
+            valors</figcaption>
+            </figure>
+            <p>No hem autocompletat, és el resultat que ens dona
+            directament la fórmula sobre E1, omplint totes les caselles
+            de la dreta. D’aquesta manera podem veure quines són les
+            columnes coincidents, i no ens cal fer la comparativa que
+            hem fet abans. Cal anar amb compte de no tindre cel·les
+            ocupades davant sinó ens dona un error, fixem-nos que a F1
+            hem posat la paraula “Emplenem”:</p>
+            <figure>
+            <img src="img/24.png" style="width:80.0%"
+            alt="Comparant rang de valors. Error" />
+            <figcaption aria-hidden="true">Comparant rang de valors.
+            Error</figcaption>
+            </figure>
+            <p>D’aquesta manera podem utilitzar la fórmula AGREGAR de la
+            següent manera per a que ens done la posició dels
+            valors:</p>
+            <pre><code>=AGREGAR(15;6;SI(CRITERIS=$E$8;COLUMNA(CRITERIS);FALSO());COLUMNA(A1))-2</code></pre>
+            <div class="warning">
+            <p>Si ho fem d’aquesta manera i obrim este full de càlcul
+            amb Libreoffice Calc no interepretarà bé la fórmula i no ens
+            donarà el valor.</p>
+            </div>
+            <p>Recordem:</p>
+            <ul>
+            <li><strong>15</strong>: Funció K.ESIMO.MENOR</li>
+            <li><strong>6</strong>: Lleva els valors no vàlids</li>
+            <li><strong>SI(CRITERIS=$E$8;COLUMNA(CRITERIS);FALSO())</strong>:
+            Ací tenim en rang que passem a K.ESIMO.MENOR. Fixem-nos que
+            agafem els criteris
+            <ul>
+            <li><strong>CRITERIS=$E$8</strong> -&gt; {1 0 0 0 0 1 0 1 0
+            0 0 0}</li>
+            <li><strong>COLUMNA(CRITERIS)</strong> -&gt; Si és cert, o
+            siga 1, tornarà el valor de la columna, per tant tindrem: {1
+            0 0 0 0 6 0 8 0 0 0 0}</li>
+            <li><strong>FALSO()</strong> -&gt; Si és fals tornarà el
+            valor FALS, per tant: {1 FALS FALS FALS FALS 6 FALS 8 FALS
+            FALS FALS FALS}</li>
+            </ul></li>
+            <li>Recordem que el valor 6 ens extreu els valors no vàlids,
+            per tant tenim: {1 6 8}</li>
+            <li><strong>COLUMNA(A1)</strong>: Recordem que ho fem per a
+            aconseguir el valor 1r, 2n i 3r, ja que al desplaçar per a
+            fer el completament automàtic, COLUMNA(A1) és 1, COLUMNA(A2)
+            és 2, etc…</li>
+            <li><strong>-2</strong>, és per a ajustar ja que el rang
+            CRITERIS comença en la 3ª columna.</li>
+            </ul>
+            <p>D’aquesta manera ja tenim les posicions on es troben els
+            criteris. La fórmula final ens quedaría:</p>
+            <pre><code>=SI.ERROR(INDICE(NOTES;COINCIDIR($C$3;ALUMNES;0);AGREGAR(15;6;SI(CRITERIS=$E8;COLUMNA(CRITERIS);FALSO());COLUMNA(A1))-2);&quot;No avaluat&quot;)</code></pre>
+            <p>Fixem-nos que de la matriu NOTES, aconseguim la fila amb
+            la següent fórmula:</p>
+            <pre><code>COINCIDIR($C$3;ALUMNES;0)</code></pre>
+            <p>La columna és la fórmula que hem extret ara:</p>
+            <pre><code>AGREGAR(15;6;SI(CRITERIS=$E8;COLUMNA(CRITERIS);FALSO());COLUMNA(A1))-2)</code></pre>
+            <div class="tip">
+            <p>En aquest cas podem escalar tot el que volem la nostra
+            pàgina, només ens cal canviar el rangs als que hem donat els
+            noms. Un altre dels motius pels quals és importantn donar
+            nom als rangs.</p>
+            </div>
+            <h1 data-number="7" id="conclusions"><span
+            class="header-section-number">7</span> Conclusions</h1>
+            <p>Aquest és el mòdul més complex ja que estem concatenant
+            fórmules que és un dels pricipals avantatges d’utilitzar
+            fulls de càlcul, els propers mòduls són molt més senzills i
+            anem passar a una altre exemple, anem a preparar el
+            pressupost per a una excursió, però cal tenir clares algunes
+            estratègies per a buscar igualtats. Podem confiar que
+            l’assistent Copilot ens ajude en algunes tasques, però les
+            més complexes no. Hem vist que Excel presenta algunes
+            diferències respecte a Libreoffice, ambdós solucions són
+            vàlides, però cal tenir-ho en compte quan treballem amb els
+            dos simultàniament.</p>
+            <aside id="footnotes"
+            class="footnotes footnotes-end-of-document"
+            role="doc-endnotes">
+            <hr />
+            <ol>
+            <li
+            id="fn1"><p>https://help.libreoffice.org/7.0/es/text/scalc/01/func_aggregate.html?DbPAR=CALC#bm_id126123001625791<a
+            href="#fnref1" class="footnote-back"
+            role="doc-backlink">↩︎</a></p></li>
+            </ol>
+            </aside>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>

@@ -151,6 +151,31 @@ Las fórmulas que vamos a introducir para conseguir este propósito son las sigu
 
 4. **\&**: Aunque no se trate de una función propiamente dicha, esta expresión nos sirve para concatenar valores. Por ejemplo, si tenemos los siguientes valores:
 
+```
+A1: "Hola"
+A2: 5
+A3: =A1\&A2
+```
+El resultado de A3 será Hola5.
+
+Bueno, estas son todas las definiciones de los manuales, pero vamos a analizar cada una de ellas con un ejemplo.
+
+### K.ENESIMO.MENOR i K.ENESIMO.MAYOR
+
+En los siguientes ejemplos podemos extraer el segundo valor más pequeño de la siguiente lista, o el segundo valor más grande.
+
+![Segundo valor más grande](img/2.png){ width=70% }
+
+
+![Segundo valor más pequeño](img/3.png){ width=70% }
+
+Podemos agregar la fórmula SI.ERROR para que nos dé otro valor en caso de que pidamos algún valor que no está en la lista:
+
+![Con SI.ERROR](img/4.png){ width=70% }
+
+Si la lista que tomamos tiene una celda con error nos devolverá un error.
+
+
 ### AGREGAR
 
 La función `AGREGAR` en Excel es una función auxiliar que nos ayuda a implementar otras funciones de Excel como son `PROMEDIO`, `SUMAR`, `CONTAR`, `K.ENESIMO.MENOR` y mayor, etc... pero haciendo que estas funciones no tomen en cuenta los errores.
@@ -212,7 +237,7 @@ Si ocultas la fila 4, la función `CONTAR` seguirá devolviendo como resultado e
 
 En este caso, la función `AGREGAR` está ejecutando la función `CONTAR` (que se representa con el número 2 en el primer argumento de la función `AGREGAR`) sobre el rango A1:A5, pero está ignorando las celdas ocultas (que se representa con el número 5 en el segundo argumento de la función `AGREGAR`). Como resultado, la función `AGREGAR` devolverá el valor 4, ya que está contando solo las celdas visibles.
 
-Una vez visto este ejemplo, vamos a centrarnos en la fórmula K.ESIMO.MENOR en nuestra hoja de cálculo, que corresponde al número 15. Queremos que los valores que tomamos (aquellos que corresponden a ref1), se omitan los valores no válidos. A continuación, pasamos a ver un nuevo ejemplo. En este tendríamos lo mismo que tenemos con el valor K.ESIMO.MENOR, pero hemos tomado la opción 6, por lo tanto el valor no válido no lo tendrá en cuenta:
+Una vez visto este ejemplo, vamos a centrarnos en la fórmula K.ESIMO.MENOR en nuestra hoja de cálculo, que corresponde al número 15. Queremos que de los valores que tomemos (aquellos que corresponden a ref1), se omitan los valores no válidos. A continuación, pasamos a ver un nuevo ejemplo. En este caso tendríamos lo mismo que tenemos con el valor K.ESIMO.MENOR, pero hemos tomado la opción 6, por lo tanto el valor no válido no lo tendrá en cuenta:
 
 ![Función AGREGAR](img/6.png){ width=70% }
 
@@ -230,7 +255,7 @@ En este caso veremos que COINCIDIR en realidad no nos devuelve un valor, sino un
 
 ![Función AGREGAR](img/7.png){ width=90% }
 
-Recordemos que la formulación de es COINCIDIR("Criterio de búsqueda","Matriz de búsqueda", 0 para valor exacto), en este caso tenemos los siguientes valores:
+Recordemos que la formulación de la función es COINCIDIR("Criterio de búsqueda","Matriz de búsqueda", **0** para valor exacto), en este caso tenemos los siguientes valores:
 
 * Criterio de búsqueda: \$M\$5\&COLUMNA($A2:$L2) unimos el valor "CA 1.1" a los números de las columnas
 * Matriz de búsqueda: \$A2:\$L2\&COLUMNA($A2:$L2) unimos el valor de los criterios CA 1.1	CA 1.2	CA 2.1... a los números de las columnas:
@@ -261,9 +286,9 @@ En primer lugar trataremos de obtener el siguiente listado marcado con un recuad
 
 Este recuadro nos lo da la unión de las dos listas de números:  
 
-| Criterio de búsqueda | E8&COLUMNA(CRITERIS) |**CA 1.11** | CA 1.22 | CA 2.13 | CA 2.44 | CA 1.55 | **CA 1.16** | CA 1.27 | **CA 1.18** | CA 2.29 | CA 2.310 | CA 1.411 | CA 1.712 |
-| ---- | -- | - | - | - | - | - | - | - | - | - | - | - | - | - |
-| Matriz de búsqueda | CRITERIS&COLUMNA(CRITERIS) | **CA 1.11** | CA 1.12 | CA 1.13 | CA 1.14 | CA 1.15 | **CA 1.16** | CA 1.17 | **CA 1.18** | CA 1.19 | CA 1.110 | CA 1.111 | CA 1.112 |
+| Criterio búsqueda E8&COLUMNA(CRITERIS) |**CA 1.11** | CA 1.22 | CA 2.13 | CA 2.44 | CA 1.55 | **CA 1.16** | CA 1.27 | **CA 1.18** | CA 2.29 | CA 2.310 | CA 1.411 | CA 1.712 |
+| -------- | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Matriz búsqueda CRITERIS&COLUMNA(CRITERIS) | **CA 1.11** | CA 1.12 | CA 1.13 | CA 1.14 | CA 1.15 | **CA 1.16** | CA 1.17 | **CA 1.18** | CA 1.19 | CA 1.110 | CA 1.111 | CA 1.112 |
 
 Fíjate que estamos comparando con COINCIDIR cuáles son de las dos filas los valores iguales. En este caso en 1, 6 y 8, que conseguimos con la fórmula COINCIDIR(E8&COLUMNA(CRITERIS)-2;CRITERIS&COLUMNA(CRITERIS)-2;0). K.ESIMO.MENOR nos da el menor de esos 3 valores. Para tal fin utilizaremos la siguiente fórmula:
 
@@ -306,16 +331,16 @@ Si eliges A1, asegúrate de que esté vacía, busca siempre una línea que no pu
 Así, la fórmula quedaría de la siguiente manera:
 
 ```excel
-=AGREGAR(15;6;COINCIDIR($E8\&COLUMNA(CRITERIS)-2;CRITERIS\&COLUMNA(CRITERIS)-2;0);COLUMNA(A1))
+=AGREGAR(15;6;COINCIDIR($E8&COLUMNA(CRITERIS)-2;CRITERIS&COLUMNA(CRITERIS)-2;0);COLUMNA(A1))
 ```
 
-Finalmente, solo necesitaríamos agregar SI.ERROR para que el valor que nos diera fuera más legible.
+Finalmente, solo necesitaríamos agregar SI.ERROR para que el valor que nos diera en caso de error fuera más legible.
 
 # Excel
 
-En esta unidad vamos a hablar del mismo procedimiento pero con Excel. LibreOffice Calc es totalmente compatible con Excel, pero no al revés. Excel presenta algunas diferencias en la forma de abordar las fórmulas.
+En esta sección vamos a hablar del mismo procedimiento pero con Excel. LibreOffice Calc es totalmente compatible con Excel, pero no al revés. Excel presenta algunas diferencias en la forma de abordar las fórmulas.
 
-En esta sección seguiremos el mismo procedimiento que hemos seguido antes, crearnos una hoja intermedia para una fórmula tan grande. Pero introduciremos el uso de la inteligencia artificial. En este caso utilizaremos Copilot, ya que, y es una apreciación personal, es la que mejor funciona para programar.
+En este apartado seguiremos el mismo procedimiento que hemos seguido antes, crearnos una hoja intermedia para una fórmula tan grande. Pero introduciremos el uso de la inteligencia artificial. En este caso utilizaremos Copilot, ya que, y es una apreciación personal, es la que mejor funciona para programar.
 
 ## Copilot
 
@@ -330,9 +355,13 @@ Debemos tener en cuenta que las respuestas que dan las IA suelen ser traduccione
 
 ## Nuestra página intermedia 
 
-Partimos de la siguiente página pero iremos creando un prompt para cada paso
+Partimos de la siguiente página pero iremos creando un prompt para cada paso, veremos que las fórmulas más sencillas las sacará perfectamente, las otras no. Eso sí, crear prompts para extraer la fórmula es todo un arte y hay que ser muy claros con lo que se pide.
 
 ![Página de partida](img/17.png){ width=80% }
+
+:::warning
+El prompt original lo hemos hecho en valenciano, por eso las imágenes estan con el prompt en valenciano. En castellano el resultado es el mismo.
+:::
 
 ## FILA
 
@@ -370,7 +399,7 @@ La respuesta:
 
 # TODO JUNTO
 
-\awesomebox[violet]{2pt}{\faRobot}{violet}{Tenemos una hoja de cálculo donde tenemos un rango llamado ALUMNES que va de B4:B13, y un rango llamado CRITERIS que va de C3:N3, dentro de estos rangos, concretamente en C4:N13 tenemos un rango llamado NOTES. Crea una fórmula que me extraiga el valor de NOTES dado un Alumno que se encontrará en la celda $C$3 y buscará en el rango ALUMNES y un valor de Criterio que se encontrará en la celda E8 y buscará en el rango CRITERIS. SI el resultado que nos da es erróneo quiero que aparezca el mensaje "No evaluado". El Excel que estamos utilizando está en España, por lo tanto las fórmulas deben ser en castellano y separadas por puntos y coma en lugar de por comas.}
+\awesomebox[violet]{2pt}{\faRobot}{violet}{Tenemos una hoja de cálculo donde tenemos un rango llamado ALUMNES que va de B4:B13, y un rango llamado CRITERIS que va de C3:N3, dentro de estos rangos, concretamente en C4:N13 tenemos un rango llamado NOTES. Crea una fórmula que me extraiga el valor de NOTES dado un Alumno que se encontrará en la celda \$C\$3 y buscará en el rango ALUMNES y un valor de Criterio que se encontrará en la celda E8 y buscará en el rango CRITERIS. SI el resultado que nos da es erróneo quiero que aparezca el mensaje "No evaluado". El Excel que estamos utilizando está en España, por lo tanto las fórmulas deben ser en castellano y separadas por puntos y coma en lugar de por comas.}
 
 La respuesta:
 
@@ -388,14 +417,14 @@ Desde un principio habéis visto que hemos dado un nombre a los rangos, esto hac
 
 Aquí es donde termina el potencial de los asistentes GPT. El razonamiento que hemos hecho en la introducción teórica es demasiado complejo para una IA, tal vez invirtiendo más tiempo podríamos conseguir sacar la fórmula. Lo que hemos tratado de hacer es lo siguiente:
 
-\awesomebox[violet]{2pt}{\faRobot}{violet}{Tenemos una hoja de cálculo donde tenemos un rango llamado ALUMNES que va de B4:B13, y un rango llamado CRITERIS que va de C3:N3, dentro de estos rangos, concretamente en C4:N13 tenemos un rango llamado NOTES donde están los siguientes valores EX, NT, BE, SF, IN. Crea una fórmula que me extraiga el valor de NOTES dado un Alumno que se encontrará en la celda $C$3 y buscará en el rango ALUMNES y un valor de Criterio que se encontrará en la celda E8 y buscará en el rango CRITERIS. Los criterios pueden estar repetidos así que quiero extraer todos los valores de NOTES, utilizando autocompletar, de manera que escribiré la fórmula en una celda que me dará el primer valor que encuentre de NOTES y al desplazar la celda para autocompletar en la segunda celda me dará el segundo valor y así sucesivamente.  SI el resultado que nos da es erróneo o ya no hay más valores quiero que aparezca el mensaje "No evaluado". El Excel que estamos utilizando está en España, por lo tanto las fórmulas deben ser en castellano y separadas por puntos y coma en lugar de por comas.}
+\awesomebox[violet]{2pt}{\faRobot}{violet}{Tenemos una hoja de cálculo donde tenemos un rango llamado ALUMNES que va de B4:B13, y un rango llamado CRITERIS que va de C3:N3, dentro de estos rangos, concretamente en C4:N13 tenemos un rango llamado NOTES donde están los siguientes valores EX, NT, BE, SF, IN. Crea una fórmula que me extraiga el valor de NOTES dado un Alumno que se encontrará en la celda \$C\$3 y buscará en el rango ALUMNES y un valor de Criterio que se encontrará en la celda E8 y buscará en el rango CRITERIS. Los criterios pueden estar repetidos así que quiero extraer todos los valores de NOTES, utilizando autocompletar, de manera que escribiré la fórmula en una celda que me dará el primer valor que encuentre de NOTES y al desplazar la celda para autocompletar en la segunda celda me dará el segundo valor y así sucesivamente.  SI el resultado que nos da es erróneo o ya no hay más valores quiero que aparezca el mensaje "No evaluado". El Excel que estamos utilizando está en España, por lo tanto las fórmulas deben ser en castellano y separadas por puntos y coma en lugar de por comas.}
 
 ![Respuesta](img/22.png){ width=80% }
 
 Si analizamos la respuesta podemos ver que algunas funciones no están correctamente traducidas, por ejemplo K.ESIMO.MENOR en inglés es la fórmula SMALL que se traduce a PEQUEÑO.La fórmula correcta sería:
 
 ```
-=SI.ERROR(INDICE(NOTES; K.ESIMO.MENOR(SI((ALUMNES=$C$3)*(CRITERIS=E8); FILA(NOTES)-MIN(FILA(NOTES))+1); FILA(A1))); "No avaluat")
+=SI.ERROR(INDICE(NOTES; K.ESIMO.MENOR(SI((ALUMNES=$C$3)*(CRITERIS=E8); FILA(NOTES)-MIN(FILA(NOTES))+1); FILA(A1))); "No evaluado")
 ```
 Pero, aún así, no funciona. Por lo tanto, podemos seguir intentando que funcione o podemos tratar de hacerlo nosotros mismos.
 
@@ -405,7 +434,7 @@ Una de las ventajas que nos ofrece Excel respecto a Libreoffice Calc es que nos 
 
 ![Comparando rango de valores](img/23.png){ width=90% }
 
-No hemos autocompletado, es el resultado que nos da directamente la fórmula sobre E1, llenando todas las celdas de la derecha. De esta manera podemos ver cuáles son las columnas coincidentes, y no necesitamos hacer la comparativa que hemos hecho antes. Hay que tener cuidado de no tener celdas ocupadas delante o nos dará un error, fíjate que en F1 hemos puesto la palabra "Llenamos":
+No hemos autocompletado, es el resultado que nos da directamente la fórmula sobre E1, llenando todas las celdas de la derecha. De esta manera podemos ver cuáles son las columnas coincidentes, y no necesitamos hacer la comparativa que hemos hecho antes. Hay que tener cuidado de no tener celdas ocupadas delante o nos dará un error, fíjate que en F1 hemos puesto la palabra "Emplenem":
 
 ![Comparando rango de valores. Error](img/24.png){ width=80% }
 
