@@ -1,0 +1,215 @@
+<quiz>
+<!-- question: 9  -->
+<question type="multichoice">
+    <name>
+        <text>Què fa la funció K.ENESIMO.MENOR d'Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Què fa la funció K.ENESIMO.MENOR d'Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="100">
+        <text>a. Retorna el valor més petit k-èssim en un conjunt de dades</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. Retorna el valor més gran k-èssim en un conjunt de dades</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. Calcula la mitjana d'un rang de valors</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Multiplica tots els valors en un conjunt de dades</text>
+    </answer>
+</question>
+
+<!-- question: 4  -->
+<question type="multichoice">
+    <name>
+        <text>Què fa la funció COINCIDIR d'Excel quan compara dos rangs?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Què fa la funció COINCIDIR d'Excel quan compara dos rangs?</p>]]></text>
+    </questiontext>
+    <answer fraction="100">
+        <text>a. Retorna les posicions dels valors coincidents</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. Calcula la mitjana dels valors en el rang</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. Multiplica els valors coincidents en els rangs</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Divideix els valors coincidents en els rangs</text>
+    </answer>
+</question>
+<!-- question: 5  -->
+<question type="multichoice">
+    <name>
+        <text>A Excel, per a què es fa servir la funció SI.ERROR en una fórmula?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>A Excel, per a què es fa servir la funció SI.ERROR en una fórmula?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text>a. Per retornar un error si es compleix una condició</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. Per ocultar errors en càlculs</text>
+    </answer>
+    <answer fraction="100">
+        <text>c. Per mostrar un missatge específic si es produeix un error</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Per excloure valors específics dels càlculs</text>
+    </answer>
+</question>
+<!-- question: 6  -->
+<question type="multichoice">
+    <name>
+        <text>Quina funció d'Excel utilitzaries per retornar el segon valor més xicotet d'un conjunt de dades?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Quina funció d'Excel utilitzaries per retornar el segon valor més petit d'un conjunt de dades?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text>a. K.ESIMO.MAYOR</text>
+    </answer>
+    <answer fraction="100">
+        <text>b. K.ESIMO.MENOR</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. PROMEDIO</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. AGREGAR</text>
+    </answer>
+</question>
+<!-- question: 7  -->
+<question type="multichoice">
+    <name>
+        <text>Què fa la funció AGREGAR d'Excel amb el núm_función 4?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Què fa la funció AGREGAR d'Excel amb el núm_función 4?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text>a. Retorna la mitjana d'un rang de valors</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. Compta el nombre de valors en un rang</text>
+    </answer>
+    <answer fraction="100">
+        <text>c. Troba el valor màxim en un conjunt de dades</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Multiplica tots els valors en un conjunt de dades</text>
+    </answer>
+</question>
+<!-- question: 8  -->
+<question type="multichoice">
+    <name>
+        <text>Quan s'utilitza la funció K.ESIMO.MENOR a Excel, què fa afegir l'opció 6?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Quan s'utilitza la funció K.ESIMO.MENOR a Excel, què fa afegir l'opció 6?</p>]]></text>
+    </questiontext>
+    <answer fraction="100">
+        <text>a. Exclou errors dels càlculs</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. Ignora valors ocults i funcions de subtotal</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. Organitza valors del més petit al més gran</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Calcula el valor més alt dins d'un conjunt de dades</text>
+    </answer>
+</question>
+<!-- question: 9  -->
+<question type="multichoice">
+    <name>
+        <text>Quina funció d'Excel utilitzaries per identificar la posició d'un valor específic dins d'un rang?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Quina funció d'Excel utilitzaries per identificar la posició d'un valor específic dins d'un rang?</p>]]></text>
+    </questiontext>
+    <answer fraction="100">
+        <text>a. BUSCARH</text>
+    </answer>
+    <answer fraction="0">
+        <text>b. FILA</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. COLUMNA</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. ESERROR</text>
+    </answer>
+</question>
+<!-- question: 10  -->
+<question type="multichoice">
+    <name>
+        <text>A Excel, com determinaries la fila en què es troba un valor específic dins d'un rang anomenat?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>A Excel, com determinaries la fila en què es troba un valor específic dins d'un rang anomenat?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text>a. Utilitzant la funció ÍNDICE</text>
+    </answer>
+    <answer fraction="100">
+        <text>b. Emprant la funció COINCIDIR</text>
+    </answer>
+    <answer fraction="0">
+        <text>c. Utilitzant la funció AGREGAR</text>
+    </answer>
+    <answer fraction="0">
+        <text>d. Aplicant la funció FILA</text>
+    </answer>
+</question>
+
+    <!-- question: 2  -->
+    <question type="multichoice">
+        <name>
+            <text>Quan s'utilitza la funció AGREGAR a Excel, què significa l'opció número 3?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quan s'utilitza la funció AGREGAR a Excel, què significa l'opció número 3?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Omet valors ocults i funcions de subtotal</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Omet errors i valors ocults</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Ignora les funcions de subtotal i les funcions AGREGAR aniuades</text>
+        </answer>
+        <answer fraction="100">
+            <text>d. Ignora errors, valors ocults i funcions AGREGAR aniuades</text>
+        </answer>
+    </question>
+    <!-- question: 3  -->
+    <question type="multichoice">
+        <name>
+            <text>Quina funció d'Excel utilitzaries per concatenar valors en dues cel·les?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quina funció d'Excel utilitzaries per concatenar valors en dues cel·les?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. CONCATENAR</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. SUMAR</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. DIVIDIR</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. BUSCARV</text>
+        </answer>
+    </question>
+    <!-- Add the rest of the questions in the same format -->
+</quiz>

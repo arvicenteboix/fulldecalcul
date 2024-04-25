@@ -1,0 +1,219 @@
+<quiz>
+    <!-- question: 9  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué hace la función K.ENESIMO.MENOR de Excel?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué hace la función K.ENESIMO.MENOR de Excel?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Devuelve el valor k-ésimo más pequeño en un conjunto de datos</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Devuelve el valor k-ésimo más grande en un conjunto de datos</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Calcula la media de un rango de valores</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Multiplica todos los valores en un conjunto de datos</text>
+        </answer>
+    </question>
+
+    <!-- question: 4  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué hace la función COINCIDIR de Excel cuando compara dos rangos?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué hace la función COINCIDIR de Excel cuando compara dos rangos?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Devuelve las posiciones de los valores coincidentes</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Calcula la media de los valores en el rango</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Multiplica los valores coincidentes en los rangos</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Divide los valores coincidentes en los rangos</text>
+        </answer>
+    </question>
+    <!-- question: 5  -->
+    <question type="multichoice">
+        <name>
+            <text>En Excel, ¿para qué se usa la función SI.ERROR en una fórmula?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>En Excel, ¿para qué se usa la función SI.ERROR en una fórmula?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Para devolver un error si se cumple una condición</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Para ocultar errores en cálculos</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. Para mostrar un mensaje específico si se produce un error</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Para excluir valores específicos de los cálculos</text>
+        </answer>
+    </question>
+    <!-- question: 6  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué función de Excel usarías para devolver el segundo valor más pequeño de un
+                conjunto de datos?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué función de Excel usarías para devolver el segundo valor más pequeño de un conjunto de datos?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. K.ESIMO.MAYOR</text>
+        </answer>
+        <answer fraction="100">
+            <text>b. K.ESIMO.MENOR</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. PROMEDIO</text>
+        </answer>
+        <answer fraction="50">
+            <text>d. AGREGAR</text>
+        </answer>
+    </question>
+    <!-- question: 7  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué hace la función AGREGAR de Excel con el num_función 4?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué hace la función AGREGAR de Excel con el num_función 4?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Devuelve la media de un rango de valores</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Cuenta el número de valores en un rango</text>
+        </answer>
+        <answer fraction="100">
+            <text>c. Encuentra el valor máximo en un conjunto de datos</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Multiplica todos los valores en un conjunto de datos</text>
+        </answer>
+    </question>
+    <!-- question: 8  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuándo se utiliza la función AGREGAR, qué hace agregar la opción
+                6?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuándo se utiliza la función K.ESIMO.MENOR en Excel, qué hace agregar la opción 6?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. Excluye errores de los cálculos</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Ignora valores ocultos y funciones de subtotal</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Organiza valores del más pequeño al más grande</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Calcula el valor más alto dentro de un conjunto de datos</text>
+        </answer>
+    </question>
+    <!-- question: 9  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué función de Excel utilizarías para identificar la posición de un valor
+                específico dentro de un rango?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué función de Excel utilizarías para identificar la posición de un valor específico dentro de un rango?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. BUSCARH</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. FILA</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. COLUMNA</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. ESERROR</text>
+        </answer>
+    </question>
+    <!-- question: 10  -->
+    <question type="multichoice">
+        <name>
+            <text>En Excel, ¿cómo determinarías la fila en la que se encuentra un valor específico
+                dentro de un rango nombrado?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>En Excel, ¿cómo determinarías la fila en la que se encuentra un valor específico dentro de un rango nombrado?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Utilizando la función ÍNDICE</text>
+        </answer>
+        <answer fraction="100">
+            <text>b. Usando la función COINCIDIR</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Utilizando la función AGREGAR</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. Aplicando la función FILA</text>
+        </answer>
+    </question>
+
+    <!-- question: 2  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Cuándo se utiliza la función AGREGAR en Excel, qué significa la opción número 3?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cuándo se utiliza la función AGREGAR en Excel, qué significa la opción número 3?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text>a. Omite valores ocultos y funciones de subtotal</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. Omite errores y valores ocultos</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. Ignora las funciones de subtotal y las funciones AGREGAR anidadas</text>
+        </answer>
+        <answer fraction="100">
+            <text>d. Ignora errores, valores ocultos y funciones AGREGAR anidadas</text>
+        </answer>
+    </question>
+    <!-- question: 3  -->
+    <question type="multichoice">
+        <name>
+            <text>¿Qué función de Excel utilizarías para concatenar valores en dos celdas?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué función de Excel utilizarías para concatenar valores en dos celdas?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text>a. CONCATENAR</text>
+        </answer>
+        <answer fraction="0">
+            <text>b. SUMAR</text>
+        </answer>
+        <answer fraction="0">
+            <text>c. DIVIDIR</text>
+        </answer>
+        <answer fraction="0">
+            <text>d. BUSCARV</text>
+        </answer>
+    </question>
+    <!-- Add the rest of the questions in the same format -->
+</quiz>
