@@ -89,4 +89,6 @@ Aquest document està subjecte a una llicència creative commons que permet la s
 \newpage
 
 
-# 
+# Introducció
+
+Aquest mòdul, es completament diferent al que hem vist fins ara. Ja hem treballat 
