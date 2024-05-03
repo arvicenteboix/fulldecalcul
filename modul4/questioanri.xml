@@ -1,0 +1,211 @@
+<quiz>
+
+<question type="multichoice">
+    <name>
+        <text>1. Quina és la funció de la fórmula BUSCARV en Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>1. Quina és la funció de la fórmula BUSCARV en Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Sumar valors en una columna]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. Buscar un valor en una fila]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[c. Buscar un valor en una columna]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Trobar la mitjana d'un rang]]></text>
+    </answer>
+</question>
+<question type="multichoice">
+    <name>
+        <text>2. Què indica el paràmetre "ordenat" en la funció BUSCARV?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>2. Què indica el paràmetre "ordenat" en la funció BUSCARV?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. La fila en la qual es buscarà el valor]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. Si es vol una coincidència exacta o no]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. El format de la cel·la on es trobarà el valor]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[d. Si el rang de cerca està organitzat en ordre ascendent]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>3. Com s'utilitza la funció BUSCARH en Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>3. Com s'utilitza la funció BUSCARH en Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Busca un valor verticalment en una columna]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[b. Busca un valor horitzontalment en una fila]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. Calcula la suma d'una columna específica]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Troba la mitjana d'una fila determinada]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>4. Què s'ha d'especificar en aplicar la funció BUSCARH en una cel·la?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>4. Què s'ha d'especificar en aplicar la funció BUSCARH en una cel·la?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. El valor de cerca a trobar]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. El rang de cel·les on buscar el valor]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[c. La fila des de la qual obtenir el valor cercat]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. El tipus de cerca a realitzar]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>5. Què fa l'eina Solver en Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>5. Què fa l'eina Solver en Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Calcula arrels d'equacions quadràtiques]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[b. Resol problemes de programació matemàtica lineal]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. Genera gràfics a partir de dades numèriques]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Realitza operacions trigonomètriques avançades]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>6. Què s'ha d'establir com a objectiu en Solver?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>6. Què s'ha d'establir com a objectiu en Solver?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. La cel·la amb la menor quantitat de dades]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. El rang amb el major nombre de valors]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[c. La cel·la que es vol maximitzar o minimitzar]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. El full de càlcul actiu en aquest moment]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>7. Quina és la finalitat de les variables de decisió en Solver?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>7. Quina és la finalitat de les variables de decisió en Solver?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Indicar valors que no poden canviar]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. Representar les dades ja conegudes]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. Ser les cel·les amb els resultats finals]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[d. Ajustar per a aconseguir l'objectiu desitjat]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>8. Quin tipus de càlculs es poden realitzar amb la funció SUMAR.SI en Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>8. Quin tipus de càlculs es poden realitzar amb la funció SUMAR.SI en Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="100">
+        <text><![CDATA[a. Sumar valors que compleixen una condició específica]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. Multiplicar valors en una columna determinada]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. Dividir dades en diferents categories]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Restar valors amb format condicional]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>9. Quin és el propòsit principal d'aplicar el format condicional en Excel?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>9. Quin és el propòsit principal d'aplicar el format condicional en Excel?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Canviar el tipus de lletra en un full de càlcul]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[b. Resaltar cel·les que compleixen certes condicions]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[c. Amagar files i columnes de dades sensibles]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Afegir vores al voltant de les cel·les seleccionades]]></text>
+    </answer>
+</question>
+
+<question type="multichoice">
+    <name>
+        <text>10. Per què és útil la funció SUMAR.SI en la gestió de despeses?</text>
+    </name>
+    <questiontext format="html">
+        <text><![CDATA[<p>10. Per què és útil la funció SUMAR.SI en la gestió de despeses?</p>]]></text>
+    </questiontext>
+    <answer fraction="0">
+        <text><![CDATA[a. Per restar valors de diferents conceptes]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[b. Per dividir les despeses entre diverses fulles de càlcul]]></text>
+    </answer>
+    <answer fraction="100">
+        <text><![CDATA[c. Per sumar únicament les despeses que coincideixen amb un criteri]]></text>
+    </answer>
+    <answer fraction="0">
+        <text><![CDATA[d. Per realitzar operacions matemàtiques complexes amb les despeses]]></text>
+    </answer>
+</question>
+</quiz>
