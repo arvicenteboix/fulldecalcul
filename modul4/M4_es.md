@@ -3,7 +3,7 @@
 # Metainformació del document
 title: Estrategias para el uso de la hoja de cálculo
 titlepage: true
-subtitle: "Funciones especiales: BUSCARV(), BUSCARH() y Solver"
+subtitle: Funciones especiales BUSCARV(), BUSCARH() y Solver
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
@@ -44,8 +44,7 @@ header-includes:
 
 
   #  - \usepackage{adjustbox}
-  # marca d'aigua
-  #- \usepackage{draftwatermark}
+  # mar| ca d'aigua   #- \usepackage{draftwatermark}
  # - \SetWatermarkText{\includegraphics{./img/Markdown.png}}
   #- \SetWatermarkText{Per revisar}
   #- \SetWatermarkScale{.5}
@@ -79,9 +78,11 @@ pandoc-latex-environment:
 ...
 
 
+
 \vspace*{\fill}
 
 ![](img/cc.png){ height=50px }
+
 Este document està subjecte a una llicència creative commons que permet la seua difusió i ús comercial reconeixent sempre l'autoria del seu creador. Es troba per a ser modificat al següent repositori de github:
 <!-- CANVIAR L'ENLLAÇ -->
 [https://github.com/arvicenteboix/fulldecalcul](https://github.com/arvicenteboix/fulldecalcul)
@@ -169,10 +170,6 @@ Esta fórmula significa:
 - **2**: Es el número de fila del rango desde donde queremos recuperar el valor. En este caso, 2 porque la temperatura está en la segunda fila.
 - **FALSO()**: Indica que queremos una coincidencia exacta.
 
-
-
-
-
 Cuando introducimos esta fórmula, la hoja de cálculo buscará "Jueves" en la primera fila del rango A1:H2 y devolverá el valor de la segunda fila, que es la temperatura máxima, y en este caso sería **21**.
 
 # Solver
@@ -182,10 +179,8 @@ Para explicar esta herramienta siempre se parte de un ejemplo que pueda ser más
 **Solver** es una herramienta que existe, tanto para Excel como para Libreoffice, que nos ayuda a encontrar la mejor solución a un problema, como repartir las golosinas. Nos permite decirle a la hoja de cálculo qué queremos maximizar o minimizar (como las golosinas verdes) y cuáles son las reglas que no podemos romper (como no dar más de 10 golosinas a cada amigo).
 
 :::note
-Si quieres saber más, Solver es una herramienta de programación matemática lineal. Hay mucha información al respecto y se utiliza en entornos empresariales para temas de producción.[^1]
+Si quieres saber más, Solver es una herramienta de programación matemática lineal. Hay mucha información al respecto y se utiliza en entornos empresariales para temas de producción. [https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal](https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal)
 :::
-
-[^1]: [https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal](https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal)
 
 Para usar el Solver, primero debemos tener claro tres cosas:
 
@@ -199,7 +194,9 @@ Cuando tenemos todo esto claro, configuramos Solver y él "juega" con las variab
 
 Y así es como el Solver nos puede ayudar a tomar decisiones y resolver problemas de manera fácil y sencilla. Pero veamos algún ejemplo.
 
-# Ejemplo 1
+## Ejemplo
+
+VAmos a ver un ejemplo clásico que se usa siempre para explicar Solver dentro de un contexto empresarial:
 
 Tenemos dos tipos de productos: camisas y pantalones. Cada camisa nos da un beneficio de 15€ y cada pantalón de 20€. Pero tenemos algunas restricciones:
 
@@ -254,11 +251,11 @@ Otra de las fórmulas que resultan interesantes y que vamos a introducir, es la 
 
 Por otro lado, tenemos una hoja llamada facturas donde vamos apuntando todos los gastos:
 
-[Hoja de facturas](img/1.png)
+![Hoja de facturas](img/1.png){ width=60% }
 
 En PARTIDA podemos tener las celdas validadas para que nos asigne ese movimiento a una partida específica:
 
-[Hoja de facturas](img/2.png)
+![Hoja de facturas](img/2.png){ width=60% }
 
 Lo que nos permite SUMAR.SI es buscar todas las partidas asignadas a un concepto específico y sumarlas. El esquema de la función sería:
 
@@ -268,7 +265,7 @@ Lo que nos permite SUMAR.SI es buscar todas las partidas asignadas a un concepto
 
 De manera que, en nuestro caso, podríamos nombrar a los intervalos de la siguiente manera:
 
-[Rangos](img/3.png)
+![Rangos](img/3.png){ width=60% }
 
 :::tip
 Fíjate que tomamos toda la columna D:D y E:E, esto no nos importa ya que las filas anteriores y posteriores no nos molestan, por lo que podemos agregar líneas a facturas y no necesitamos tener en cuenta si tenemos que cambiar el rango.
@@ -288,7 +285,7 @@ O mejor:
 
 Donde I9 correspondería a la celda donde tenemos nuestro concepto, de manera que tendríamos un resultado similar a este:
 
-[Conceptos sumados](img/4.png)
+![Conceptos sumados](img/4.png){ width=60% }
 
 # Caso práctico 
 
@@ -296,7 +293,7 @@ En este punto, os planteamos la tarea que os vamos a pedir. Vamos a imaginar que
 
 Nuestra hoja sería similar a esta:
 
-[Hoja de cálculo](img/5.png)
+![Hoja de cálculo](img/5.png){ width=60% }
 
 :::caution
 Los valores que tenemos aquí son totalmente inventados. Tenemos un presupuesto con unos ingresos ya realizados.
@@ -311,33 +308,33 @@ Las cuestiones que plantearíamos serían:
 
 En este punto vamos a añadirnos un formato condicional. Hemos creado unas celdas para que nos indique si nos pasamos de la cantidad de personas que cabemos.
 
-[Cantidad de personas](img/9.png)
+![Cantidad de personas](img/9.png){ width=60% }
 
 Nos crearíamos un formato condicional:
 
-[Formato condicional](img/6.png)
+![Formato condicional](img/6.png){ width=60% }
 
 Tenemos que crear un estilo nuevo:
 
-[Estilo](img/7.png)
+![Estilo](img/7.png){ width=60% }
 
 Resultado:
 
-[Formato creado](img/8.png)
+![Formato creado](img/8.png){ width=60% }
 
 ## Solver
 
 Vamos a hacer uso de Solver para saber cuál sería el mínimo número de personas que necesitaríamos para hacer rentable la salida. Iríamos a Herramientas > Solver, y rellenamos las celdas de la siguiente manera:
 
-[Solver](img/10.png)
+![Solver](img/10.png){ width=70% }
 
 Si intentamos buscar una solución nos dice que no hay solución posible:
 
-[Solución](img/11.png)
+![Solución](img/11.png){ width=70% }
 
 Ahora, se nos plantean varias posibilidades. Podríamos contratar otro autobús (o coche, etc...), o podemos subir el precio, que es la opción que hemos buscado. Planteamos 225 €.
 
-[Solución](img/12.png)
+![Solución](img/12.png){ width=60% }
 
 :::warning
 Con el solver también podríamos plantear que modificara el precio de la salida dado un número de alumnos.
@@ -349,7 +346,7 @@ Con el solver también podríamos plantear que modificara el precio de la salida
 
 Le decimos que queremos "Mantener la solución" y tendríamos un resultado de la siguiente manera:
 
-[Tabla resultante](img/13.png)
+![Tabla resultante](img/13.png){ width=60% }
 
 :::note
 Obviamente hay que cambiar el valor de 90,4 alumnos a un número entero, en este caso pondríamos 91.
@@ -359,7 +356,7 @@ Obviamente hay que cambiar el valor de 90,4 alumnos a un número entero, en este
 
 En este punto querríamos que el valor de los gastos fuera sumándose al gasto real, además nos añadiríamos otra celda donde pondríamos el grado de cumplimiento del gasto, más que nada para ver que no pasa del 100% (hemos añadido también el formato condicional a estas celdas):
 
-[Tabla gastos](img/14.png)
+![Tabla gastos](img/14.png){ width=60% }
 
 :::note
 Hemos definido los rangos IMPORTS y PARTIDES, en la hoja Facturas.
@@ -372,4 +369,4 @@ De esta manera ahora podríamos aplicar la fórmula:
 ```
 Finalmente podríamos ver nuestra tabla de la siguiente manera:
 
-[Tabla gastos](img/15.png)
+![Tabla gastos](img/15.png){ width=60% }

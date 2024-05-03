@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estrategias para el uso de la hoja de cálculo</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estrategias para el uso de la hoja de cálculo</h1>
+            <!--        <p class="subtitle">Funciones especiales BUSCARV(), BUSCARH() y Solver</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducción"><span class="toc-section-number">1</span> INTRODUCCIÓN</a></li>
+<li><a href="#buscarv-y-buscarh"><span class="toc-section-number">2</span> BUSCARV y BUSCARH</a>
+<ul>
+<li><a href="#ejemplo-buscarv"><span class="toc-section-number">2.1</span> Ejemplo BUSCARV()</a></li>
+<li><a href="#ejemplo-buscarh"><span class="toc-section-number">2.2</span> Ejemplo BUSCARH()</a></li>
+</ul></li>
+<li><a href="#solver"><span class="toc-section-number">3</span> Solver</a>
+<ul>
+<li><a href="#ejemplo"><span class="toc-section-number">3.1</span> Ejemplo</a></li>
+</ul></li>
+<li><a href="#sumar.si"><span class="toc-section-number">4</span> SUMAR.SI</a></li>
+<li><a href="#caso-práctico"><span class="toc-section-number">5</span> Caso práctico</a>
+<ul>
+<li><a href="#formato-condicional"><span class="toc-section-number">5.1</span> Formato condicional</a></li>
+<li><a href="#solver-1"><span class="toc-section-number">5.2</span> Solver</a></li>
+<li><a href="#sumar.si-1"><span class="toc-section-number">5.3</span> SUMAR.SI</a></li>
+</ul></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Este document està subjecte a una llicència creative commons que permet la seua difusió i ús comercial reconeixent sempre l’autoria del seu creador. Es troba per a ser modificat al següent repositori de github: <!-- CANVIAR L'ENLLAÇ --> <a href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a> </p>
+            <h1 data-number="1" id="introducción"><span class="header-section-number">1</span> INTRODUCCIÓN</h1>
+            <p>En esta unidad veremos las funciones BUSCARV y BUSCARH, que son funciones para buscar elementos en una matriz dada. Luego echaremos un vistazo a Solver, donde veremos un ejemplo que podremos utilizar para resolver pequeñas ecuaciones.</p>
+            <h1 data-number="2" id="buscarv-y-buscarh"><span class="header-section-number">2</span> BUSCARV y BUSCARH</h1>
+            <p>Se trata de funciones de búsqueda de datos. Estas funciones nos permiten buscar la referencia de un valor dentro de un rango.</p>
+            <pre><code>=BUSCARV( Criterio de búsqueda; matriz_de_búsqueda; Índice; ordenado )</code></pre>
+            <h2 data-number="2.1" id="ejemplo-buscarv"><span class="header-section-number">2.1</span> Ejemplo BUSCARV()</h2>
+            <p>Vamos a buscar un valor en la primera columna de un rango, esta nos devuelve un valor en la misma fila desde una columna que especificamos. Por ejemplo:</p>
+            <p>Supongamos que tenemos una lista de estudiantes con sus calificaciones y queremos buscar la de un estudiante específico. Nuestra tabla es:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Estudiante</th>
+            <th>Nota</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Anna</td>
+            <td>NT</td>
+            </tr>
+            <tr class="even">
+            <td>Alfred</td>
+            <td>BE</td>
+            </tr>
+            <tr class="odd">
+            <td>Carla</td>
+            <td>EX</td>
+            </tr>
+            <tr class="even">
+            <td>David</td>
+            <td>SF</td>
+            </tr>
+            <tr class="odd">
+            <td>Javi</td>
+            <td>EX</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Si queremos buscar la nota del estudiante “Carla”, utilizaremos la función <strong>BUSCARV</strong> de la siguiente manera:</p>
+            <pre class="excel"><code>=BUSCARV(&quot;Carla&quot;; A2:B6; 2; FALSO())</code></pre>
+            <p>Esta fórmula significa:</p>
+            <ul>
+            <li><strong>“Carla”</strong>: Es el valor que queremos buscar.</li>
+            <li><strong>A2:B6</strong>: Es el rango donde queremos buscar. “Carla” debe encontrarse en la primera columna de este rango. Esta parte es muy importante.</li>
+            <li><strong>2</strong>: Es el número de columna del rango desde donde queremos recuperar el valor. En este caso, 2 porque la nota está en la segunda columna. Si pusiéramos 1, nos devolvería “Carla”, ya que es el valor que ha buscado.</li>
+            <li><strong>FALSO()</strong>: Indica que queremos una coincidencia exacta. Si pusiéramos VERDADERO(), podríamos poner por ejemplo Carlota y buscaría una semejanza con lo que estamos buscando.</li>
+            </ul>
+            <p>Cuando introducimos esta fórmula, Excel buscará “Carla” en la primera columna del rango A2:B6 y devolverá el valor de la segunda columna, que es la nota, y en este caso sería <strong>EX</strong>.</p>
+            <p>En el siguiente ejemplo:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Estudiante</th>
+            <th>Nota</th>
+            <th>Nota2</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Anna</td>
+            <td>NT</td>
+            <td>NT</td>
+            </tr>
+            <tr class="even">
+            <td>Alfred</td>
+            <td>BE</td>
+            <td>NT</td>
+            </tr>
+            <tr class="odd">
+            <td>Carla</td>
+            <td>EX</td>
+            <td>SF</td>
+            </tr>
+            <tr class="even">
+            <td>David</td>
+            <td>SF</td>
+            <td>BE</td>
+            </tr>
+            <tr class="odd">
+            <td>Javi</td>
+            <td>EX</td>
+            <td>IN</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Si escribiéramos la siguiente fórmula:</p>
+            <pre class="excel"><code>=BUSCARV(&quot;Carla&quot;; A2:B6; 3; FALSO())</code></pre>
+            <p>Nos daría el valor SF, ya que es el valor de la columna 3.</p>
+            <h2 data-number="2.2" id="ejemplo-buscarh"><span class="header-section-number">2.2</span> Ejemplo BUSCARH()</h2>
+            <p>La función <strong>BUSCARH</strong> es similar a <strong>BUSCARV</strong>, pero en lugar de buscar verticalmente en una columna, <strong>BUSCARH</strong> busca horizontalmente en una fila. Es útil cuando la información que queremos encontrar está organizada en filas en lugar de columnas.</p>
+            <p>Imagina que tenemos una tabla con los días de la semana y las temperaturas máximas que se han registrado. Queremos encontrar la temperatura máxima de un día específico. Nuestra tabla podría ser así:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Día</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Temp. Máx</td>
+            <td>22</td>
+            <td>24</td>
+            <td>19</td>
+            <td>21</td>
+            <td>23</td>
+            <td>25</td>
+            <td>20</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Si queremos buscar la temperatura máxima del <strong>Jueves</strong>, utilizaremos la función <strong>BUSCARH</strong> de la siguiente manera:</p>
+            <pre class="excel"><code>=BUSCARH(&quot;Jueves&quot;; A1:H2; 2; falso())</code></pre>
+            <p>Esta fórmula significa:</p>
+            <ul>
+            <li><strong>“Jueves”</strong>: Es el valor que queremos buscar.</li>
+            <li><strong>A1:H2</strong>: Es el rango donde queremos buscar. “Jueves” debe encontrarse en la primera fila de este rango.</li>
+            <li><strong>2</strong>: Es el número de fila del rango desde donde queremos recuperar el valor. En este caso, 2 porque la temperatura está en la segunda fila.</li>
+            <li><strong>FALSO()</strong>: Indica que queremos una coincidencia exacta.</li>
+            </ul>
+            <p>Cuando introducimos esta fórmula, la hoja de cálculo buscará “Jueves” en la primera fila del rango A1:H2 y devolverá el valor de la segunda fila, que es la temperatura máxima, y en este caso sería <strong>21</strong>.</p>
+            <h1 data-number="3" id="solver"><span class="header-section-number">3</span> Solver</h1>
+            <p>Para explicar esta herramienta siempre se parte de un ejemplo que pueda ser más o menos claro, imagina que tienes una caja llena de golosinas de diferentes colores y quieres repartirlas entre tus amigos de la manera más justa posible, pero también quieres quedarte con la mayor cantidad de golosinas verdes, que son tus favoritas. Así es como funciona el Solver.</p>
+            <p><strong>Solver</strong> es una herramienta que existe, tanto para Excel como para Libreoffice, que nos ayuda a encontrar la mejor solución a un problema, como repartir las golosinas. Nos permite decirle a la hoja de cálculo qué queremos maximizar o minimizar (como las golosinas verdes) y cuáles son las reglas que no podemos romper (como no dar más de 10 golosinas a cada amigo).</p>
+            <div class="note">
+            <p>Si quieres saber más, Solver es una herramienta de programación matemática lineal. Hay mucha información al respecto y se utiliza en entornos empresariales para temas de producción. <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal">https://es.wikipedia.org/wiki/Programaci%C3%B3n_lineal</a></p>
+            </div>
+            <p>Para usar el Solver, primero debemos tener claro tres cosas:</p>
+            <ol type="1">
+            <li><p><strong>¿Qué queremos lograr?</strong> Esto es nuestra <strong>meta</strong> u <strong>objetivo</strong>. Puede ser maximizar algo, como los beneficios, o minimizar, como el costo.</p></li>
+            <li><p><strong>¿Qué podemos cambiar?</strong> Estas son nuestras <strong>variables</strong>. Son las cosas que podemos ajustar para intentar alcanzar nuestra meta. Como, por ejemplo, cuántas golosinas de cada color damos a nuestros amigos.</p></li>
+            <li><p><strong>¿Cuáles son las reglas?</strong> Estas son las <strong>restricciones</strong>. Son las normas que no podemos pasar por alto. Como, por ejemplo, no podemos dar más golosinas de las que tenemos en la caja.</p></li>
+            </ol>
+            <p>Cuando tenemos todo esto claro, configuramos Solver y él “juega” con las variables dentro de las reglas hasta encontrar la mejor manera de alcanzar el objetivo, aunque a veces nos da valores aproximados. Es como un juego de rompecabezas donde Excel prueba diferentes combinaciones hasta encontrar la que mejor funciona.</p>
+            <p>Y así es como el Solver nos puede ayudar a tomar decisiones y resolver problemas de manera fácil y sencilla. Pero veamos algún ejemplo.</p>
+            <h2 data-number="3.1" id="ejemplo"><span class="header-section-number">3.1</span> Ejemplo</h2>
+            <p>VAmos a ver un ejemplo clásico que se usa siempre para explicar Solver dentro de un contexto empresarial:</p>
+            <p>Tenemos dos tipos de productos: camisas y pantalones. Cada camisa nos da un beneficio de 15€ y cada pantalón de 20€. Pero tenemos algunas restricciones:</p>
+            <ul>
+            <li>Solo podemos fabricar un máximo de 100 unidades entre camisas y pantalones a la semana debido a la capacidad de producción.</li>
+            <li>Por cuestiones de demanda del mercado, debemos fabricar al menos 10 camisas y 10 pantalones cada semana.</li>
+            <li>El costo de fabricación por unidad es de 8€ para las camisas y de 10€ para los pantalones, y no queremos superar un costo total de 1200€ a la semana.</li>
+            </ul>
+            <p>Con estos datos, podemos configurar nuestro modelo en Excel de la siguiente manera:</p>
+            <ol type="1">
+            <li><strong>Variables de decisión</strong>:</li>
+            </ol>
+            <ul>
+            <li><strong>Celda B2</strong>: Número de camisas a fabricar.</li>
+            <li><strong>Celda B3</strong>: Número de pantalones a fabricar.</li>
+            </ul>
+            <ol start="2" type="1">
+            <li><strong>Función objetivo</strong>:</li>
+            </ol>
+            <ul>
+            <li><strong>Celda B4</strong>: Beneficio total. La fórmula sería <code>=15*B2 + 20*B3</code>.</li>
+            </ul>
+            <ol start="3" type="1">
+            <li><strong>Restricciones</strong>:</li>
+            </ol>
+            <ul>
+            <li><strong>Celda B5</strong>: Total de unidades fabricadas. La fórmula sería <code>=B2 + B3</code>, y este valor debe ser menor o igual a 100.</li>
+            <li><strong>Celda B6</strong>: Costo total de fabricación. La fórmula sería <code>=8*B2 + 10*B3</code>, y este valor debe ser menor o igual a 1200€.</li>
+            <li><strong>Celda B2</strong> debe ser mayor o igual a 10.</li>
+            <li><strong>Celda B3</strong> debe ser mayor o igual a 10.</li>
+            </ul>
+            <p>Ahora, abrimos la herramienta Solver y configuramos los siguientes parámetros:</p>
+            <ul>
+            <li><strong>Establecer objetivo</strong>: Celda B4.</li>
+            <li><strong>Para maximizar</strong>: Seleccionamos ‘Max’.</li>
+            <li><strong>Variables de cambio</strong>: Celdas B2 y B3.</li>
+            <li><strong>Agregar restricciones</strong>:
+            <ul>
+            <li>B5 &lt;= 100</li>
+            <li>B6 &lt;= 1200</li>
+            <li>B2 &gt;= 10</li>
+            <li>B3 &gt;= 10</li>
+            </ul></li>
+            </ul>
+            <p>Una vez que todo está configurado, hacemos clic en ‘Resolver’ y Solver encontrará la combinación óptima de camisas y pantalones a fabricar para maximizar los beneficios sin superar las restricciones establecidas.</p>
+            <h1 data-number="4" id="sumar.si"><span class="header-section-number">4</span> SUMAR.SI</h1>
+            <p>Otra de las fórmulas que resultan interesantes y que vamos a introducir, es la de sumar dados unas condiciones. Es muy similar a BUSCARV(), ya que busca unos valores y suma todos los valores que coinciden con ese criterio. Imaginemos que tenemos una serie de gastos con diferentes conceptos.</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Concepto</th>
+            <th>Gasto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Alquiler de las instalaciones</td>
+            <td></td>
+            </tr>
+            <tr class="even">
+            <td>Alquiler Furgoneta coche gasoil</td>
+            <td></td>
+            </tr>
+            <tr class="odd">
+            <td>Alquiler Autobús</td>
+            <td></td>
+            </tr>
+            <tr class="even">
+            <td>Camisetas y sudaderas</td>
+            <td></td>
+            </tr>
+            <tr class="odd">
+            <td>Excursión</td>
+            <td></td>
+            </tr>
+            <tr class="even">
+            <td>Actividades y material común</td>
+            <td></td>
+            </tr>
+            <tr class="odd">
+            <td>Manutención</td>
+            <td></td>
+            </tr>
+            <tr class="even">
+            <td>Farmacia</td>
+            <td></td>
+            </tr>
+            <tr class="odd">
+            <td>Marcha</td>
+            <td></td>
+            </tr>
+            <tr class="even">
+            <td>Imprevistos y cena</td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Por otro lado, tenemos una hoja llamada facturas donde vamos apuntando todos los gastos:</p>
+            <figure>
+            <img src="img/1.png" style="width:60.0%" alt="" /><figcaption>Hoja de facturas</figcaption>
+            </figure>
+            <p>En PARTIDA podemos tener las celdas validadas para que nos asigne ese movimiento a una partida específica:</p>
+            <figure>
+            <img src="img/2.png" style="width:60.0%" alt="" /><figcaption>Hoja de facturas</figcaption>
+            </figure>
+            <p>Lo que nos permite SUMAR.SI es buscar todas las partidas asignadas a un concepto específico y sumarlas. El esquema de la función sería:</p>
+            <pre class="excel"><code>=SUMAR.SI(Intervalo;Criterio_búsqueda;Intervalo_suma)</code></pre>
+            <p>De manera que, en nuestro caso, podríamos nombrar a los intervalos de la siguiente manera:</p>
+            <figure>
+            <img src="img/3.png" style="width:60.0%" alt="" /><figcaption>Rangos</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Fíjate que tomamos toda la columna D:D y E:E, esto no nos importa ya que las filas anteriores y posteriores no nos molestan, por lo que podemos agregar líneas a facturas y no necesitamos tener en cuenta si tenemos que cambiar el rango.</p>
+            </div>
+            <p>Así podríamos tener una fórmula del tipo:</p>
+            <pre class="excel"><code>=SUMAR.SI(Facturas.D:D;I9;Facturas.E:E)</code></pre>
+            <p>O mejor:</p>
+            <pre class="excel"><code>=SUMAR.SI(PARTIDES;I9;IMPORTS)</code></pre>
+            <p>Donde I9 correspondería a la celda donde tenemos nuestro concepto, de manera que tendríamos un resultado similar a este:</p>
+            <figure>
+            <img src="img/4.png" style="width:60.0%" alt="" /><figcaption>Conceptos sumados</figcaption>
+            </figure>
+            <h1 data-number="5" id="caso-práctico"><span class="header-section-number">5</span> Caso práctico</h1>
+            <p>En este punto, os planteamos la tarea que os vamos a pedir. Vamos a imaginar que hemos organizado una salida con nuestros alumnos a un paraje natural y vamos a pasar una semana allí. Hemos decidido prepararnos una hoja de cálculo para no tener que pensar demasiado e ir anotando los gastos que vamos teniendo en una hoja llamada presupuesto.</p>
+            <p>Nuestra hoja sería similar a esta:</p>
+            <figure>
+            <img src="img/5.png" style="width:60.0%" alt="" /><figcaption>Hoja de cálculo</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Los valores que tenemos aquí son totalmente inventados. Tenemos un presupuesto con unos ingresos ya realizados.</p>
+            </div>
+            <p>Las cuestiones que plantearíamos serían:</p>
+            <ul>
+            <li>¿Cuál sería el menor número de personas que necesitaríamos para hacer viable esta salida?</li>
+            <li>Llevar un control continuo de los gastos.</li>
+            </ul>
+            <h2 data-number="5.1" id="formato-condicional"><span class="header-section-number">5.1</span> Formato condicional</h2>
+            <p>En este punto vamos a añadirnos un formato condicional. Hemos creado unas celdas para que nos indique si nos pasamos de la cantidad de personas que cabemos.</p>
+            <figure>
+            <img src="img/9.png" style="width:60.0%" alt="" /><figcaption>Cantidad de personas</figcaption>
+            </figure>
+            <p>Nos crearíamos un formato condicional:</p>
+            <figure>
+            <img src="img/6.png" style="width:60.0%" alt="" /><figcaption>Formato condicional</figcaption>
+            </figure>
+            <p>Tenemos que crear un estilo nuevo:</p>
+            <figure>
+            <img src="img/7.png" style="width:60.0%" alt="" /><figcaption>Estilo</figcaption>
+            </figure>
+            <p>Resultado:</p>
+            <figure>
+            <img src="img/8.png" style="width:60.0%" alt="" /><figcaption>Formato creado</figcaption>
+            </figure>
+            <h2 data-number="5.2" id="solver-1"><span class="header-section-number">5.2</span> Solver</h2>
+            <p>Vamos a hacer uso de Solver para saber cuál sería el mínimo número de personas que necesitaríamos para hacer rentable la salida. Iríamos a Herramientas &gt; Solver, y rellenamos las celdas de la siguiente manera:</p>
+            <figure>
+            <img src="img/10.png" style="width:70.0%" alt="" /><figcaption>Solver</figcaption>
+            </figure>
+            <p>Si intentamos buscar una solución nos dice que no hay solución posible:</p>
+            <figure>
+            <img src="img/11.png" style="width:70.0%" alt="" /><figcaption>Solución</figcaption>
+            </figure>
+            <p>Ahora, se nos plantean varias posibilidades. Podríamos contratar otro autobús (o coche, etc…), o podemos subir el precio, que es la opción que hemos buscado. Planteamos 225 €.</p>
+            <figure>
+            <img src="img/12.png" style="width:60.0%" alt="" /><figcaption>Solución</figcaption>
+            </figure>
+            <p>:::warning Con el solver también podríamos plantear que modificara el precio de la salida dado un número de alumnos. ::</p>
+            <div class="caution">
+            <p>“Estancamiento”, significa que ha llegado un punto donde no es capaz de encontrar una solución mejor que la ofrecida.</p>
+            </div>
+            <p>Le decimos que queremos “Mantener la solución” y tendríamos un resultado de la siguiente manera:</p>
+            <figure>
+            <img src="img/13.png" style="width:60.0%" alt="" /><figcaption>Tabla resultante</figcaption>
+            </figure>
+            <div class="note">
+            <p>Obviamente hay que cambiar el valor de 90,4 alumnos a un número entero, en este caso pondríamos 91.</p>
+            </div>
+            <h2 data-number="5.3" id="sumar.si-1"><span class="header-section-number">5.3</span> SUMAR.SI</h2>
+            <p>En este punto querríamos que el valor de los gastos fuera sumándose al gasto real, además nos añadiríamos otra celda donde pondríamos el grado de cumplimiento del gasto, más que nada para ver que no pasa del 100% (hemos añadido también el formato condicional a estas celdas):</p>
+            <figure>
+            <img src="img/14.png" style="width:60.0%" alt="" /><figcaption>Tabla gastos</figcaption>
+            </figure>
+            <div class="note">
+            <p>Hemos definido los rangos IMPORTS y PARTIDES, en la hoja Facturas.</p>
+            </div>
+            <p>De esta manera ahora podríamos aplicar la fórmula:</p>
+            <pre class="excel"><code>=SUMAR.SI(PARTIDES;I9;IMPORTS)</code></pre>
+            <p>Finalmente podríamos ver nuestra tabla de la siguiente manera:</p>
+            <figure>
+            <img src="img/15.png" style="width:60.0%" alt="" /><figcaption>Tabla gastos</figcaption>
+            </figure>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>
