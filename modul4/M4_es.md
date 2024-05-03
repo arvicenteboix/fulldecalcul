@@ -1,9 +1,9 @@
 ---
 # Front matter
 # Metainformació del document
-title: Estratègies per a l'ús del full de càlcul
+title: Estrategias para el uso de la hoja de cálculo
 titlepage: true
-subtitle: "Funcions especials: BUSCARV(), BUSCARH(), Solver"
+subtitle: "Funciones especiales: BUSCARV(), BUSCARH() y Solver"
 author: 
 - Alfredo Rafael Vicente Boix
 lang: ca
