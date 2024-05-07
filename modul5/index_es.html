@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estrategias para el uso de la hoja de cálculo</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+        code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #7d9029; } /* Attribute */
+        code span.bn { color: #40a070; } /* BaseN */
+        code span.bu { } /* BuiltIn */
+        code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4070a0; } /* Char */
+        code span.cn { color: #880000; } /* Constant */
+        code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+        code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+        code span.dt { color: #902000; } /* DataType */
+        code span.dv { color: #40a070; } /* DecVal */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #40a070; } /* Float */
+        code span.fu { color: #06287e; } /* Function */
+        code span.im { } /* Import */
+        code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+        code span.op { color: #666666; } /* Operator */
+        code span.ot { color: #007020; } /* Other */
+        code span.pp { color: #bc7a00; } /* Preprocessor */
+        code span.sc { color: #4070a0; } /* SpecialChar */
+        code span.ss { color: #bb6688; } /* SpecialString */
+        code span.st { color: #4070a0; } /* String */
+        code span.va { color: #19177c; } /* Variable */
+        code span.vs { color: #4070a0; } /* VerbatimString */
+        code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estrategias para el uso de la hoja de cálculo</h1>
+            <!--        <p class="subtitle">Módulo V: Introducción a Macros. Grabador de macros</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducción"><span class="toc-section-number">1</span> INTRODUCCIÓN</a></li>
+<li><a href="#organizando-macros-y-diálogos"><span class="toc-section-number">2</span> Organizando Macros y diálogos</a></li>
+<li><a href="#grabador-de-macros"><span class="toc-section-number">3</span> Grabador de macros</a>
+<ul>
+<li><a href="#habilitar-grabador-de-macros"><span class="toc-section-number">3.1</span> Habilitar grabador de macros</a></li>
+<li><a href="#ejemplo-de-uso"><span class="toc-section-number">3.2</span> Ejemplo de uso</a></li>
+</ul></li>
+<li><a href="#botones-de-formularios"><span class="toc-section-number">4</span> Botones de formularios</a></li>
+<li><a href="#programando-macros"><span class="toc-section-number">5</span> Programando macros</a>
+<ul>
+<li><a href="#mi-primera-macro"><span class="toc-section-number">5.1</span> Mi primera macro</a></li>
+</ul></li>
+<li><a href="#conceptos-básicos-de-programación-de-macros"><span class="toc-section-number">6</span> Conceptos básicos de programación de macros</a>
+<ul>
+<li><a href="#procedimientos"><span class="toc-section-number">6.1</span> Procedimientos</a></li>
+<li><a href="#variables-dim"><span class="toc-section-number">6.2</span> Variables (Dim)</a>
+<ul>
+<li><a href="#definición-de-variables"><span class="toc-section-number">6.2.1</span> Definición de variables</a></li>
+</ul></li>
+<li><a href="#objetos"><span class="toc-section-number">6.3</span> Objetos</a></li>
+<li><a href="#copilot-al-rescate"><span class="toc-section-number">6.4</span> Copilot al rescate</a></li>
+</ul></li>
+<li><a href="#usando-macros.-uso-de-diálogos"><span class="toc-section-number">7</span> Usando macros. Uso de diálogos</a>
+<ul>
+<li><a href="#ejemplo"><span class="toc-section-number">7.1</span> Ejemplo</a></li>
+</ul></li>
+<li><a href="#consideraciones-finales"><span class="toc-section-number">8</span> Consideraciones finales</a></li>
+<li><a href="#bibliografía"><span class="toc-section-number">9</span> Bibliografía</a></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Este documento está sujeto a una licencia Creative Commons que permite su difusión y uso comercial reconociendo siempre la autoría de su creador. Este documento se encuentra para ser modificado en el siguiente repositorio de github: <!-- CAMBIAR EL ENLACE --> <a href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a> </p>
+            <h1 data-number="1" id="introducción"><span class="header-section-number">1</span> INTRODUCCIÓN</h1>
+            <p>Las macros en las hojas de cálculo son operaciones que podemos realizar de manera automatizada. En este módulo veremos cómo realizar operaciones muy sencillas con macros, pero que nos pueden dar resultados muy vistosos. Sin embargo, podemos decir que puede resultar extremadamente complicada esta unidad, pero la tarea que vamos a pedirles tendrá una parte muy sencilla para ser APTA, al menos utilizando el grabador de macros. Pero vale la pena esforzarse e intentar sacar el máximo posible.</p>
+            <p>Las macros pueden estar escritas en diferentes lenguajes de programación, LibreOffice Basic, BeanShell, JavaScript y Python, nosotros nos centraremos en este primero ya que tiene un modo de compatibilidad con Excel. Las macros no siempre son compatibles entre Excel y LibreOffice Calc y muchas veces cuando creamos una macro en uno u otro sistema tendremos que retocarla.</p>
+            <p>Asimismo, también veremos cómo crear <em>diálogos</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> para dotar de mayor usabilidad a la hoja de cálculo. Principalmente para aquellas personas que no son usuarias de hojas de cálculo y hacerlo más amigable.</p>
+            <p>Partiremos del ejemplo que teníamos en el módulo anterior y iremos explicando poco a poco a través de ejemplos, eso sí… Vayan a escribir código, poco, pero las macros al final son líneas de código. Este módulo les facilitará las herramientas básicas para crear macros y a partir de ahí pueden complicar las cosas todo lo que quieran, piensen que se trata de unos conceptos muy básicos.</p>
+            <h1 data-number="2" id="organizando-macros-y-diálogos"><span class="header-section-number">2</span> Organizando Macros y diálogos</h1>
+            <p>Entender la gestión de las macros en LibreOffice Calc es poco intuitivo, para poder acceder a las macros que tenemos en el sistema vamos al menú de <em>Herramientas</em> y tenemos varias opciones:</p>
+            <ul>
+            <li>Ejecutar macros: Si queremos ejecutar una macro.</li>
+            <li>Editar macro: Si queremos editar alguna de las macros ya creadas. Aquí es donde iremos normalmente.</li>
+            <li>Organizar macros: Si queremos crear una macro nueva o eliminarla, debemos ir siempre a esta opción.</li>
+            <li>Organizar diálogos: para crear ventanas (diálogos).</li>
+            </ul>
+            <figure>
+            <img src="img/1.png" style="width:60.0%" alt="" /><figcaption>Menú macros</figcaption>
+            </figure>
+            <p>Si vamos a editar macros podemos ver que nos aparece un menú a la izquierda donde están todas nuestras macros. Fíjense que tenemos clasificadas las macros en:</p>
+            <ul>
+            <li>Mis macros y diálogos: Estas macros son las que tenemos en el sistema, es decir, en nuestro LibreOffice Calc.</li>
+            <li>Macros y diálogos de la aplicación: les recomiendo que no toquen esta parte.</li>
+            <li>Sin título 1: es el nombre de nuestra hoja de cálculo. Aquí se guardan las macros que se encuentran en nuestra hoja de cálculo. Si vamos a pasar esta hoja a otras personas para que utilicen las macros, las debemos poner aquí.</li>
+            </ul>
+            <figure>
+            <img src="img/2.png" style="width:60.0%" alt="" /><figcaption>Editar macros</figcaption>
+            </figure>
+            <p>Para crear una macro podemos ir a Organizar macros en el menú de Herramientas &gt; Macros. O si ya estamos dentro de la ventana editar. Podemos ir aquí:</p>
+            <figure>
+            <img src="img/3.png" style="width:60.0%" alt="" /><figcaption>Organizar macros macros</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recuerden que nosotros vamos a trabajar con BASIC. Por lo tanto debemos elegir la opción BASIC.</p>
+            </div>
+            <p>Aquí podemos editar directamente, eliminar o ejecutar.</p>
+            <figure>
+            <img src="img/4.png" style="width:50.0%" alt="" /><figcaption>Organizando macros</figcaption>
+            </figure>
+            <p>Si seleccionamos Standard dentro de nuestra hoja de cálculo (<em>Sin título 1</em>), podemos crearnos una macro.</p>
+            <figure>
+            <img src="img/5.png" style="width:60.0%" alt="" /><figcaption>Creando macros</figcaption>
+            </figure>
+            <p>Nos creamos una macro muy sencilla:</p>
+            <figure>
+            <img src="img/6.png" style="width:50.0%" alt="" /><figcaption>Código macro</figcaption>
+            </figure>
+            <div class="info">
+            <p>El comando MsgBox, lo que hace es abrir una ventana mostrando un mensaje.</p>
+            </div>
+            <p>Si queremos ejecutar la macro iremos a Ejecutar macro:</p>
+            <figure>
+            <img src="img/7.png" style="width:60.0%" alt="" /><figcaption>Ejecutar macro</figcaption>
+            </figure>
+            <p>Y le decimos qué macro queremos ejecutar:</p>
+            <figure>
+            <img src="img/8.png" style="width:50.0%" alt="" /><figcaption>Ejecutar macros</figcaption>
+            </figure>
+            <p>Y podemos ver el resultado:</p>
+            <figure>
+            <img src="img/9.png" style="width:40.0%" alt="" /><figcaption>Mi macro</figcaption>
+            </figure>
+            <!-- **Habilitar macros** -->
+            <h1 data-number="3" id="grabador-de-macros"><span class="header-section-number">3</span> Grabador de macros</h1>
+            <p>Una de las opciones más sencillas para crear macros es utilizar el grabador de macros, que no es más que repetir una serie de acciones que grabaremos, estas acciones pueden ser editar una celda y agregar una fórmula o un texto, eliminar columnas o filas, etc…</p>
+            <div class="warning">
+            <p>Aunque parezca sencillo, no siempre es posible realizar todas las acciones mediante el grabador de macros. En ocasiones, tendremos que recurrir a escribir código para conseguir el efecto deseado. Es más complejo de lo que parece a primera vista. Sin embargo, a menudo puede ser una herramienta útil que nos ahorra tiempo y simplifica el uso de la hoja de cálculo.</p>
+            </div>
+            <h2 data-number="3.1" id="habilitar-grabador-de-macros"><span class="header-section-number">3.1</span> Habilitar grabador de macros</h2>
+            <p>Las macros vienen deshabilitadas por defecto en LibreOffice Calc, para habilitarlas debemos ir al menú de opciones (Herramientas &gt; Opciones):</p>
+            <figure>
+            <img src="img/10.png" style="width:60.0%" alt="" /><figcaption>Habilitar grabador de macros</figcaption>
+            </figure>
+            <p>Una vez que vamos al menú de macros, ya nos aparecerá en el menú “grabar macro”.</p>
+            <figure>
+            <img src="img/11.png" style="width:60.0%" alt="" /><figcaption>Grabar macro</figcaption>
+            </figure>
+            <h2 data-number="3.2" id="ejemplo-de-uso"><span class="header-section-number">3.2</span> Ejemplo de uso</h2>
+            <p>Vamos a partir de la hoja que hemos utilizado en el módulo anterior a la cual le hemos agregado el recuadro marcado en rojo:</p>
+            <figure>
+            <img src="img/12.png" alt="" /><figcaption>Hoja de ejemplo</figcaption>
+            </figure>
+            <p>Vamos a tratar de agregar los valores que vamos poniendo en la hoja de facturas, y que se haga todo automáticamente sin necesidad de ir a la hoja de facturas. Debemos pensar detenidamente todo lo que vamos a realizar, no siempre el resultado esperado nos saldrá a la primera.</p>
+            <ol type="1">
+            <li>Comenzamos el grabador de macros y nos aparecerá esta ventana, pulsaremos el botón <em>finalizar macro</em> cuando terminemos de hacer todas las acciones:</li>
+            </ol>
+            <figure>
+            <img src="img/13.png" style="width:20.0%" alt="" /><figcaption>Grabar macros</figcaption>
+            </figure>
+            <ol start="2" type="1">
+            <li>Insertamos una fila.</li>
+            </ol>
+            <figure>
+            <img src="img/15.png" style="width:40.0%" alt="" /><figcaption>Insertar línea</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Como estamos grabando una macro, debemos poner una línea nueva siempre en el mismo lugar, es buena estrategia ir agregando líneas al principio y no al final, ya que no hay manera de grabar que estás en la última línea, ya que el grabador de macros no entiende que es la última sino la número X.</p>
+            </div>
+            <ol start="3" type="1">
+            <li>Copiamos celda por celda</li>
+            </ol>
+            <figure>
+            <img src="img/14.png" style="width:60.0%" alt="" /><figcaption>Copiar línea</figcaption>
+            </figure>
+            <div class="warning">
+            <p>En LibreOffice Calc, si seleccionas un rango y lo pegas, no funciona. Debes hacer el procedimiento de copiar y pegar para cada celda. Por lo tanto, si queremos copiar y pegar las 3 celdas, debes copiar y pegar 3 veces.</p>
+            </div>
+            <ol start="4" type="1">
+            <li>Pegamos celda por celda</li>
+            </ol>
+            <figure>
+            <img src="img/16.png" style="width:60.0%" alt="" /><figcaption>Pegar línea</figcaption>
+            </figure>
+            <ol start="5" type="1">
+            <li>Volvemos a la hoja en la que estábamos y borramos el valor que hemos agregado.</li>
+            </ol>
+            <figure>
+            <img src="img/19.png" style="width:60.0%" alt="" /><figcaption>Borrar</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Una de las limitaciones que tendríamos en este caso sería el uso de fechas o el hecho de copiar y pegar una línea, ya que, aunque le digamos que nos escriba la fecha actual (Ctrl+;), el grabador no lo detecta. Pero podrías poner otro campo con la fecha de la factura.</p>
+            </div>
+            <ol start="6" type="1">
+            <li>Finalmente, vamos a <em>ejecutar macro</em> y podemos ver cómo se realizan todas las acciones.</li>
+            </ol>
+            <h1 data-number="4" id="botones-de-formularios"><span class="header-section-number">4</span> Botones de formularios</h1>
+            <p>Una de las cosas que podemos pensar es que es bastante incómodo ir cada vez a <em>Ejecutar macro</em> cuando queremos agregar un gasto. Es por eso que podemos recurrir al uso de formularios. Lo primero que haremos es habilitar la barra de herramientas de <em>Controles de formulario</em>. Vamos a Ver &gt; Barra de herramientas &gt; Controles de formularios:</p>
+            <figure>
+            <img src="img/20.png" style="width:60.0%" alt="" /><figcaption>Control de formulario</figcaption>
+            </figure>
+            <p>Nos aparecerá la siguiente barra de herramientas. En esta nos debemos fijar en un botón para Activar el modo edición, en el cual podemos agregar controles, pero no podemos hacer uso de los controles. Cuando desactivemos el modo edición podremos hacer uso de los controles, como por ejemplo presionar el botón que hemos agregado.</p>
+            <figure>
+            <img src="img/21c.png" style="width:40.0%" alt="" /><figcaption>Barra de control de formulario</figcaption>
+            </figure>
+            <p>Seleccionamos un botón y lo agregamos, pero para asociarlo a una macro en concreto, como la que tenemos creada, lo que debemos hacer es presionar el botón derecho del ratón y ir a <em>Propiedades de control</em>:</p>
+            <figure>
+            <img src="img/22.png" style="width:40.0%" alt="" /><figcaption>Propiedades de control</figcaption>
+            </figure>
+            <p>Nos aparecerá una ventana donde iremos a la pestaña Eventos y presionaremos el botón de <em>Ejecutar una acción</em>:</p>
+            <figure>
+            <img src="img/23.png" style="width:50.0%" alt="" /><figcaption>Asociar a una acción</figcaption>
+            </figure>
+            <p>Ahí seleccionamos nuestra macro para que se ejecute cada vez que presionemos ese botón:</p>
+            <figure>
+            <img src="img/24.png" style="width:60.0%" alt="" /><figcaption>Asociar a macro</figcaption>
+            </figure>
+            <figure>
+            <img src="img/25.png" style="width:40.0%" alt="" /><figcaption>Elegir macro</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recuerda que para que funcione el botón debes salir del modo de edición presionando:</p>
+            <figure>
+            <img src="img/26.png" alt="" /><figcaption>Salir del modo edición del formulario</figcaption>
+            </figure>
+            </div>
+            <h1 data-number="5" id="programando-macros"><span class="header-section-number">5</span> Programando macros</h1>
+            <p>Hasta ahora hemos visto el grabador de macros, y aquí termina el curso. Si piensas que ha sido demasiado complicado para ti, puedes dejar la unidad aquí y hacer la tarea, entendemos que en este punto las cosas pueden complicarse un poco. Pero uno de los verdaderos potenciales de las hojas de cálculo es conocer un poco el uso de las macros. En esta sección vamos a darte algunas nociones básicas de cómo realizar el ejemplo anterior pero sin grabar la macro.</p>
+            <div class="caution">
+            <p>Si piensas que el grabador de macros te va a dar una idea de cómo hacer ciertas acciones, verás que el código que crea el grabador es muy poco intuitivo y difícil de entender.</p>
+            </div>
+            <h2 data-number="5.1" id="mi-primera-macro"><span class="header-section-number">5.1</span> Mi primera macro</h2>
+            <p>Ya hemos visto cómo se organizan las macros. Vamos a crear una macro llamada modul5 donde intentaremos obtener el valor de una celda y, al presionar un botón, nos aparecerá una ventana que diga “Hola + Nombre”.</p>
+            <p>Por supuesto, aquí está la traducción al español:</p>
+            <div class="warning">
+            <p>Es recomendable guardar las macros siempre en local. Si utilizas macros adjuntas a los documentos debes habilitar la opción para poder ejecutarlas. Debes ir a <em>Herramientas&gt;Opciones&gt;Libreoffice&gt;Seguridad&gt;Seguridad macros&gt;Nivel de seguridad medio</em>.</p>
+            </div>
+            <p>Comenzaremos yendo a <em>Herramientas&gt;Macros&gt;Organizar macros&gt;BASIC</em>, iremos a <em>Organizador</em>:</p>
+            <p>Y le daremos a <em>Nuevo</em> para crear un nuevo módulo:</p>
+            <p>Le damos el nombre de <strong>Modul5</strong>:</p>
+            <p>Si ahora vamos a <em>Editar macros</em> ya veremos nuestro módulo creado en una función llamada main, si ejecutamos ese módulo siempre ejecutará esa función, también podemos ejecutar una función específica dentro del módulo.</p>
+            <p>Y escribiremos el siguiente código:</p>
+            <div class="sourceCode" id="cb1"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>oFull = ThisComponent.CurrentController.ActiveSheet</span>
+            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>oCellCadena = oFull.getCellByPosition(0,0).getString()</span>
+            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>MsgBox(<span class="st">&quot;Hola &quot;</span>+oCellCadena)</span>
+            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>En este código lo que hemos hecho es:</p>
+            <ul>
+            <li><strong>oFull = ThisComponent.CurrentController.ActiveSheet</strong> : asignamos a la variable oFull un objeto. De manera que estoy extrayendo el objeto <em>ActiveSheet</em> del objeto <em>CurrentController</em> que se encuentra en <em>ThisComponent</em>. Y lo guardo dentro de oCell, ahora es como si cada vez que escribiera oCell escribiera todo lo que había antes.</li>
+            <li><strong>oCell = oFull.getCellByPosition(0,0)</strong> : asignamos a oCellCadena el texto que hay dentro de la celda que se encuentra en 0,0. O sea la primera celda de todas.</li>
+            <li><strong>MsgBox(“Hola”+oCellCadena)</strong> : MsgBox(TEXT) es una función que nos permite sacar una ventana con un texto, en este caso hemos concatenado dos cadenas: “Hola”+oCellCadena.</li>
+            </ul>
+            <p>: Un objeto es una entidad que guarda dentro diversas funciones, diversas variables y diversos objetos.</p>
+            <p>De esta manera el resultado es:</p>
+            <figure>
+            <img src="img/32.png" style="width:60.0%" alt="" /><figcaption>Ventana</figcaption>
+            </figure>
+            <p>Claro, aquí está la traducción al castellano:</p>
+            <h1 data-number="6" id="conceptos-básicos-de-programación-de-macros"><span class="header-section-number">6</span> Conceptos básicos de programación de macros</h1>
+            <p>En este punto vamos a dar unos objetos comunes que se suelen utilizar para programar.</p>
+            <h2 data-number="6.1" id="procedimientos"><span class="header-section-number">6.1</span> Procedimientos</h2>
+            <div class="caution">
+            <p>Este apartado y el siguiente se deben leer en paralelo, puedes leer primero este y después variables y después volver a leer este.</p>
+            </div>
+            <p>La palabra <strong>Sub</strong> muestra la apertura de un procedimiento. Un procedimiento es un código que realiza una acción determinada. Hay un procedimiento que es el que se ejecuta cuando ejecutamos un módulo que es <strong>Sub Main</strong>, en el ejemplo anterior hemos puesto el código dentro de Sub Main.</p>
+            <div class="sourceCode" id="cb2"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">Sub </span>NOMBRE_PROCEDIMIENTO()</span>
+            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>Podemos pasar variables al procedimiento poniendo entre paréntesis las variables que queremos pasar:</p>
+            <div class="sourceCode" id="cb3"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">Sub </span>NOMBRE_PROCEDIMIENTO(var1 <span class="kw">as</span> <span class="dt">Integer</span>, var2 <span class="kw">as</span> <span class="dt">Integer</span>)</span>
+            <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  var3 = var1+var2</span>
+            <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>Si queremos que nos devuelva un valor el procedimiento tendremos que decirle el resultado qué tipo de variable será:</p>
+            <div class="sourceCode" id="cb4"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">Sub </span>NOMBRE_PROCEDIMIENTO(var1 <span class="kw">as</span> <span class="dt">Integer</span>, var2 <span class="kw">as</span> <span class="dt">Integer</span>) <span class="kw">as</span> <span class="dt">Integer</span></span>
+            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  NOMBRE_PROCEDIMIENTO = var1+var2</span>
+            <span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <div class="important">
+            <p>Fijémonos que ahora para devolver un valor tenemos que dar a la variable NOMBRE_PROCEDIMIENTO un valor y ese será el valor que devolverá.</p>
+            </div>
+            <h2 data-number="6.2" id="variables-dim"><span class="header-section-number">6.2</span> Variables (Dim)</h2>
+            <p>Una variable es una palabra a la cual se le asigna un valor, ese valor puede ser:</p>
+            <ul>
+            <li>String: cuando se trata de un texto.</li>
+            <li>Integer: cuando se trata de un número.</li>
+            <li>Object: Cuando se trata de un objeto.</li>
+            <li>Hay otros tipos de variables, pero nos centraremos en estos 3.</li>
+            </ul>
+            <h3 data-number="6.2.1" id="definición-de-variables"><span class="header-section-number">6.2.1</span> Definición de variables</h3>
+            <p>Las variables pueden encontrarse dentro de un procedimiento o son necesarias para utilizarlas en todo el módulo:</p>
+            <ul>
+            <li>Si la utilizamos dentro de un procedimiento simplemente daremos un nombre y pondremos =.</li>
+            <li>Si queremos utilizarla en todo el módulo, la tenemos que definir al principio con la palabra <em>Dim NOMBRE_VARIABLE As TIPO_VARIABLE</em></li>
+            </ul>
+            <p>Por ejemplo:</p>
+            <div class="sourceCode" id="cb5"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>REM Definimos una variable al inicio, por lo tanto la podremos utilizar donde queramos.</span>
+            <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+            <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">Dim</span> oFull <span class="kw">As</span> <span class="dt">Object</span></span>
+            <span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+            <span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="kw">Sub </span>Ventana()</span>
+            <span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+            <span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>  REM Aquí tenemos una variable que solo podemos utilizar dentro de este procedimiento (aux). En cambio podemos utilizar oFull en cualquier lugar.</span>
+            <span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
+            <span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>  aux = oFull.getCellByPosition(0,0).getString()</span>
+            <span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>  MsgBox(aux)</span>
+            <span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a></span>
+            <span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a></span>
+            <span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a></span>
+            <span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>  REM Dentro del procedimiento Main asignamos un valor que podemos utilizar en cualquier lugar.</span>
+            <span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a></span>
+            <span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>  oFull = ThisComponent.CurrentController.ActiveSheet</span>
+            <span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>  Ventana()</span>
+            <span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+            <span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <div class="tip">
+            <p>Os habréis fijado que cuando ponemos la palabra REM delante estamos haciendo un comentario sobre lo que estamos haciendo. Esa palabra nos permite hacer comentarios en el código para aclarar cosas, o saber qué se está haciendo cuando en un futuro queramos modificar nuestra macro.</p>
+            </div>
+            <p>: No puedes nombrar a las variables con palabras reservadas. No puedes nombrar Main a una variable por ejemplo.</p>
+            <h2 data-number="6.3" id="objetos"><span class="header-section-number">6.3</span> Objetos</h2>
+            <p>Todo en el lenguaje de programación BASIC son objetos. Aquí vamos a mostraros algunos que se utilizan muy frecuentemente</p>
+            <ul>
+            <li><strong>ThisComponent</strong>: Se trata del Objeto que representa nuestra hoja de cálculo actual, de aquí derivan todos los demás objetos
+            <ul>
+            <li><strong>.CurrentController.ActiveSheet</strong>: Nos devuelve un objeto que representa nuestra hoja</li>
+            <li><strong>.getSheets()</strong> o <strong>.Sheets</strong>: Nos devuelve un objeto que representa todas nuestras hojas
+            <ul>
+            <li><strong>.getByIndex(INDEX_HOJA)</strong>: Podemos coger una hoja por Index, el 0 es el primero.</li>
+            <li><strong>.getByName(NOMBRE_HOJA)</strong>: Podemos hacerlo también por nombre</li>
+            <li><strong>.getCount()</strong>: O extraer el número de hojas totales que tengo en mi hoja de cálculo.</li>
+            </ul></li>
+            </ul></li>
+            </ul>
+            <p>Podríamos tener nuestra hoja en la que estamos trabajando para extraer valores de celdas:</p>
+            <pre><code>nuestra_hoja = ThisComponent.getSheets().getByIndex(0)</code></pre>
+            <ul>
+            <li><strong>nuestra_hoja</strong>
+            <ul>
+            <li><strong>.getCellByPosition(0,0)</strong> : Sacaríamos un objeto tipo celda, que representa nuestra celda en la posición 0,0.</li>
+            <li><strong>.getCellRangeByName(NOMBRE_CELDA_O_RANGO)</strong> : Si hemos nombrado una celda o un rango, podemos extraerlo de aquí.
+            <ul>
+            <li><strong>.setValue(VALOR_A_DAR)</strong> : Podríamos dar un valor a la celda con esta función.</li>
+            <li><strong>.setFormula(“=A1+A2”)</strong> : O una fórmula.</li>
+            <li><strong>.getValue()</strong> : Podríamos coger el valor de la celda.</li>
+            <li><strong>.getString()</strong> : O el texto, si es un número entero, no nos devolverá el valor en texto, tendríamos que utilizar getValue.</li>
+            <li><strong>.getFormula()</strong> : Igualmente, si es una fórmula la podemos extraer con esta función.</li>
+            </ul></li>
+            </ul></li>
+            </ul>
+            <h2 data-number="6.4" id="copilot-al-rescate"><span class="header-section-number">6.4</span> Copilot al rescate</h2>
+            <p>Copilot siempre nos proporcionará ejemplos sobre las diferentes opciones. Eso sí, siempre hay que tener unas nociones básicas sobre lo que se está preguntando:</p>
+            <figure>
+            <img src="img/33.png" style="width:80.0%" alt="" /><figcaption>Copilot</figcaption>
+            </figure>
+            <p>Claro, aquí está la traducción al castellano:</p>
+            <h1 data-number="7" id="usando-macros.-uso-de-diálogos"><span class="header-section-number">7</span> Usando macros. Uso de diálogos</h1>
+            <p>Como hemos dicho, un diálogo es una ventana que facilita la interacción entre la hoja de cálculo y el usuario. Vamos a crear un pequeño ejemplo para nuestra hoja de cálculo del presupuesto.</p>
+            <p>Para agregar un nuevo diálogo vamos a <em>Herramientas&gt;Macros&gt;Organizar diálogos</em> y creamos un nuevo diálogo:</p>
+            <figure>
+            <img src="img/34.png" style="width:40.0%" alt="" /><figcaption>Nuevo Diálogo</figcaption>
+            </figure>
+            <p>Y editamos:</p>
+            <figure>
+            <img src="img/35.png" style="width:40.0%" alt="" /><figcaption>Editamos Diálogo</figcaption>
+            </figure>
+            <p>Nos aparecerá la siguiente ventana que podremos configurar arrastrando y soltando los elementos que se encuentran en la barra de herramientas en la parte inferior de la pantalla.</p>
+            <figure>
+            <img src="img/36c.png" style="width:60.0%" alt="" /><figcaption>Creamos Diálogo</figcaption>
+            </figure>
+            <p>Cuando arrastramos y soltamos podemos ver que en la parte de propiedades nos aparecen las propiedades del elemento:</p>
+            <figure>
+            <img src="img/37.png" style="width:60.0%" alt="" /><figcaption>Propiedades de los elementos</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Os recomendamos que utilicéis las propiedades para colocar cada uno de los elementos y que queden correctamente dispuestos dentro de la ventana.</p>
+            </div>
+            <p>Arrastrando y soltando podemos crearnos la siguiente ventana por ejemplo:</p>
+            <figure>
+            <img src="img/38.png" style="width:60.0%" alt="" /><figcaption>Ejemplo de diálogo</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Este diálogo tiene 3 campos de texto y el último es un campo numérico. El campo numérico aunque visualmente parecen iguales, son diferentes.</p>
+            </div>
+            <p>Podemos ver las propiedades del botón que pueden cambiar su manera de actuar, al botón Cancelar pueden ir a <em>Tipo de botón</em> y decirle que es un botón <em>Cancelar</em>.</p>
+            <figure>
+            <img src="img/40.png" style="width:40.0%" alt="" /><figcaption>Tipo de botón</figcaption>
+            </figure>
+            <p>Dentro de las propiedades del botón, podemos ir a <em>Eventos</em> y en <em>Ejecutar Acción</em> pulsamos al botón del lado:</p>
+            <figure>
+            <img src="img/41.png" style="width:50.0%" alt="" /><figcaption>Eventos del botón</figcaption>
+            </figure>
+            <p>Se nos abrirá una ventana que nos permitirá asociar ese botón a un procedimiento de la macro:</p>
+            <figure>
+            <img src="img/42.png" style="width:60.0%" alt="" /><figcaption>Acción del botón</figcaption>
+            </figure>
+            <p>Finalmente, abriríamos el diálogo de la misma manera que hemos asociado antes un botón del formulario en nuestra hoja de cálculo, el código que debemos utilizar para abrir el diálogo es el siguiente. Siempre será de la misma manera, solo habrá que cambiar:</p>
+            <ul>
+            <li>Standard: Pondremos el nombre de nuestra macro.</li>
+            <li>Dialog1: Pondremos el nombre que le damos a nuestro Diálogo.</li>
+            </ul>
+            <div class="sourceCode" id="cb7"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">Sub </span>StartDialog1()</span>
+            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    BasicLibraries.LoadLibrary(<span class="st">&quot;Tools&quot;</span>)</span>
+            <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    oDialog1 = LoadDialog(<span class="st">&quot;Standard&quot;</span>, <span class="st">&quot;Dialog1&quot;</span>)</span>
+            <span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    oDialog1.Execute()</span>
+            <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <h2 data-number="7.1" id="ejemplo"><span class="header-section-number">7.1</span> Ejemplo</h2>
+            <p>Vamos a realizar el mismo ejemplo de antes pero esta vez en lugar de poner los valores en 3 celdas, pondremos un botón que asociaremos al procedimiento, <em>StartDialog1</em>:</p>
+            <figure>
+            <img src="img/43.png" style="width:80.0%" alt="" /><figcaption>Hoja de cálculo</figcaption>
+            </figure>
+            <p>Crearemos otro procedimiento que se llamará readDialog1, que tenemos asociado al botón <em>Añadir</em> de nuestro diálogo. Hemos definido dos procedimientos auxiliares para practicar un poco:</p>
+            <div class="sourceCode" id="cb8"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a></span>
+            <span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>REM Definimos 2 variables globales para poder utilizarlas en todos los lugares</span>
+            <span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>REM oDialog1 lo necesitamos en dos procedimientos, en startDialog1 y en readDialog1</span>
+            <span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>REM oFullFactures lo utilizamos en InsertaText, InsertaValor y definimos el objeto en readDialog1</span>
+            <span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a></span>
+            <span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="kw">Dim</span> oDialog1 <span class="kw">as</span> <span class="dt">Object</span></span>
+            <span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">Dim</span> oFullFactures <span class="kw">as</span> <span class="dt">Object</span></span>
+            <span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a></span>
+            <span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>REM Procedimiento para abrir el Diálogo</span>
+            <span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a></span>
+            <span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="kw">Sub </span>StartDialog1()</span>
+            <span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>    BasicLibraries.LoadLibrary(<span class="st">&quot;Tools&quot;</span>)</span>
+            <span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    oDialog1 = LoadDialog(<span class="st">&quot;Standard&quot;</span>, <span class="st">&quot;Dialog1&quot;</span>)</span>
+            <span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>    oDialog1.Execute()</span>
+            <span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a></span>
+            <span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>REM Definimos un procedimiento auxiliar donde le pasamos 3 parámetros, la fila y la columna donde queremos añadir el texto y el texto que queremos añadir</span>
+            <span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a></span>
+            <span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a><span class="kw">Sub </span>InsertaText(fila <span class="kw">as</span> <span class="dt">Integer</span>, columna <span class="kw">as</span> <span class="dt">Integer</span>, texto <span class="kw">as</span> <span class="dt">String</span>)</span>
+            <span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>    </span>
+            <span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>    oFullFactures.getCellByPosition(fila,columna).setString(texto)</span>
+            <span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a></span>
+            <span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a></span>
+            <span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>REM Definimos un procedimiento auxiliar donde le pasamos 3 parámetros, la fila y la columna donde queremos añadir el valor y el valor que queremos añadir</span>
+            <span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a></span>
+            <span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a><span class="kw">Sub </span>InsertaValor(fila <span class="kw">as</span> <span class="dt">Integer</span>, columna <span class="kw">as</span> <span class="dt">Integer</span>, valor <span class="kw">as</span> <span class="dt">Integer</span>)</span>
+            <span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a></span>
+            <span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    oFullFactures.getCellByPosition(fila,columna).setValue(valor)</span>
+            <span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a></span>
+            <span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a> </span>
+            <span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a>REM En este procedimiento en primer lugar cogemos el valor de todos los campos y los guardamos en oT1, oT2, oT3 y oT4</span>
+            <span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>REM Después definimos nuestra hoja</span>
+            <span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a>REM Añadimos una línea en la hoja Factura</span>
+            <span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>REM Llenamos esa línea con inserta valor</span>
+            <span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a></span>
+            <span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a></span>
+            <span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a><span class="kw">Sub </span>readDialog1()</span>
+            <span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a></span>
+            <span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>    oT1 = oDialog1.GetControl(<span class="st">&quot;TextField1&quot;</span>).Text</span>
+            <span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>    oT2 = oDialog1.GetControl(<span class="st">&quot;TextField2&quot;</span>).Text</span>
+            <span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>    oT3 = oDialog1.GetControl(<span class="st">&quot;TextField3&quot;</span>).Text</span>
+            <span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>    oT4 = oDialog1.GetControl(<span class="st">&quot;NumericField1&quot;</span>).getValue()</span>
+            <span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a>    </span>
+            <span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a>    oFullFactures = ThisComponent.getSheets().getByName(<span class="st">&quot;Facturas&quot;</span>)</span>
+            <span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a></span>
+            <span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a>    oFullFactures.getRows().insertByIndex(4,1)</span>
+            <span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a></span>
+            <span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a>    InsertaText(1,4, oT1)</span>
+            <span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>    InsertaText(2,4,oT2)</span>
+            <span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    InsertaText(3,4,oT3)</span>
+            <span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a>    InsertaValor(4,4,oT4)</span>
+            <span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>    </span>
+            <span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a>    MsgBox(<span class="st">&quot;Datos Introducidos&quot;</span>)</span>
+            <span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>    </span>
+            <span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a></span>
+            <span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a></span>
+            <span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <h1 data-number="8" id="consideraciones-finales"><span class="header-section-number">8</span> Consideraciones finales</h1>
+            <p>Utilizar macros puede facilitar la interacción con nuestra hoja de cálculo y podemos dotarlo de multitud de operaciones que nos facilitan las tareas. Eso sí, es necesario practicar con él mucho. Al fin, es aprender a programar.</p>
+            <p>Hay que decir que se nos quedan algunas cosas en el tintero que os invitamos a investigar por vuestra cuenta. Por ejemplo:</p>
+            <ul>
+            <li>Function: se trata de un procedimiento especial para definir nuevas funciones en nuestra hoja</li>
+            <li>Bucle For: Podemos crear bucles, en la hoja de la bibliografía tenéis ejemplos muy aclaratorios sobre cómo utilizar el bucle.</li>
+            <li>Condicional If: Igualmente, podemos necesitar en alguna tarea algún condicional.</li>
+            </ul>
+            <p>Casi que haría falta un curso entero para practicar y hacer una introducción como es debido al uso de las hojas de cálculos. Aquí os hemos mostrado las herramientas que hay y algunos borradores de cómo utilizarlas.</p>
+            <h1 data-number="9" id="bibliografía"><span class="header-section-number">9</span> Bibliografía</h1>
+            <ol type="1">
+            <li><a href="https://documentation.libreoffice.org/assets/Uploads/Documentation/es/CG62/PDF/CG6212-MacrosDeCalc.pdf">Introducción a macros. Documentación Libreoffice</a></li>
+            </ol>
+            <section class="footnotes" role="doc-endnotes">
+            <hr />
+            <ol>
+            <li id="fn1" role="doc-endnote"><p>Un diálogo en programación es una ventana que muestra información al usuario o solicita una entrada de usuario. Esta herramienta facilita la interacción entre el usuario y el sistema o aplicación.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            </ol>
+            </section>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>

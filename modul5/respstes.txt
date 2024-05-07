@@ -1,0 +1,12 @@
+Respuestas:
+
+    c. Un conjunto de instrucciones que se pueden ejecutar automáticamente
+    b. LibreOffice Basic, BeanShell, JavaScript y Python
+    c. Una ventana que muestra información al usuario o solicita una entrada
+    b. Herramientas > Opciones > Configuración de macros
+    b. Para automatizar tareas mediante la grabación de acciones
+    a. Herramientas > Organizar diálogos
+    b. Hacer clic derecho en el botón y seleccionar "Asociar macro"
+    b. Representa la hoja de cálculo activa
+    a. Tener habilitadas las macros
+    b. Para automatizar tareas repetitivas y mejorar la interacción con el usuario

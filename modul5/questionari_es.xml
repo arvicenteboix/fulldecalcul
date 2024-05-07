@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question type="multichoice">
+        <name>
+            <text>¿Qué es una macro en un procesador de hojas de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué es una macro en un procesador de hojas de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una imagen en la hoja de cálculo</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una fórmula matemática</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Un conjunto de instrucciones que se pueden ejecutar automáticamente</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Un formato condicional</p>]]></text>
+        </answer>
+    </question>
+
+    <!-- Add more questions here -->
+
+    <question type="multichoice">
+        <name>
+            <text>¿En qué lenguajes de programación se pueden escribir las macros en LibreOffice
+                Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿En qué lenguajes de programación se pueden escribir las macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Python y Java</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>LibreOffice Basic, BeanShell, JavaScript y Python</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>C++ y Ruby</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Visual Basic y C#</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Qué es un diálogo en programación?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué es un diálogo en programación?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una etiqueta en una hoja de cálculo</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Un mensaje emergente en la pantalla</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Una ventana que muestra información al usuario o solicita una entrada</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una función matemática</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Cómo se habilitan las macros en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Cómo se habilitan las macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Configuración > Habilitar macros</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Herramientas > Opciones > Configuración de macros</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Es necesario instalar un complemento</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Las macros vienen habilitadas por defecto</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Para qué se utiliza el gravador de macros en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Para qué se utiliza el gravador de macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para grabar videos de la pantalla</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Para automatizar tareas mediante la grabación de acciones</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para grabar mensajes de audio</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para editar el contenido de la hoja de cálculo</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿En qué parte del menú se pueden organizar los diálogos en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿En qué parte del menú se pueden organizar los diálogos en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Herramientas > Organizar diálogos</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Vista > Opciones de diálogo</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Insertar > Nuevo diálogo</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Datos > Crear diálogo</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Qué es necesario hacer para asociar un botón en un diálogo con una macro en
+                LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué es necesario hacer para asociar un botón en un diálogo con una macro en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Arrastrar el botón sobre la hoja de cálculo</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Hacer clic derecho en el botón y seleccionar "Asociar macro"</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Editar el código de la macro</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Crear una nueva hoja de cálculo</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Qué tipo de objeto representa el objeto ThisComponent en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué tipo de objeto representa el objeto ThisComponent en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa un rango de celdas en una hoja de cálculo</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Representa la hoja de cálculo activa</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa un botón de comando</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa una fórmula matemática</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Qué se necesita para poder ejecutar correctamente un diálogo en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Qué se necesita para poder ejecutar correctamente un diálogo en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text><![CDATA[<p>Tener habilitadas las macros</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Disponer de conexión a internet</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Tener una hoja de cálculo vacía</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Abrir varios archivos simultáneamente</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>¿Por qué es útil utilizar macros y diálogos en una hoja de cálculo?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>¿Por qué es útil utilizar macros y diálogos en una hoja de cálculo?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para añadir colores y efectos visuales</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Para automatizar tareas repetitivas y mejorar la interacción con el usuario</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para insertar música de fondo en la hoja de cálculo</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Para compartir la hoja de cálculo en redes sociales</p>]]></text>
+        </answer>
+    </question>
+
+</quiz>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question type="multichoice">
+        <name>
+            <text>Què és una macro en un processador de fulls de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què és una macro en un processador de fulls de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una imatge en el full de càlcul</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una fórmula matemàtica</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Un conjunt d'instruccions que es poden executar automàticament</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Un format condicional</p>]]></text>
+        </answer>
+    </question>
+
+    <!-- Afegir més preguntes aquí -->
+
+    <question type="multichoice">
+        <name>
+            <text>En quins llenguatges de programació es poden escriure les macros en LibreOffice
+                Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>En quins llenguatges de programació es poden escriure les macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Python i Java</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>LibreOffice Basic, BeanShell, JavaScript i Python</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>C++ i Ruby</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Visual Basic i C#</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Què és un diàleg en programació?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què és un diàleg en programació?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una etiqueta en un full de càlcul</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Un missatge emergent en la pantalla</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Una finestra que mostra informació a l'usuari o sol·licita una entrada</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Una funció matemàtica</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Com s'habiliten les macros en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Com s'habiliten les macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Configuració > Habilitar macros</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Eines > Opcions > Configuració de macros</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>És necessari instal·lar un complement</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Les macros venen habilitades per defecte</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Per a què s'utilitza el gravador de macros en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Per a què s'utilitza el gravador de macros en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per a gravar vídeos de la pantalla</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Per a automatitzar tasques mitjançant la gravació d'accions</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per a gravar missatges d'àudio</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per a editar el contingut del full de càlcul</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>En quina part del menú es poden organitzar els diàlegs en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>En quina part del menú es poden organitzar els diàlegs en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Eines > Organitzar diàlegs</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Vista > Opcions de diàleg</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Insertar > Nou diàleg</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Dades > Crear diàleg</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Què és necessari fer per associar un botó en un diàleg amb una macro en
+                LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què és necessari fer per associar un botó en un diàleg amb una macro en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Arrossegar el botó sobre el full de càlcul</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Fer clic dret en el botó i seleccionar "Associar macro"</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Editar el codi de la macro</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Crear un nou full de càlcul</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Quin tipus d'objecte representa l'objecte ThisComponent en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Quin tipus d'objecte representa l'objecte ThisComponent en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa un rang de cel·les en un full de càlcul</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Representa el full de càlcul actiu</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa un botó de comandament</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Representa una fórmula matemàtica</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Què es necessita per poder executar correctament un diàleg en LibreOffice Calc?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Què es necessita per poder executar correctament un diàleg en LibreOffice Calc?</p>]]></text>
+        </questiontext>
+        <answer fraction="100">
+            <text><![CDATA[<p>Tenir habilitades les macros</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Disposar de connexió a internet</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Tenir un full de càlcul buit</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Obrir diversos fitxers simultàniament</p>]]></text>
+        </answer>
+    </question>
+
+    <question type="multichoice">
+        <name>
+            <text>Per què és útil utilitzar macros i diàlegs en un full de càlcul?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Per què és útil utilitzar macros i diàlegs en un full de càlcul?</p>]]></text>
+        </questiontext>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per afegir colors i efectes visuals</p>]]></text>
+        </answer>
+        <answer fraction="100">
+            <text><![CDATA[<p>Per automatitzar tasques repetitives i millorar la interacció amb l'usuari</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per inserir música de fons en el full de càlcul</p>]]></text>
+        </answer>
+        <answer fraction="0">
+            <text><![CDATA[<p>Per compartir el full de càlcul en xarxes socials</p>]]></text>
+        </answer>
+    </question>
+
+</quiz>

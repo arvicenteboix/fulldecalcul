@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />     <meta name="author" content="Alfredo Rafael Vicente Boix" />        <title>Estratègies per a l’ús del full de càlcul</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+        code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+        code span.at { color: #7d9029; } /* Attribute */
+        code span.bn { color: #40a070; } /* BaseN */
+        code span.bu { } /* BuiltIn */
+        code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+        code span.ch { color: #4070a0; } /* Char */
+        code span.cn { color: #880000; } /* Constant */
+        code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+        code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+        code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+        code span.dt { color: #902000; } /* DataType */
+        code span.dv { color: #40a070; } /* DecVal */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.fl { color: #40a070; } /* Float */
+        code span.fu { color: #06287e; } /* Function */
+        code span.im { } /* Import */
+        code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+        code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+        code span.op { color: #666666; } /* Operator */
+        code span.ot { color: #007020; } /* Other */
+        code span.pp { color: #bc7a00; } /* Preprocessor */
+        code span.sc { color: #4070a0; } /* SpecialChar */
+        code span.ss { color: #bb6688; } /* SpecialString */
+        code span.st { color: #4070a0; } /* String */
+        code span.va { color: #19177c; } /* Variable */
+        code span.vs { color: #4070a0; } /* VerbatimString */
+        code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <link rel="stylesheet" href="aqua.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+                        
+</head>
+
+<body>
+    <div id="content">
+                 <header id="title-block-header">
+            <h1 class="title">Estratègies per a l’ús del full de càlcul</h1>
+            <!--        <p class="subtitle">Mòdul V: Introducció a Macros. Gravador de macros</p>
+        -->
+            <!--         <p class="author">Alfredo Rafael Vicente Boix</p>
+         -->
+                    </header>
+                 <nav id="TOC" role="doc-toc">
+            <div class="navContainer">
+                                <h2 id="toc-title">Continguts</h2>
+                 <ul>
+<li><a href="#introducció"><span class="toc-section-number">1</span> INTRODUCCIÓ</a></li>
+<li><a href="#organitzant-macros-i-diàlegs"><span class="toc-section-number">2</span> Organitzant Macros i diàlegs</a></li>
+<li><a href="#gravador-de-macros"><span class="toc-section-number">3</span> Gravador de macros</a>
+<ul>
+<li><a href="#habilitar-gravador-de-macros"><span class="toc-section-number">3.1</span> Habilitar gravador de macros</a></li>
+<li><a href="#exemple-dús"><span class="toc-section-number">3.2</span> Exemple d’ús</a></li>
+</ul></li>
+<li><a href="#botons-de-formularis"><span class="toc-section-number">4</span> Botons de formularis</a></li>
+<li><a href="#programant-macros"><span class="toc-section-number">5</span> Programant macros</a>
+<ul>
+<li><a href="#la-meua-primera-macro"><span class="toc-section-number">5.1</span> La meua primera macro</a></li>
+</ul></li>
+<li><a href="#nocions-bàsiques-de-programació-de-macros"><span class="toc-section-number">6</span> Nocions bàsiques de programació de macros</a>
+<ul>
+<li><a href="#procediments"><span class="toc-section-number">6.1</span> Procediments</a></li>
+<li><a href="#variables-dim"><span class="toc-section-number">6.2</span> Variables (Dim)</a>
+<ul>
+<li><a href="#definició-de-variables"><span class="toc-section-number">6.2.1</span> Definició de variables</a></li>
+</ul></li>
+<li><a href="#objectes"><span class="toc-section-number">6.3</span> Objectes</a></li>
+<li><a href="#copilot-al-rescat"><span class="toc-section-number">6.4</span> Copilot al rescat</a></li>
+</ul></li>
+<li><a href="#utilitzant-macros.-ús-dels-diàlegs"><span class="toc-section-number">7</span> Utilitzant macros. Ús dels diàlegs</a>
+<ul>
+<li><a href="#exemple"><span class="toc-section-number">7.1</span> Exemple</a></li>
+</ul></li>
+<li><a href="#consideracions-finals"><span class="toc-section-number">8</span> Consideracions finals</a></li>
+<li><a href="#bibliografia"><span class="toc-section-number">9</span> Bibliografia</a></li>
+</ul>
+            </div>
+        </nav>
+                <main>
+            <p><img src="img/cc.png" height="50" /></p>
+            <p>Este document està subjecte a una llicència Creative Commons que permet la seua difusió i ús comercial reconeixent sempre l’autoria del seu creador. Aquest document es troba per a ser modificat al següent repositori de github: <!-- CANVIAR L'ENLLAÇ --> <a href="https://github.com/arvicenteboix/fulldecalcul">https://github.com/arvicenteboix/fulldecalcul</a> </p>
+            <h1 data-number="1" id="introducció"><span class="header-section-number">1</span> INTRODUCCIÓ</h1>
+            <p>Les macros als fulls de càlcul són operacions que podem realitzar de manera automatitzada. En aquest mòdul veurem com realitzar operacions molt senzilles amb macros, però que ens poden donar resultats molt vistosos. Tot i així, podem dir que pot resultar-vos extremadament complicada esta unitat, però la tasca que anem a demanar-vos tindrà una part molt senzilla per a ser APTA, al menys utilitzat el gravador de macros. Però paga la pena esforçar-se i intentar traure el màxim possible.</p>
+            <p>Les macros poden estar escrites en diferents llenguatges de programació, LibreOffice Basic, BeanShell, JavaScript i Python, nosaltres ens centrarem en aquest primer ja que té un mode de compatibilitat amb Excel. Les macros no sempre són compatibles entre Excel i Libreoffice Calc i moltes vegades quan creem una macro en un u altre sistema tindrem que retocar-la.</p>
+            <p>Així mateix també veurem com crear <em>dialogs</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> per a dotar de major usabilitat el full de càlcul. Principalment per a aquelles persones que no són usuàries de fulls de càlcul i fer-lo més amigable.</p>
+            <p>Partirem de l’exemple que teníem en el mòdul d’abans i anirem explicant poc a poc a través d’exemples, això sí… Aneu a escriure codi, poc, però les macros al final són línies de codi. Aquest mòdul vos facilitarà les ferramentes bàsiques per a crear macros i a partir d’ahí podeu complicar les coses tot el que vullgueu, penseu que es tracta d’uns conceptes molt bàsics.</p>
+            <h1 data-number="2" id="organitzant-macros-i-diàlegs"><span class="header-section-number">2</span> Organitzant Macros i diàlegs</h1>
+            <p>Entendre la gestió de les macros en Libreoffice Calc és poc intuïtiu, per a poder accedir a les macros que tenim al sistema anem al menú de <em>Herramientas</em> i tenim varies opcions:</p>
+            <ul>
+            <li>Ejecutar macros: Si volem executar una macro.</li>
+            <li>Editar macro: Si volem editar alguna de les macros ja creades. Ací és on anirem normalment.</li>
+            <li>Organitzar macros: Si volem crear una macro nova o eliminar-la, hem d’anar sempre a esta opció.</li>
+            <li>Organitzar diàlegs: per a crear finestres (diàlegs).</li>
+            </ul>
+            <figure>
+            <img src="img/1.png" style="width:60.0%" alt="" /><figcaption>Menú macros</figcaption>
+            </figure>
+            <p>Si anem a editar macros podem veure que ens apareix un menú a l’esquerre on estan totes les nostres macros. Fixem-nos que tenim classificades les macros en:</p>
+            <ul>
+            <li>Mis macros y diálogos: Estes macros són les que tenim al sistema, es a dir, al nostre Libreoffice calc.</li>
+            <li>Macros y diálogos de la aplicación: vos recomane que no toqueu esta part.</li>
+            <li>Sin título 1: és el nom del nostre full de càlcul. Ací es guarden les macros que es troben en el nostre full de càlcul. Si anem a passar este full a altres persones per a que utilitzen els macros, les hem de posar ací.</li>
+            </ul>
+            <figure>
+            <img src="img/2.png" style="width:60.0%" alt="" /><figcaption>Editar macros</figcaption>
+            </figure>
+            <p>Per a crear una macro podem anar a Organitzat macros en el menú de Herramientas &gt; Macros. O si ja estem dins de la finestra editar. Podem anar ací:</p>
+            <figure>
+            <img src="img/3.png" style="width:60.0%" alt="" /><figcaption>Organitzar macros macros</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recordeu qeu nosaltres anem a treballar amb BASIC. Per tant hem d’escollir l’opció BASIC.</p>
+            </div>
+            <p>Ací podem editar directament, eliminar o executar.</p>
+            <figure>
+            <img src="img/4.png" style="width:50.0%" alt="" /><figcaption>Organitzant macros</figcaption>
+            </figure>
+            <p>Si seleccionem Standard dins del nostre full de càlcul (<em>Sin título 1</em>), podem crear-nos una macro.</p>
+            <figure>
+            <img src="img/5.png" style="width:60.0%" alt="" /><figcaption>Creant macros</figcaption>
+            </figure>
+            <p>Ens creem una macro molt senzilla:</p>
+            <figure>
+            <img src="img/6.png" style="width:50.0%" alt="" /><figcaption>Codi macro</figcaption>
+            </figure>
+            <div class="info">
+            <p>El comandament MsgBox, el que fa és obrir una finestra mostrant un missatge.</p>
+            </div>
+            <p>Si volem executar la macro anirem a Ejecutar macro:</p>
+            <figure>
+            <img src="img/7.png" style="width:60.0%" alt="" /><figcaption>Executar macro</figcaption>
+            </figure>
+            <p>I li diem quina macro volem executar:</p>
+            <figure>
+            <img src="img/8.png" style="width:50.0%" alt="" /><figcaption>Executar macros</figcaption>
+            </figure>
+            <p>I podem veure el resultat:</p>
+            <figure>
+            <img src="img/9.png" style="width:40.0%" alt="" /><figcaption>La meua macro</figcaption>
+            </figure>
+            <!-- **Habilitar macros** -->
+            <h1 data-number="3" id="gravador-de-macros"><span class="header-section-number">3</span> Gravador de macros</h1>
+            <p>Una de les opcions més senzilles per a crear macros és utilitzar el gravador de macros, que no és més que repetir una sèrie d’accions que gravarem, este accions podem ser editar una cel·la i afegir una fórmula o un text, llevar columnes o línies, etc…</p>
+            <div class="warning">
+            <p>Tot i semblar senzill, no sempre és possible realitzar totes les accions mitjançant el gravador de macros. En ocasions, haurem de recórrer a escriure codi per aconseguir l’efecte desitjat. És més complex del que sembla a primera vista. Malgrat això, sovint pot ser una eina útil que ens estalvia temps i simplifica l’ús del full de càlcul.</p>
+            </div>
+            <h2 data-number="3.1" id="habilitar-gravador-de-macros"><span class="header-section-number">3.1</span> Habilitar gravador de macros</h2>
+            <p>Les macros venen deshabilitades per defecte en Libreoffice Calc, per a habilitar-les hem d’anar al menú d’opcions (Herramientas &gt; Opciones):</p>
+            <figure>
+            <img src="img/10.png" style="width:60.0%" alt="" /><figcaption>Habiliar gravador de macros</figcaption>
+            </figure>
+            <p>Ata si anem al menú macros ja ens apareixerà en el menú “gravar macro”.</p>
+            <figure>
+            <img src="img/11.png" style="width:60.0%" alt="" /><figcaption>Gravar macro</figcaption>
+            </figure>
+            <h2 data-number="3.2" id="exemple-dús"><span class="header-section-number">3.2</span> Exemple d’ús</h2>
+            <p>Anem a partir del full que hem utilitzat en el mòdul anterior al qual li hem afegit el recuadre marcat en roig:</p>
+            <figure>
+            <img src="img/12.png" alt="" /><figcaption>Full d’exemple</figcaption>
+            </figure>
+            <p>Anem a tractar d’afegir els valors que anem posant al full de factures, i ens ho faja tot automàticament sense necessitat d’anar al full de factures. Hem de pensar detingudament tot el que anem a realitzar, no sempre el resultat esperat ens eixirà a la primera.</p>
+            <ol type="1">
+            <li>Comencem el gravador de macros i ens apareixerà esta finestram polsarem el botó <em>finalizar macro</em> quan acabem de fer totes les accions:</li>
+            </ol>
+            <figure>
+            <img src="img/13.png" style="width:20.0%" alt="" /><figcaption>Gravar macros</figcaption>
+            </figure>
+            <ol start="2" type="1">
+            <li>Insertem una fila.</li>
+            </ol>
+            <figure>
+            <img src="img/15.png" style="width:40.0%" alt="" /><figcaption>Insertem línia</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Com que estem gravant una macro hem de posar una línia nova sempre en el mateix lloc, es bona estratègia anar afegint línies al principi i no al final, ja que no hi ha manera de gravar que estàs en l’última línia, ja que la gravadora de macros no entén que és l’última sinó la número X.</p>
+            </div>
+            <ol start="3" type="1">
+            <li>Copiem cel·la per cel·la</li>
+            </ol>
+            <figure>
+            <img src="img/14.png" style="width:60.0%" alt="" /><figcaption>Copiem línia</figcaption>
+            </figure>
+            <div class="warning">
+            <p>En Libreoffice Calc si selecciones un rang i l’enganxes no funciona. Has de fer el procediment de copiar i enganxar per a cada Cel·la. De manera que si volem copiar i enganxar les 3 cel·les has de copiar i enganxar 3 vegades.</p>
+            </div>
+            <ol start="4" type="1">
+            <li>Enganxem cel·la per cel·la</li>
+            </ol>
+            <figure>
+            <img src="img/16.png" style="width:60.0%" alt="" /><figcaption>Enganxem línia</figcaption>
+            </figure>
+            <ol start="5" type="1">
+            <li>Tornem a la full on estàvem i borrem el valor que hem afegit.</li>
+            </ol>
+            <figure>
+            <img src="img/19.png" style="width:60.0%" alt="" /><figcaption>Borrem</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Una de les limitacions que tindríem en este cas será el de utilitzar dates o el fet de copiar i enganxar una línia, ja que, encara que li diguem que ens escriga la data actual (Ctrl+,), la gravadora no ho detecta. Pero podries posar altre camp amb la data de la factura.</p>
+            </div>
+            <ol start="6" type="1">
+            <li>Finalment anem a <em>executar macro</em> i podem veure com es realitzem totes les accions.</li>
+            </ol>
+            <h1 data-number="4" id="botons-de-formularis"><span class="header-section-number">4</span> Botons de formularis</h1>
+            <p>Una de les coses que podem pensar és que bastant incòmode anar cada vegada a <em>Executar macro</em> quan volem afegir una despesa. És per això que podem recòrrer a l’ús de formularis. El que farem en primer lloc és habilitar la barra de ferramentes de <em>Controles de formulari</em>. Anem a Ver &gt; Barra de herramientas &gt; Controles de formularios:</p>
+            <figure>
+            <img src="img/20.png" style="width:60.0%" alt="" /><figcaption>Control de formulari</figcaption>
+            </figure>
+            <p>Ens apreixerà la següent barra de ferramentes. En esta ens hem de fixar en un botó per a Activar el mode edició, en el qual podem afegir controls, però no podem fer ús dels controls. Quan desactivem el mode edició podrem fer ús del controls, com per exemple apretar el botó que hem afegit.</p>
+            <figure>
+            <img src="img/21.png" style="width:40.0%" alt="" /><figcaption>Barra de control de formulari</figcaption>
+            </figure>
+            <p>Seleccionem un botó i l’afegim, però per a associar-lo a una macro en concret, com la que tenim creada, el que hem de fer és polsar el botó dret del ratolí i anar a <em>Propiedades de control</em>:</p>
+            <figure>
+            <img src="img/22.png" style="width:40.0%" alt="" /><figcaption>Propiedades de control</figcaption>
+            </figure>
+            <p>Ens apareixerà una finestra on anirem a la pestanya Eventos i polsarem el botó de <em>Ejecutar una acción</em>:</p>
+            <figure>
+            <img src="img/23.png" style="width:50.0%" alt="" /><figcaption>Associar a una acció</figcaption>
+            </figure>
+            <p>Ahí ja seleccionem la nostra macro per a que s’execute cada vegada que polsem eixe botó:</p>
+            <figure>
+            <img src="img/24.png" style="width:60.0%" alt="" /><figcaption>Associar a macro</figcaption>
+            </figure>
+            <figure>
+            <img src="img/25.png" style="width:40.0%" alt="" /><figcaption>Escollim macro</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Recorda que per a que funcione el botó has d’eixir del mode d’edició polsant:</p>
+            <figure>
+            <img src="img/26.png" alt="" /><figcaption>Eixir mode edició del formulari</figcaption>
+            </figure>
+            </div>
+            <h1 data-number="5" id="programant-macros"><span class="header-section-number">5</span> Programant macros</h1>
+            <p>Fins ara hem vist el gravador de macros, i ací acaba el curs. Si penses que ha sigut massa complicat per a tu, pots deixar la unitat ací i fer la tasca, entenem que en este punt les coses es poden complicar un poc. Però un dels veritables potencials dels fulls de càlcul és conèixer un poc l’ús de les macros. En este apartat anem a donar-vos algunes nocions bàsiques de com realitzar l’exemple anterior però sense gravar la macro.</p>
+            <div class="caution">
+            <p>Si penseu que el gravador de macros vos va a donar una idea de com fer certes accions voreu que el codi que crea el gravador és molt poc intuitiu i difícil d’entendre.</p>
+            </div>
+            <h2 data-number="5.1" id="la-meua-primera-macro"><span class="header-section-number">5.1</span> La meua primera macro</h2>
+            <p>Ja hem vist com s’organitzen les macros. Anem a crear una macro que es diga modul5 on tractarem de traure el valor d’una cel·la i que, al polsar un botó, ens aparega una finestra que diga “Hola + Nom”.</p>
+            <div class="warning">
+            <p>Es recomanable desar les macros sempre en local. Si utilitzes macros adherides als documents has d’habilitar l’opció per a poder executar-les. Cal anar a *Herramientas&gt;Opciones&gt;Libreoffice&gt;Seguridad&gt;Seguridad macros&gt;Nivel de seguridad medio.</p>
+            <figure>
+            <img src="img/31.png" style="width:60.0%" alt="" /><figcaption>Seguridad macros</figcaption>
+            </figure>
+            </div>
+            <p>Començarem anar al <em>Herramientas&gt;Macros&gt;Organizar macros&gt;BASIC</em>, anirem a <em>Organizador</em>:</p>
+            <figure>
+            <img src="img/27.png" style="width:60.0%" alt="" /><figcaption>Macros</figcaption>
+            </figure>
+            <p>I li donarem a <em>Nuevo</em> per a crear un nou mòdul:</p>
+            <figure>
+            <img src="img/28.png" style="width:60.0%" alt="" /><figcaption>Crear mòdul</figcaption>
+            </figure>
+            <p>Li donem el nom de <strong>Modul5</strong>:</p>
+            <figure>
+            <img src="img/29.png" style="width:60.0%" alt="" /><figcaption>Nom mòdul</figcaption>
+            </figure>
+            <p>Si ara anem a <em>Editar macros</em> ja veurem el nostre mòdul creat en una funció anomenada main, si executem eixe mòdul sempre executarà eixa funció, també podem executar una funció específica dins del mòdul.</p>
+            <figure>
+            <img src="img/30.png" style="width:60.0%" alt="" /><figcaption>Modul5</figcaption>
+            </figure>
+            <p>I escriurem el següent codi:</p>
+            <div class="sourceCode" id="cb1"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>oFull = ThisComponent.CurrentController.ActiveSheet</span>
+            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>oCellCadena = oFull.getCellByPosition(0,0).getString()</span>
+            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>MsgBox(<span class="st">&quot;Hola &quot;</span>+oCellCadena)</span>
+            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>En aquest codi el que hem fet és:</p>
+            <ul>
+            <li><strong>oFull = ThisComponent.CurrentController.ActiveSheet</strong> : assignem a la variable oFull un objecte<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. De manera que jo estic extraient l’objecte <em>ActiveSheet</em> de l’objecte <em>CurrentController</em> que es troba a <em>ThisComponent</em>. I el guarde dins de oCell, ara és com si cada vegada que escribira oCell escric tot el que hi havia abans.</li>
+            <li><strong>oCell = oFull.getCellByPosition(0,0)</strong> : assignem a oCellCadena el text que hi ha dins de la cel·la que es troba en 0,0. O siga la primera cel·la de totes.</li>
+            <li><strong>MsgBox(“Hola”+oCellCadena)</strong> : MsgBox(TEXT) és una funció que ens permet traure una finestra amb un text, en este cas en concatenat dos cadenes: “Hola”+oCellCadena.</li>
+            </ul>
+            <p>D’aquesta manera el resultat és:</p>
+            <figure>
+            <img src="img/32.png" style="width:60.0%" alt="" /><figcaption>Finestra</figcaption>
+            </figure>
+            <h1 data-number="6" id="nocions-bàsiques-de-programació-de-macros"><span class="header-section-number">6</span> Nocions bàsiques de programació de macros</h1>
+            <p>En aquest punt vos anem a donar uns objectes comuns que es solen utilitzar per a programar.</p>
+            <h2 data-number="6.1" id="procediments"><span class="header-section-number">6.1</span> Procediments</h2>
+            <div class="caution">
+            <p>Este apartat i el següent s’han de llegir en paral·lel, podeu llegir primer este i després variables i després tornar a llegir este.</p>
+            </div>
+            <p>La paraula <strong>Sub</strong> mostra l’abertura d’un procediment. Un procediment és un codi que realitza una acció determinada. Hi ha un procediments que és el que s’executa quan executem un mòdul que és <strong>Sub Main</strong>, en l’exemple anterior hem posat el codi dins de Sub Main.</p>
+            <div class="sourceCode" id="cb2"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">Sub </span>NOM_PROCEDIMENT()</span>
+            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>Podem pasar variables al procediment posant entre parèntesis les variables que volem passar:</p>
+            <div class="sourceCode" id="cb3"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">Sub </span>NOM_PROCEDIMENT(var1 <span class="kw">as</span> <span class="dt">Integer</span>, var2 <span class="kw">as</span> <span class="dt">Integer</span>)</span>
+            <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  var3 = var1+var2</span>
+            <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <p>Si volem que ens torne un valor el procediment caldrà que li diem el resultat quin tipus de variable serà:</p>
+            <div class="sourceCode" id="cb4"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">Sub </span>NOM_PROCEDIMENT(var1 <span class="kw">as</span> <span class="dt">Integer</span>, var2 <span class="kw">as</span> <span class="dt">Integer</span>) <span class="kw">as</span> <span class="dt">Integer</span></span>
+            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  NOM_PROCEDIMENT = var1+var2</span>
+            <span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <div class="important">
+            <p>Fixem-nos que ara per a tornar un valor hem de donar a la variable NOM_PROCEDIMENT un valor i eixe serà el valor que tornarà.</p>
+            </div>
+            <h2 data-number="6.2" id="variables-dim"><span class="header-section-number">6.2</span> Variables (Dim)</h2>
+            <p>Una variable és una paraula<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> a la qual se li assigna un valor, eixe valor pot ser:</p>
+            <ul>
+            <li>String: quan es tracta d’un text.</li>
+            <li>Integer: quan es tracta d’un número.</li>
+            <li>Object: Quan es tracta d’un objecte.</li>
+            <li>Hi han altre tipus de variables, però ens centrarem en este 3.</li>
+            </ul>
+            <h3 data-number="6.2.1" id="definició-de-variables"><span class="header-section-number">6.2.1</span> Definició de variables</h3>
+            <p>Les variables poden trobar-se dins d’un procediment o són necessàries per a utilitzar-les en tot el mòdul:</p>
+            <ul>
+            <li>Si la utilitzem dins d’un procediment simplement donarem un nom i posarem =.</li>
+            <li>Si volem utilitzar-la en tot el mòdul, l’hem de definir al principi amb la paraula <em>Dim NOM_VARIABLE As TIPUS_VARIABLE</em></li>
+            </ul>
+            <p>Per exemple:</p>
+            <div class="sourceCode" id="cb5"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>REM Definim una variable a l<span class="co">&#39;inici, per tant la podrem utilitzar on vullguem.</span></span>
+            <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+            <span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">Dim</span> oFull <span class="kw">As</span> <span class="dt">Object</span></span>
+            <span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+            <span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="kw">Sub </span>Finestra()</span>
+            <span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+            <span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>  REM Ací tenim una variable que només podem utilitzar dins d<span class="co">&#39;este procediment (aux). En canvi podem utilitzar oFull en qualsevol lloc.</span></span>
+            <span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
+            <span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>  aux = oFull.getCellByPosition(0,0).getString()</span>
+            <span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>  MsgBox(aux)</span>
+            <span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a></span>
+            <span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a></span>
+            <span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a></span>
+            <span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>  REM Dins del procediment Main assignem un valor que podem utilitzar en qualsevol lloc.</span>
+            <span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a></span>
+            <span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>  oFull = ThisComponent.CurrentController.ActiveSheet</span>
+            <span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>  Finestra()</span>
+            <span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+            <span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <div class="tip">
+            <p>Vos haureu fixa’t que quan possem la paraula REM davant estem fent un caomentari sobre el que estem fent. Eixa paraula ens permet fer comentaris en el codi per aclarir coses, o saber què s’està fent quan en un futur vullguem modificar la nostra macro.</p>
+            </div>
+            <h2 data-number="6.3" id="objectes"><span class="header-section-number">6.3</span> Objectes</h2>
+            <p>Tot en el llenguatge de programació BASIC són objectes. Ací anem a mostrar-vos alguns que s’utilitzen molt freqüentment</p>
+            <ul>
+            <li><strong>ThisComponent</strong>: Es tracta del Objecte que representa el nostre full de càlcul actual, d’ací deriven tots els altres objectes
+            <ul>
+            <li><strong>.CurrentController.ActiveSheet</strong>: Ens torna un objecte que representa el nostre full</li>
+            <li><strong>.getSheets()</strong> o <strong>.Sheets</strong>: Ens torna un objecte que representa tots els nostre fulls
+            <ul>
+            <li><strong>.getByIndex(INDEX_FULL)</strong>: Podem agafar un full per Index, el 0 és el primer.</li>
+            <li><strong>.getByName(NOM_FULL)</strong>: Podem fer-ho també per nom</li>
+            <li><strong>.getCount()</strong>: O extraure el número de fulls totals que tinc al meu full de càlcul.</li>
+            </ul></li>
+            </ul></li>
+            </ul>
+            <p>Podríem tindre el nostre full en el que estem treballant per a extraure valors de cel·les:</p>
+            <pre><code>el_nostre_full = ThisComponent.getSheets().getByIndex(0)</code></pre>
+            <ul>
+            <li><strong>el_nostre_full</strong>
+            <ul>
+            <li><strong>.getCellByPosition(0,0)</strong> : Trauríem un objecte tipus cel·la, que representa la nostra cel·la en la posició 0,0.</li>
+            <li><strong>.getCellRangeByName(NOM_CEL·LA_O_RANG)</strong> : Si hem anomenat una cel·la o un rang, podem extraure’l d’ací.
+            <ul>
+            <li><strong>.setValue(VALOR_A_DONAR)</strong> : Podríem donar un valor a la cel·la amb aquesta funció.</li>
+            <li><strong>.setFormula(“=A1+A2”)</strong> : O una fórmula.</li>
+            <li><strong>.getValue()</strong> : Podríem agafar el valor de la cel·la.</li>
+            <li><strong>.getString()</strong> : O el text, si es un nombre enter, no ens tornarà el valor en text, caldria que utilitzarem getValue.</li>
+            <li><strong>.getFormula()</strong> : Igualment, si és una fórmula la podem extraure amb aquesta funció.</li>
+            </ul></li>
+            </ul></li>
+            </ul>
+            <h2 data-number="6.4" id="copilot-al-rescat"><span class="header-section-number">6.4</span> Copilot al rescat</h2>
+            <p>Copilot sempre ens proporcionarà exemples sobre les diferents opcions. Això sí, sempre cal tenir unes nocions bàsiques sobre el que s’està preguntant:</p>
+            <figure>
+            <img src="img/33.png" style="width:80.0%" alt="" /><figcaption>Copilot</figcaption>
+            </figure>
+            <h1 data-number="7" id="utilitzant-macros.-ús-dels-diàlegs"><span class="header-section-number">7</span> Utilitzant macros. Ús dels diàlegs</h1>
+            <p>Com hem dit, un diàleg és una finestra que facilita l’interacció entre el full de càlcul i l’usuari. Anem a crear un xicotet exemple per al nostre full de càlcul del pressupost.</p>
+            <p>Per a afegir un diàleg nou anem a <em>Herramientas&gt;Macros&gt;Organizar diálogos</em> i creem un nou diàleg:</p>
+            <figure>
+            <img src="img/34.png" style="width:40.0%" alt="" /><figcaption>Nou Diàleg</figcaption>
+            </figure>
+            <p>I editem:</p>
+            <figure>
+            <img src="img/35.png" style="width:40.0%" alt="" /><figcaption>Editem Diàleg</figcaption>
+            </figure>
+            <p>Ens apareixerà la següent finestra que podrem configurar arrastrant i soltant els elements que es troben a la barra de ferramentes a la part inferior de la pantalla.</p>
+            <figure>
+            <img src="img/36.png" style="width:60.0%" alt="" /><figcaption>Creem Diàleg</figcaption>
+            </figure>
+            <p>Quan arrastrem i soltem podem veure que en la part de propietats ens apareixen les propietats de l’element:</p>
+            <figure>
+            <img src="img/37.png" style="width:60.0%" alt="" /><figcaption>Propietats de l’elements</figcaption>
+            </figure>
+            <div class="tip">
+            <p>Vos recomanem que utiltizeu les propietats per a posar cadascun dels elements i que queden correctament disposats dins de la finestra.</p>
+            </div>
+            <p>Arrastrant i soltant podem crear-nos la següent finestra per exemple:</p>
+            <figure>
+            <img src="img/38.png" style="width:60.0%" alt="" /><figcaption>Exemple de diàleg</figcaption>
+            </figure>
+            <div class="caution">
+            <p>Este diàleg té 3 camps de text i l’últim és un camp numèric. El camp numèric encara que visualment semblen iguals, són diferents.</p>
+            </div>
+            <p>Podem veure les propietats del botó que poden canviar la seua manera d’actuar, al botó Cancelar poden anar a <em>Tipo de botón</em> i dir-li que es un botó <em>Cancelar</em>.</p>
+            <figure>
+            <img src="img/40.png" style="width:40.0%" alt="" /><figcaption>Tipus de botó</figcaption>
+            </figure>
+            <p>Dins de les propietats del botó, podem anar a <em>Eventos</em> i en <em>Ejecutar Acción</em> polsem al botó del costat:</p>
+            <figure>
+            <img src="img/41.png" style="width:50.0%" alt="" /><figcaption>Events del botó</figcaption>
+            </figure>
+            <p>Se’ns obrirà una finestra que ens permetrà associar eixe botó a un procediment de la macro:</p>
+            <figure>
+            <img src="img/42.png" style="width:60.0%" alt="" /><figcaption>Acció del botó</figcaption>
+            </figure>
+            <p>Finalment, obriríem el diàleg de la mateixa manera que hem associat abans un botó del formulari en el nostre full de càlcul, el codi que hem d’utilitzar per a obrir el diàleg és le següent. Sempre serà del mateixa manera, només caldrà canviar:</p>
+            <ul>
+            <li>Standard: Posarem el nom de la nostra macro.</li>
+            <li>Dialog1: Posarem el nom que li donem al nostre Diàleg.</li>
+            </ul>
+            <div class="sourceCode" id="cb7"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">Sub </span>StartDialog1()</span>
+            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    BasicLibraries.LoadLibrary(<span class="st">&quot;Tools&quot;</span>)</span>
+            <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    oDialog1 = LoadDialog(<span class="st">&quot;Standard&quot;</span>, <span class="st">&quot;Dialog1&quot;</span>)</span>
+            <span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    oDialog1.Execute()</span>
+            <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <h2 data-number="7.1" id="exemple"><span class="header-section-number">7.1</span> Exemple</h2>
+            <p>Anem a realitzar el mateix exemple d’abans però esta vegada enlloc de posar els valors en 3 cel·les, posarem un botó que associarem al procediment, <em>StartDialog1</em>:</p>
+            <figure>
+            <img src="img/43.png" style="width:80.0%" alt="" /><figcaption>Full de càlcul</figcaption>
+            </figure>
+            <p>Crearen altre procediment que s’anomenarà readDialog1, que tenim associat al botó <em>Afegix</em> del nostre diàleg. Hem definit do procediments auxiliars per a practicar un poc:</p>
+            <div class="sourceCode" id="cb8"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a></span>
+            <span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>REM Definim 2 variables globals per a poder utilitzar-les en tots els llocs</span>
+            <span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>REM oDialog1 el necessitem en dos procediments, en startDialog1 i en readDialog1</span>
+            <span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>REM oFullFactures l utilitzem en InsertaText, InsertaValor i definim l objecte en readDialog1</span>
+            <span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a></span>
+            <span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="kw">Dim</span> oDialog1 <span class="kw">as</span> <span class="dt">Object</span></span>
+            <span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">Dim</span> oFullFactures <span class="kw">as</span> <span class="dt">Object</span></span>
+            <span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a></span>
+            <span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>REM Procediment per a obrir el Diàleg</span>
+            <span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a></span>
+            <span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="kw">Sub </span>StartDialog1()</span>
+            <span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>    BasicLibraries.LoadLibrary(<span class="st">&quot;Tools&quot;</span>)</span>
+            <span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    oDialog1 = LoadDialog(<span class="st">&quot;Standard&quot;</span>, <span class="st">&quot;Dialog1&quot;</span>)</span>
+            <span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>    oDialog1.Execute()</span>
+            <span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a></span>
+            <span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>REM Definim un procediment auxiliar <span class="kw">on</span> li passem 3 paràmetres, la fila i la columna <span class="kw">on</span> volem afegir el text i el text que volem afegir</span>
+            <span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a></span>
+            <span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a><span class="kw">Sub </span>InsertaText(fila <span class="kw">as</span> <span class="dt">Integer</span>, columna <span class="kw">as</span> <span class="dt">Integer</span>, texto <span class="kw">as</span> <span class="dt">String</span>)</span>
+            <span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>    </span>
+            <span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>    oFullFactures.getCellByPosition(fila,columna).setString(texto)</span>
+            <span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a></span>
+            <span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a></span>
+            <span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>REM Definim un procediment auxiliar <span class="kw">on</span> li passem 3 paràmetres, la fila i la columna <span class="kw">on</span> volem afegir el valor i el valor que volem afegir</span>
+            <span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a></span>
+            <span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a><span class="kw">Sub </span>InsertaValor(fila <span class="kw">as</span> <span class="dt">Integer</span>, columna <span class="kw">as</span> <span class="dt">Integer</span>, valor <span class="kw">as</span> <span class="dt">Integer</span>)</span>
+            <span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a></span>
+            <span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    oFullFactures.getCellByPosition(fila,columna).setValue(valor)</span>
+            <span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a></span>
+            <span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a> </span>
+            <span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a>REM En este procediment en primer lloc agafem el valor de tots els camps i els guardem en oT1, oT2, oT3 i oT4</span>
+            <span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>REM DEsprés definim la nostra fulla</span>
+            <span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a>REM Afegim una línia en el full Facture</span>
+            <span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>REM Emplenem eixa línia en inserta valor</span>
+            <span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a></span>
+            <span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a></span>
+            <span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a><span class="kw">Sub </span>readDialog1()</span>
+            <span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a></span>
+            <span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>    oT1 = oDialog1.GetControl(<span class="st">&quot;TextField1&quot;</span>).Text</span>
+            <span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>    oT2 = oDialog1.GetControl(<span class="st">&quot;TextField2&quot;</span>).Text</span>
+            <span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>    oT3 = oDialog1.GetControl(<span class="st">&quot;TextField3&quot;</span>).Text</span>
+            <span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>    oT4 = oDialog1.GetControl(<span class="st">&quot;NumericField1&quot;</span>).getValue()</span>
+            <span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a>    </span>
+            <span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a>    oFullFactures = ThisComponent.getSheets().getByName(<span class="st">&quot;Factures&quot;</span>)</span>
+            <span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a></span>
+            <span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a>    oFullFactures.getRows().insertByIndex(4,1)</span>
+            <span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a></span>
+            <span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a>    InsertaText(1,4, oT1)</span>
+            <span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>    InsertaText(2,4,oT2)</span>
+            <span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    InsertaText(3,4,oT3)</span>
+            <span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a>    InsertaValor(4,4,oT4)</span>
+            <span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>    </span>
+            <span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a>    MsgBox(<span class="st">&quot;Dades Introduïdes&quot;</span>)</span>
+            <span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>    </span>
+            <span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a><span class="kw">End Sub</span></span>
+            <span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a></span>
+            <span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a><span class="kw">Sub </span>Main</span>
+            <span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a></span>
+            <span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
+            <h1 data-number="8" id="consideracions-finals"><span class="header-section-number">8</span> Consideracions finals</h1>
+            <p>Utilitzar macros pot facilitar l’interacció amb el nostre full de càlcul i podem dotar-lo de multitud d’operacions que ens faciliten les tasques. Això sí, és necessari practicar amb ell molt. A la fi, és aprendre a programar.</p>
+            <p>Cal dir que se’ns queden algunes coses en el tinten que vos convidem a investigar pel vostre compte. Per exemple:</p>
+            <ul>
+            <li>Function: es tracta d’un procediment especial per a definir noves funcions en el nostre full</li>
+            <li>Bucle For: Podem crear bucles, al full de la bibliografia teniu exemple molt aclaridors sobre com utilitzar el bucle.</li>
+            <li>Condicional If: Igualment, podem necessitar en alguna tasca algun condicional.</li>
+            </ul>
+            <p>Casi que caldria un curs sencer per a practica i fer una introducció com cal a l’ús dels fulls de càlculs. Ací vos hem mostrat les ferramentes que hi ha i alguns esborranys de com utilitzar-les.</p>
+            <h1 data-number="9" id="bibliografia"><span class="header-section-number">9</span> Bibliografia</h1>
+            <ol type="1">
+            <li><a href="https://documentation.libreoffice.org/assets/Uploads/Documentation/es/CG62/PDF/CG6212-MacrosDeCalc.pdf">Introducció a macros. Documentació Libreoffice</a></li>
+            </ol>
+            <section class="footnotes" role="doc-endnotes">
+            <hr />
+            <ol>
+            <li id="fn1" role="doc-endnote"><p>Un diàleg en programació és una finestra que mostra informació a l’usuari o sol·licita una entrada d’usuari. Aquesta eina facilita la interacció entre l’usuari i el sistema o aplicació.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            <li id="fn2" role="doc-endnote"><p>Un objecte és una entitat que guarda dins diverses funcions, diverses variables i diversos objectes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            <li id="fn3" role="doc-endnote"><p>No pots anomenar a les variables amb paraules reservades. No pots anomenar Main a una variable per exemple.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            </ol>
+            </section>
+        </main>
+        
+
+        <!--- Modal images -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <!--span class="close">&times;</span-->
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <!-- End Modal Images -->
+
+        <script>
+            function ModalizeImages() {
+                // Script basat en https://www.w3schools.com/howto/howto_css_modal_images.asp
+                // PEr ampliar imatges en fer click
+
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                //var img = document.getElementById("myImg");
+                document.querySelectorAll("img").forEach((img => {
+                        img.onclick = function() {
+                            modal.style.display = "block";
+                            modalImg.src = this.src;
+                            captionText.innerHTML = this.alt;
+                        }
+                    }))
+                    // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                //span.onclick = function() {
+                myModal.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+
+            }
+
+
+            function markItem(id) {
+                // Restaurem format de tots
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                        //item.style.fontWeight = "300";
+                        item.classList.remove("navItemSelected");
+                    })
+                    //item.style.color = "#ff0000";
+
+                // Afegim format
+                let items = document.querySelectorAll("#TOC a[href='#" + id + "']");
+                items.forEach(function(item) {
+                    //item.style.fontWeight = "bolder";
+                    item.classList.add("navItemSelected");
+                })
+
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                // isIntersecting is true when element and viewport are overlapping
+                // isIntersecting is false when element and viewport don't overlap
+                if (entries[0].isIntersecting === true) {
+                    let id = entries[0].target.id;
+                    markItem(id);
+                }
+
+            }, {
+                threshold: [0]
+            });
+
+            window.addEventListener("load", function() {
+                document.querySelectorAll("h1, h2, h3").forEach(function(item) {
+                    observer.observe(item);
+                });
+
+                document.querySelectorAll("#TOC a").forEach(function(item) {
+                    item.addEventListener("click", function(item) {
+                        markItem(item.id);
+                    })
+                })
+
+                // Fem modals totes les imatges
+                ModalizeImages();
+            })
+
+            document.querySelector("#TOC").addEventListener("click", function(event) {
+                let toc = event.target
+                if (toc.offsetWidth > 10) {
+                    toc.classList.add("minimizedToc");
+                }
+            })
+
+            document.querySelector("#TOC").addEventListener("mouseover", function(event) {
+                let toc = event.target
+                if (toc.classList.contains("minimizedToc"))
+                    toc.classList.remove("minimizedToc");
+            })
+
+
+            //item.style.color = "#ff0000";
+        </script>
+    </div>
+</body>
+
+</html>
