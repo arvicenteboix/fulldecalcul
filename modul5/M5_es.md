@@ -312,7 +312,9 @@ En este punto vamos a dar unos objetos comunes que se suelen utilizar para progr
 Este apartado y el siguiente se deben leer en paralelo, puedes leer primero este y después variables y después volver a leer este.
 :::
 
-La palabra **Sub** muestra la apertura de un procedimiento. Un procedimiento es un código que realiza una acción determinada. Hay un procedimiento que es el que se ejecuta cuando ejecutamos un módulo que es **Sub Main**, en el ejemplo anterior hemos puesto el código dentro de Sub Main.
+La palabra clave o reservada del lenguaje BASIC, **Sub**, se utiliza para mostrar el inicio de la definición de un procedimiento. Un procedimiento es un código que realiza una acción determinada. Los procedimientos pueden ejecutarse llamándolos desde dentro de otro procedimiento. En el ejemplo anterior hicimos una llamada al procedimiento **MsgBox** dentro de Sub Main para ejecutarlo.
+
+Aquí tenemos un ejemplo de un procedimiento llamado NOM_PROCEDIMIENTO sin parámetros o variables, ya que en la definición del procedimiento no hemos puesto nada entre los paréntesis.
 
 ```vb
 Sub NOMBRE_PROCEDIMIENTO()
