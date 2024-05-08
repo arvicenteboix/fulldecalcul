@@ -335,11 +335,12 @@
             <div class="caution">
             <p>Este apartat i el següent s’han de llegir en paral·lel, podeu llegir primer este i després variables i després tornar a llegir este.</p>
             </div>
-            <p>La paraula <strong>Sub</strong> mostra l’abertura d’un procediment. Un procediment és un codi que realitza una acció determinada. Hi ha un procediments que és el que s’executa quan executem un mòdul que és <strong>Sub Main</strong>, en l’exemple anterior hem posat el codi dins de Sub Main.</p>
+            <p>La paraula clau o reservada del llenguatge BASIC, <strong>Sub</strong>, s’utilitza per mostrar l’inici de la definició d’un procediment. Un procediment és un codi que realitza una acció determinada. Els procediments poden executar-se cridant-los des de dins d’un altre procediment. En l’exemple anterior fet una cridada al procediment <strong>MsgBox</strong> dins de Sub Main per executar-lo.</p>
+            <p>Ací tenim un exemple d’un procediment anomenat NOM_PROCEDIMENT sense paràmetres o variables, ja que en la definició del procediment no hem posat res entre els parèntesis.</p>
             <div class="sourceCode" id="cb2"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">Sub </span>NOM_PROCEDIMENT()</span>
             <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
             <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
-            <p>Podem pasar variables al procediment posant entre parèntesis les variables que volem passar:</p>
+            <p>Podem <strong>pasar variables</strong> al procediment posant entre parèntesis les variables que volem passar:</p>
             <div class="sourceCode" id="cb3"><pre class="sourceCode vb"><code class="sourceCode monobasic"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">Sub </span>NOM_PROCEDIMENT(var1 <span class="kw">as</span> <span class="dt">Integer</span>, var2 <span class="kw">as</span> <span class="dt">Integer</span>)</span>
             <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  var3 = var1+var2</span>
             <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
@@ -387,7 +388,7 @@
             <span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
             <span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="kw">End Sub</span></span></code></pre></div>
             <div class="tip">
-            <p>Vos haureu fixa’t que quan possem la paraula REM davant estem fent un caomentari sobre el que estem fent. Eixa paraula ens permet fer comentaris en el codi per aclarir coses, o saber què s’està fent quan en un futur vullguem modificar la nostra macro.</p>
+            <p>Vos haureu fixa’t que quan possem la paraula REM davant, estem fent un comentari sobre què estem fent. Esta paraula ens permet fer comentaris en el codi per aclarir coses, o saber què s’està fent quan en un futur vullguem modificar la nostra macro.</p>
             </div>
             <h2 data-number="6.3" id="objectes"><span class="header-section-number">6.3</span> Objectes</h2>
             <p>Tot en el llenguatge de programació BASIC són objectes. Ací anem a mostrar-vos alguns que s’utilitzen molt freqüentment</p>
