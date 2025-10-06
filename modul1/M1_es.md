@@ -235,9 +235,7 @@ Finalmente tendríamos en la hoja de cálculo un desplegable para poder seleccio
 ![Desplegable](img/17.png)
 
 :::tip
-En los casos que hagáis uso de esta opción, es una opción recomendable tener todos los datos de los desplegables en una hoja aparte o ocultar estos datos poniéndolos a la derecha. Para ocultar una columna os ponéis encima de la línea con el cursor del ratón y hacéis clic derecho sobre la letra y ahí tenemos la opción de ocultar. Esta acción ocultaría la columna pero aún estaría ahí aunque no la podamos ver:
-
-![Ocultar columna](img/18.png)
+En los casos que hagáis uso de esta opción, es una opción recomendable tener todos los datos de los desplegables en una hoja aparte.
 :::
 
 :::note
